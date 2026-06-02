@@ -117,12 +117,12 @@ The following measurements are still required:
 * Re-route traces to eliminate temperature gradient across the Q1/Q2 die - thermal transfer to Q2 currently dominates.
 
 ### 3. 633 Hz oscillation - excellent work by CR7BTQ:
-* Prototype board exhibited oscillation (633Hz - 20-40mV).
+* Prototype board exhibited oscillation under load (633Hz, 20-40 mV).
 * Various experiments pointed to Vref - 10k loading resistor reduces amplitude by 70%, but frequency enters kHz range.
-* Alternate Vref installed - behavior is now stable.
-* V2 will ship with 78L05. A low Iq alternative will require testing for later revision.
+* Alternate Vref installed - behavior now stable.
+* V2 will ship with 78L05. A lower Iq alternative will require testing for later revisions.
 ---
 
-## Future Release
+## Future Project
 
-Work has commenced on a hybrid board (SMPS + linear) - awaiting stable V2 release with verified PSRR measurements before prototyping.
+Hybrid board (SMPS + linear) - awaiting stable V2 release with verified PSRR measurements before prototyping.
