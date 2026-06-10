@@ -25,7 +25,7 @@ When this project began, the QRP Labs QMX had a strict **12.0 V maximum input**.
 Linear regulation is the cleanest route to an RF-quiet supply, but many LDO boards require too much headroom for a nominal 12 V battery. This project follows the evolution of a discrete topology. **One** device, ideal for field and shack:
 
 1. **SPRAT Issue 201 (G4COL):** [Ian Braithwaite’s original schematic](https://www.gqrp.com/limiter.jpg) used a BJT long-tailed pair driving a P-channel MOSFET pass device: stable and well-behaved in simulations.
-2. **The ND6T variant:** [ND6T published a variant](http://www.nd6t.com/qrp/VLDO.htm) to significantly reduce quiescent current. Simulations suggest it weakens PMOS gate control.
+2. **The ND6T variant:** [ND6T published a variant](http://www.nd6t.com/qrp/VLDO.htm) to significantly reduce quiescent current - changes include Itail, voltage divider, Vref and PMOS. Simulations suggest it weakens PMOS gate control. Further testing revealed that a change to Vref led to oscillation (visible under load).
 3. **M9OMS VLDO Prototype:** A 4-layer PCB implementation of G4COL's topology, miniaturised with targeted component upgrades. DC performance [shared by KC7XE on QRP Labs groups.io](https://groups.io/g/QRPLabs/message/158202).
 4. **M9OMS VLDO V1.1:** Based on prototype - final changes include 0.5% Vref, output selection ladder with trim, mounting holes and cable strain relief. 65 mm x 20.5 mm. Factory assembled. Baseline for V2.
 5. **M9OMS VLDO V2:** A redesign to reduce dropout, improve transient response, and in-dropout performance beyond V1.1 & modern monolithic LDOs. Same footprint. Clearance hole added for case mounting (external cooling).
@@ -117,10 +117,10 @@ The following measurements are still required:
 * Re-route traces to eliminate temperature gradient across the Q1/Q2 die - thermal transfer to Q2 currently dominates.
 
 ### 3. 633 Hz oscillation - excellent work by CR7BTQ:
-* Prototype board exhibited oscillation under load (633Hz, 20-40 mV).
-* Various experiments pointed to Vref - 10k loading resistor reduces amplitude by 70%, but frequency enters kHz range.
-* Alternate Vref installed - behavior now stable.
-* V2 will ship with 78L05. A lower Iq alternative will require testing for later revisions.
+* Prototype board exhibits oscillation under load (633Hz, 20-30 mV).
+* Various experiments point to Vref - 10k loading resistor reduces amplitude by 70%, but frequency enters kHz range - not a viable solution.
+* Alternate Vref installed - stability restored.
+* V2 will ship with 78L05. A low Iq / low drift alternative requires testing for later revisions.
 ---
 
 ## Future Project
