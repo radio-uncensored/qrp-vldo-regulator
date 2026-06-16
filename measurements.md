@@ -5,8 +5,8 @@ records hardware results that supplement — and progressively replace — the
 simulation figures in the [main specification table](./README.md#technical-electrical-specifications).
 
 > **Measurements by Stan Dye, KC7XE** (June 2026), on a single production-representative
-> V2 board supplied by M9OMS. Method follows Stan's earlier characterisation of the
-> M9OMS prototype, [shared on the QRP Labs group](https://groups.io/g/QRPLabs/message/158202).
+> V2 board supplied by M9OMS. Method follows Stan's characterisation of the first
+> M9OMS V1 prototype, [shared on the QRP Labs group](https://groups.io/g/QRPLabs/message/158202).
 
 ---
 
