@@ -82,12 +82,12 @@ tracks the input less the dropout, and above it the output holds flat.
 | 14.00 | 9.04 | 9.00 | 9.00 | 9.00 | 9.00 | 9.00 | — |
 
 <p align="center">
-  <img src="images/measurements/dc_9v_full.svg" alt="9 V setting: output voltage versus input voltage at all load levels" width="640">
+  <img src="images/measurements/dc_9v_full.svg" alt="9 V setting: output voltage versus input voltage at all load levels" width="960">
 </p>
 <p align="center"><em>9 V setting — full input sweep, all load levels.</em></p>
 
 <p align="center">
-  <img src="images/measurements/dc_9v_zoom.svg" alt="9 V setting: detail of the regulation knee" width="640">
+  <img src="images/measurements/dc_9v_zoom.svg" alt="9 V setting: detail of the regulation knee" width="960">
 </p>
 <p align="center"><em>9 V setting — regulation knee in detail.</em></p>
 
@@ -113,12 +113,12 @@ tracks the input less the dropout, and above it the output holds flat.
 | 16.00 | 12.09 | 12.05 | 12.03 | 12.03 | 12.03 | 12.03 | 11.97 |
 
 <p align="center">
-  <img src="images/measurements/dc_12v_full.svg" alt="12 V setting: output voltage versus input voltage at all load levels" width="640">
+  <img src="images/measurements/dc_12v_full.svg" alt="12 V setting: output voltage versus input voltage at all load levels" width="960">
 </p>
 <p align="center"><em>12 V setting — full input sweep, all load levels.</em></p>
 
 <p align="center">
-  <img src="images/measurements/dc_12v_zoom.svg" alt="12 V setting: detail of the regulation knee" width="640">
+  <img src="images/measurements/dc_12v_zoom.svg" alt="12 V setting: detail of the regulation knee" width="960">
 </p>
 <p align="center"><em>12 V setting — regulation knee in detail.</em></p>
 
@@ -146,12 +146,12 @@ tracks the input less the dropout, and above it the output holds flat.
 | 19.00 | 13.83 | 13.79 | 13.78 | 13.78 | 13.77 | 13.77 | 13.75 |
 
 <p align="center">
-  <img src="images/measurements/dc_13v8_full.svg" alt="13.8 V setting: output voltage versus input voltage at all load levels" width="640">
+  <img src="images/measurements/dc_13v8_full.svg" alt="13.8 V setting: output voltage versus input voltage at all load levels" width="960">
 </p>
 <p align="center"><em>13.8 V setting — full input sweep, all load levels.</em></p>
 
 <p align="center">
-  <img src="images/measurements/dc_13v8_zoom.svg" alt="13.8 V setting: detail of the regulation knee" width="640">
+  <img src="images/measurements/dc_13v8_zoom.svg" alt="13.8 V setting: detail of the regulation knee" width="960">
 </p>
 <p align="center"><em>13.8 V setting — regulation knee in detail.</em></p>
 
@@ -195,7 +195,7 @@ Heatsink temperature versus time key-down, supplied heatsink, 20 °C ambient:
 15 s off); it stabilised around 66–68 °C after ~20 minutes.*
 
 <p align="center">
-  <img src="images/measurements/thermal_rise.svg" alt="Heatsink temperature versus key-down time for several input-output differences" width="660">
+  <img src="images/measurements/thermal_rise.svg" alt="Heatsink temperature versus key-down time for several input-output differences" width="980">
 </p>
 <p align="center"><em>Thermal rise at 12 V output with the supplied heatsink, 20 °C ambient.</em></p>
 
@@ -219,7 +219,7 @@ in the design documentation. Most use will see a smaller rise; for QMX use this 
 inconsequential. (80 °C was a self-imposed test ceiling, a 57 °C rise above ambient.)
 
 <p align="center">
-  <img src="images/measurements/voltage_drift.svg" alt="Output voltage versus heatsink temperature showing about 28 mV of upward drift" width="560">
+  <img src="images/measurements/voltage_drift.svg" alt="Output voltage versus heatsink temperature showing about 28 mV of upward drift" width="840">
 </p>
 <p align="center"><em>Output drift versus heatsink temperature, 14 V in, 1 A, 12 V setting.</em></p>
 
