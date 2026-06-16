@@ -34,22 +34,24 @@ Linear regulation is the cleanest route to an RF-quiet supply, but many LDO boar
 
 ## Technical Electrical Specifications
 
-> ⚠️ **Specification Note:** The figures below come from LTspice simulations including PCB parasitics, ESR/ESL, and TO-220 lead inductance. They are being replaced with bench measurements as hardware verification progresses.
+> ⚠️ **Specification Note:** Figures originate from LTspice simulations (PCB parasitics, ESR/ESL, TO-220 lead inductance) and are progressively being replaced with bench measurements. The **Basis** column flags which rows are now hardware-verified; the full measured dataset and test conditions are in [Bench Measurements](measurements.md).
 
-| Parameter | Specification | Condition / Note |
-| :--- | :--- | :--- |
-| **Input Voltage Range** | 8.0 V to 18.0 V DC | Continuous operation |
-| **Output Voltages** | **9.0 V / 12.0 V / 13.6 V** | Set by header pins; trimmed via `R7` |
-| **Max Output Current** | 2.0 A | Continuous |
-| **Dropout Voltage** | **< 100 mV** | At 1.0 A load |
-| **Quiescent Current ($I_q$)** | 1.13 mA to 2.48 mA | Varies with $V_{IN}$ (8.0 V – 18.0 V) |
-| **Load Regulation** | ~20 mV / ~40 mV | 0.1 A–1.0 A / 0.1 A–2.0 A |
-| **Line Regulation** | < 5.0 mV | Across $V_{IN}$ = 8.0 V–18.0 V at $I_{LOAD} = 1.0\text{ A}$ |
-| **Output Noise** | < 25 µV RMS | 20 Hz – 20 kHz |
-| **Transient Undershoot** | < 15 mV | 0.5 A $\rightarrow$ 2.0 A, 1 µs edge |
-| **Transient Overshoot** | < 15 mV | 2.0 A $\rightarrow$ 0.5 A, 1 µs edge |
-| **Load Transient Recovery** | < 5 µs / < 2 µs | To within $\pm 5\text{ mV}$ / $\pm 10\text{ mV}$ |
-| **Phase Margin** | ~48° | Clean phase transition, no ringing |
+| Parameter | Specification | Condition / Note | Basis |
+| :--- | :--- | :--- | :--- |
+| **Input Voltage Range** | 8.0 V to 18.0 V DC | Continuous operation | Measured |
+| **Output Voltages** | **9.0 V / 12.0 V / 13.8 V** | Set by header pins; trimmed via `R7` | Measured |
+| **Max Output Current** | 2.0 A | Continuous | Measured |
+| **Dropout Voltage** | **< 100 mV** | At 1.0 A load | Measured |
+| **Quiescent Current ($I_q$)** | 1.13 mA to 2.48 mA | Varies with $V_{IN}$ (8.0 V – 18.0 V) | Simulation |
+| **Load Regulation** | ~20 mV / ~40 mV | 0.1 A–1.0 A / 0.1 A–2.0 A | Measured |
+| **Line Regulation** | < 5.0 mV | Across $V_{IN}$ = 8.0 V–18.0 V at $I_{LOAD} = 1.0\text{ A}$ | Measured |
+| **Output Noise** | < 25 µV RMS | 20 Hz – 20 kHz | Simulation |
+| **Transient Undershoot** | < 15 mV | 0.5 A $\rightarrow$ 2.0 A, 1 µs edge | Simulation |
+| **Transient Overshoot** | < 15 mV | 2.0 A $\rightarrow$ 0.5 A, 1 µs edge | Simulation |
+| **Load Transient Recovery** | < 5 µs / < 2 µs | To within $\pm 5\text{ mV}$ / $\pm 10\text{ mV}$ | Simulation |
+| **Phase Margin** | ~48° | Clean phase transition, no ringing | Simulation |
+
+> **Measured** rows are hardware-verified on a single V2 sample (DC + thermal, taken at the board terminals); measured dropout, line, and load regulation meet or beat the simulated figures. **Simulation** rows await the dynamic bench work below. Full values, plots, and conditions: [Bench Measurements](measurements.md).
 
 ---
 
@@ -92,9 +94,9 @@ V2 exceeds V1.1 on measured DC performance in or near dropout. Faster transient 
 
 ## Outstanding Bench Work
 
-The following measurements are still required:
+DC and thermal characterisation is complete — full output-vs-input sweeps (0–4 A, all three output settings) plus thermal data, measured by KC7XE: see [Bench Measurements](measurements.md).
 
-* **V2 full DC sweep at 1.5 A:** Plus extension of the 0.5 A, 1 A, and 2 A sweeps where needed.
+The following dynamic measurements remain:
 * **V1.1 transient correlation:** Scope verification against simulated Figure 3a with the same 0.1 A → 2 A pulse profile.
 * **V2 transient correlation:** Scope verification against simulated Figure 3b under the same conditions.
 * **Loop characterisation:** Measure V2 phase margin, unity-gain bandwidth, and gain margin to confirm the simulated ~50° PM / ~60 kHz UGB.
@@ -116,7 +118,7 @@ The following measurements are still required:
 * Remote-mounting PMOS (10cm leads) exhibits similar behaviour, though lower (<0.17%). Thermal calculator to be added to documentation.
 * Re-route traces to eliminate temperature gradient across the Q1/Q2 die - thermal transfer to Q2 currently dominates.
 
-### 3. 633 Hz oscillation - excellent work by CR7BTQ:
+### 4. 633 Hz oscillation — excellent work by CR7BTQ:
 * Prototype board exhibits oscillation under load (633Hz, 20-30 mV).
 * Various experiments point to Vref - 10k loading resistor reduces amplitude by 70%, but frequency enters kHz range - not a viable solution.
 * Alternate Vref installed - stability restored.
