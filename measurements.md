@@ -8,6 +8,8 @@ simulation figures in the [main specification table](./README.md#technical-elect
 > V2 board supplied by M9OMS. Method follows Stan's characterisation of the first
 > M9OMS V1 prototype, [shared on the QRP Labs group](https://groups.io/g/QRPLabs/message/158202).
 
+[Full evaluation by KC7XE downloadable here.](./downloads/Evaluation%20of%20VLDO%20V2%20by%20M9OMS.pdf)
+
 ---
 
 ## Test method and conditions
