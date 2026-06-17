@@ -42,7 +42,7 @@ Linear regulation is the cleanest route to an RF-quiet supply, but many LDO boar
 | **Output Voltages** | **9.0 V / 12.0 V / 13.8 V** | Set by header pins; trimmed via `R7` | Measured |
 | **Max Output Current** | 2.0 A | Continuous | Measured |
 | **Dropout Voltage** | **< 100 mV** | At 1.0 A load | Measured |
-| **Quiescent Current ($I_q$)** | 1.13 mA to 2.48 mA | Varies with $V_{IN}$ (8.0 V – 18.0 V) | Simulation |
+| **Quiescent Current ($I_q$)** | 1.13 mA to 2.48 mA | Varies with $V_{IN}$ (8.0 V – 18.0 V) | Measured with LP2950. Stable release will be higher. |
 | **Load Regulation** | ~20 mV / ~40 mV | 0.1 A–1.0 A / 0.1 A–2.0 A | Measured |
 | **Line Regulation** | < 5.0 mV | Across $V_{IN}$ = 8.0 V–18.0 V at $I_{LOAD} = 1.0\text{ A}$ | Measured |
 | **Output Noise** | < 25 µV RMS | 20 Hz – 20 kHz | Simulation |
@@ -119,8 +119,9 @@ The following dynamic measurements remain:
 * Re-route traces to eliminate temperature gradient across the Q1/Q2 die - thermal transfer to Q2 currently dominates.
 
 ### 4. 633 Hz oscillation — excellent work by CR7BTQ:
-* Prototype board exhibits oscillation under load (633Hz, 20-30 mV).
-* Various experiments point to Vref - 10k loading resistor reduces amplitude by 70%, but frequency enters kHz range - not a viable solution.
+* Prototype board exhibited oscillation under load (633Hz, 20-30 mV).
+* Various experiments pointed to Vref - 10k loading resistor reduced amplitude by 70%, but frequency entered kHz range - not a viable solution.
+* Vref may need some current sinking ability to feed LTP, plus LTP current draw may be too low for LP2950's stailibty.
 * Alternate Vref installed - stability restored.
 * V2 will ship with 78L05. A low Iq / low drift alternative requires testing for later revisions.
 ---
