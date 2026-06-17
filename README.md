@@ -28,7 +28,7 @@ Linear regulation is the cleanest route to an RF-quiet supply, but many LDO boar
 2. **The ND6T variant:** [ND6T published a variant](http://www.nd6t.com/qrp/VLDO.htm) to significantly reduce quiescent current - changes include Itail, voltage divider, Vref and PMOS. Simulations suggest it weakens PMOS gate control. Further testing revealed that a change to Vref led to oscillation (visible under load).
 3. **M9OMS VLDO Prototype:** A 4-layer PCB implementation of G4COL's topology, miniaturised with targeted component upgrades. DC performance [shared by KC7XE on QRP Labs groups.io](https://groups.io/g/QRPLabs/message/158202).
 4. **M9OMS VLDO V1.1:** Based on prototype - final changes include 0.5% Vref, output selection ladder with trim, mounting holes and cable strain relief. 65 mm x 20.5 mm. Factory assembled. Baseline for V2.
-5. **M9OMS VLDO V2:** A redesign to reduce dropout, improve transient response, and in-dropout performance beyond V1.1 & modern monolithic LDOs. Same footprint. Clearance hole added for case mounting (external cooling).
+5. **M9OMS VLDO V2:** A redesign to reduce dropout, improve transient response, and in-dropout performance beyond V1.1 & modern monolithic LDOs. Same footprint. Clearance hole added for case mounting (external cooling). See [DC improvements vs V1.1](improvements.md).
 
 ---
 
@@ -82,7 +82,7 @@ Linear regulation is the cleanest route to an RF-quiet supply, but many LDO boar
 
 ## Performance Summary: V2 vs V1.1
 
-V2 exceeds V1.1 on measured DC performance in or near dropout. Faster transient response in simulation. Loop bandwidth and PSRR are also expected to improve, pending bench verification.
+[V2 exceeds V1.1 on measured DC performance in or near dropout](improvements.md). Faster transient response in simulation. Loop bandwidth and PSRR are also expected to improve, pending bench verification.
 
 * **Headroom:** V2 needs about 100 mV across 30 mA–1 A and about 200 mV at 2 A; V1.1 needs 250-500 mV.
 * **DC stiffness:** V2 has a small intrinsic output-resistance advantage, though wiring resistance dominates in-regulation measurements.
