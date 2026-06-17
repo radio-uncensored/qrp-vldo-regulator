@@ -68,9 +68,10 @@ Two points on reading the table:
 <p align="center">
   <img src="images/improvements/sag_vs_vin.svg" alt="Load-induced output sag versus input voltage for V1.1 and V2 at 1 A and 2 A, 12 V setting" width="960">
 </p>
-<p align="center"><em>Load-induced output sag, 12 V setting. The shaded band marks the dropout region
-(V<sub>in</sub> below the 12 V setpoint). V1.1 markers above the scale are off-chart; "collapse"
-indicates loss of regulation at that load.</em></p>
+<p align="center"><em>Load-induced output sag, 12 V setting. The shaded band marks V2's conservative
+dropout estimate (V<sub>in</sub> ≤ 12.1 V at 1 A, ≤ 12.2 V at 2 A); the V1.1 dropout boundary has not
+been characterised. V1.1 markers above the scale are off-chart; "collapse" indicates loss of
+regulation at that load.</em></p>
 
 V2 maintains a near-constant sag across the rated band — approximately 20 mV at 1 A and 40 mV at
 2 A — down to the setpoint. V1.1 is comparable only above the setpoint and degrades as
@@ -110,8 +111,8 @@ independent of each board's trim.</em></p>
 
 Plotting all three load traces shows the behaviour in detail. V2's 100 mA, 1 A and 2 A traces remain
 within approximately 40 mV of one another up to and through the knee, reaching the plateau by
-~12.1 V. V1.1's traces separate below ~12 V — at 11.9 V the 2 A output has fallen approximately
-280 mV below the 100 mA trace — and the board does not fully settle until ~13 V. A 12 V output taken
+~12.1 V. V1.1's traces separate below ~12 V — at 12.0 V the 2 A output has fallen approximately
+290 mV below the 100 mA trace — and the board does not fully settle until ~13 V. A 12 V output taken
 from a nominal 12 V battery operates within this window.
 
 ---
