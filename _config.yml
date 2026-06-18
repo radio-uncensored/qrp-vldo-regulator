@@ -1,0 +1,33 @@
+# GitHub Pages / Jekyll configuration for the M9OMS VLDO V2 project site.
+# Place this file in the repository root, then enable Pages:
+#   Settings -> Pages -> Source: "Deploy from a branch" -> main / (root)
+
+# --- Site identity (these drive the <title> and <meta description>) ---
+title: "M9OMS VLDO V2 — Very Low Dropout LDO Regulator for QRP"
+description: >-
+  Open-hardware very low dropout (VLDO) linear voltage regulator for QRP radios.
+  RF-quiet, selectable 9.0 / 12.0 / 13.8 V at up to 2 A — designed by M9OMS for
+  the QRP Labs QMX and QMX+.
+
+# --- Canonical URLs (help jekyll-seo-tag and the sitemap emit absolute links) ---
+url: "https://radio-uncensored.github.io"
+baseurl: "/qrp-vldo-regulator"
+
+# --- Theme: clean, professional, includes the {% seo %} tag in its layout ---
+theme: jekyll-theme-cayman
+show_downloads: false
+
+# --- Plugins (all on the GitHub Pages allow-list) ---
+plugins:
+  - jekyll-seo-tag      # emits <title>, <meta description>, Open Graph / Twitter cards
+  - jekyll-sitemap      # auto-generates /sitemap.xml for crawlers
+  # jekyll-relative-links is enabled by GitHub Pages by default, so existing
+  # [text](measurements.md) links resolve to the correct .html URLs automatically.
+
+# Keep the raw markdown sources out of the rendered site navigation if desired.
+# (README/measurements/improvements still render as pages; this only affects build noise.)
+exclude:
+  - downloads/
+  - "*.kicad_*"
+  - "*.gbr"
+  - "*.drl"
