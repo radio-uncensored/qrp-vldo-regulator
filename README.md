@@ -1,10 +1,10 @@
-# QRP Power Supply: 12.0V / 9.0V LDO Regulator (V2)
+# M9OMS VLDO V2 — Very Low Dropout (VLDO) LDO Linear Regulator for QRP (QMX / QMX+)
 
-A discrete Very Low Dropout (VLDO) linear regulator for QRP radios such as the QRP Labs QMX, designed for clean power, strict voltage control, and low RF noise.
+The **M9OMS VLDO V2** is a discrete **very low dropout (VLDO)** linear voltage regulator for QRP radios such as the **QRP Labs QMX and QMX+**. It delivers clean, RF-quiet power — selectable **9.0 V / 12.0 V / 13.8 V** at up to **2 A** — with strict voltage control and **zero switching noise**, making it ideal for sensitive HF receivers powered from a battery.
 
 ---
 <p align="center">
-  <img src="images/DSC01726.JPG" alt="M9OMS VLDO V2 assembled board — 65 × 20.5 mm discrete low-dropout linear regulator for QRP radios" width="600">
+  <img src="images/DSC01726.JPG" alt="M9OMS VLDO V2 assembled board — 65 × 20.5 mm discrete very low dropout (VLDO) linear regulator for QRP radios such as the QRP Labs QMX" width="600">
 </p>
 
 ---
@@ -129,3 +129,7 @@ The following dynamic measurements remain:
 ## Future Project
 
 Hybrid board (SMPS + linear) - awaiting stable V2 release with verified PSRR measurements before prototyping.
+
+---
+
+<sub>**Keywords:** M9OMS VLDO, M9OMS VLDO V2, VLDO regulator, very low dropout regulator, ultra low dropout regulator, low-dropout linear regulator, LDO regulator for QMX, QMX 12V power supply, QRP linear voltage regulator, no-switching-noise regulator, RF-quiet voltage regulator, selectable 9V / 12V / 13.8V regulator, QRP Labs QMX / QMX+ power, SOTA / POTA portable power, AOTF4185 pass-FET LDO, discrete linear regulator ham radio.</sub>
