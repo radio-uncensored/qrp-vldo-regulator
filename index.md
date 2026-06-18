@@ -32,8 +32,6 @@ Modern QRP rigs want a stable ~12 V rail, but switching modules spray RF interfe
 - **[Bench measurements](measurements.md)** — hardware-verified DC and thermal data (KC7XE, June 2026).
 - **[V1.1 vs V2 comparison](improvements.md)** — like-for-like bench comparison of dropout and load regulation.
 
-Build notes, BOM, and support live in the **QRP Labs Groups.io** community archive.
-
 ## Credits
 
 V2 design and hardware by **M9OMS** — pass stage, active gate drive, loop compensation, biasing, and output network designed from first principles. Bench and stability evaluation by **KC7XE** and **CR7BTQ**.
