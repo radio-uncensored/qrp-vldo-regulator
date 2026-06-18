@@ -1,4 +1,4 @@
-# VLDO V2 — Bench Measurements
+# M9OMS VLDO V2 — Bench Measurements (Dropout, Line/Load Regulation & Thermal Data)
 
 Measured DC and thermal performance of the **M9OMS VLDO V2** regulator. This page
 records hardware results that supplement — and progressively replace — the
@@ -250,3 +250,5 @@ None of these is addressed by the DC and thermal data above.
 terminals on a single V2 sample. Plots generated from Stan's tabulated data. See the
 [project README](./README.md) for design rationale, schematic lineage, and the full
 specification table.*
+
+<sub>**Keywords:** M9OMS VLDO V2 measurements, very low dropout regulator bench data, LDO dropout voltage test, QRP regulator load regulation, line regulation, thermal performance, QRP Labs QMX power supply.</sub>
