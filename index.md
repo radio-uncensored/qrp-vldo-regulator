@@ -36,7 +36,7 @@ Build notes, BOM, and support live in the **QRP Labs Groups.io** community archi
 
 ## Credits
 
-Design and hardware by **Omar (M9OMS)**, building on **Ian Braithwaite (G4COL)**'s original *SPRAT* LDO architecture, with independent bench characterisation by **Stan Dye (KC7XE)**.
+V2 design and hardware by **M9OMS** — pass stage, active gate drive, loop compensation, biasing, and output network designed from first principles. Bench and stability evaluation by **KC7XE** and **CR7BTQ**.
 
 ---
 
