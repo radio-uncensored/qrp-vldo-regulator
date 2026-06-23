@@ -1,6 +1,6 @@
 # M9OMS VLDO V2 — Very Low Dropout (VLDO) LDO Linear Regulator for QRP radios
 
-The **M9OMS VLDO V2** is a discrete **very low dropout (VLDO)** linear voltage regulator for QRP radios. It delivers clean, RF-quiet power — selectable **9.0 V / 12.0 V / 13.8 V** at up to **2 A** — with strict voltage control and **no switching noise**, making it ideal for sensitive HF receivers powered from a battery.
+The **M9OMS VLDO V2** is a discrete **very low dropout (VLDO)** linear voltage regulator for QRP radios. It delivers clean, RF-quiet power — selectable **9.0 V / 12.0 V / 13.8 V** at up to **2 A** — with strict voltage control, making it ideal for sensitive HF receivers.
 
 ---
 <p align="center">
@@ -34,7 +34,7 @@ Linear regulation is the cleanest route to an RF-quiet supply, but many LDO boar
 
 ## Technical Electrical Specifications
 
-> ⚠️ **Specification Note:** Figures originate from LTspice simulations (PCB parasitics, ESR/ESL, TO-220 lead inductance) and are progressively being replaced with bench measurements. The **Basis** column flags which rows are now hardware-verified; the full measured dataset and test conditions are in [Bench Measurements](measurements.md).
+> ⚠️ **Specification Note:** Figures originate from LTspice simulations (PCB parasitics, ESR/ESL, TO-220 lead inductance) and are progressively being replaced with bench measurements. The **Basis** column flags which rows are now hardware-verified; the full DC measured dataset and test conditions are in [DC Bench Measurements](measurements.md).
 
 | Parameter | Specification | Condition / Note | Basis |
 | :--- | :--- | :--- | :--- |
@@ -51,7 +51,7 @@ Linear regulation is the cleanest route to an RF-quiet supply, but many LDO boar
 | **Load Transient Recovery** | < 5 µs / < 2 µs | To within $\pm 5\text{ mV}$ / $\pm 10\text{ mV}$ | Simulation |
 | **Phase Margin** | ~48° | Clean phase transition, no ringing | Simulation |
 
-> **Measured** rows are hardware-verified on a single V2 sample (DC + thermal, taken at the board terminals); measured dropout, line, and load regulation meet or beat the simulated figures. **Simulation** rows await the dynamic bench work below. Full values, plots, and conditions: [Bench Measurements](measurements.md).
+> **Measured** rows are hardware-verified on a single V2 sample (DC + thermal, taken at the board terminals); measured dropout, line, and load regulation meet or beat the simulated figures. **Simulation** rows await the dynamic bench work below. Full values, plots, and conditions: [DC Bench Measurements](measurements.md).
 
 ---
 
@@ -94,7 +94,7 @@ Linear regulation is the cleanest route to an RF-quiet supply, but many LDO boar
 
 ## Outstanding Bench Work
 
-DC and thermal characterisation is complete — full output-vs-input sweeps (0–4 A, all three output settings) plus thermal data, measured by KC7XE: see [Bench Measurements](measurements.md).
+DC and thermal characterisation is complete — full output-vs-input sweeps (0–4 A, all three output settings) plus thermal data, measured by KC7XE: see [DC Bench Measurements](measurements.md).
 
 The following dynamic measurements remain:
 * **V1.1 transient correlation:** Scope verification against simulated Figure 3a with the same 0.1 A → 2 A pulse profile.
@@ -113,7 +113,7 @@ The following dynamic measurements remain:
 * Re-routing of header pins allows a single 1x2 shunt to be used. Layout & function remain the same as V1.1.
 
 ### 3. Temperature-dependent drift
-* Both V1.1 and V2 exhibit drift. V2 more sensitive in destructive stress-testing (14Vin, 9Vout, 3A).
+* Both V1.1 and V2 exhibit drift. V2 more sensitive in stress-testing (14Vin, 9Vout, 3A).
 * Normal operating parameters verified - 1.5W continuous for 45 minutes (no housing). No voltage excursion observed beyond settling temperature (<0.34%, reached after 5-10 minutes).
 * Remote-mounting PMOS (10cm leads) exhibits similar behaviour, though lower (<0.17%). Thermal calculator to be added to documentation.
 * Re-route traces to eliminate temperature gradient across the Q1/Q2 die - thermal transfer to Q2 currently dominates.
@@ -129,7 +129,3 @@ The following dynamic measurements remain:
 ## Future Project
 
 Hybrid board (SMPS + linear) - awaiting stable V2 release with verified PSRR measurements before prototyping.
-
----
-
-<sub>**Keywords:** M9OMS VLDO, M9OMS VLDO V2, VLDO regulator, very low dropout regulator, ultra low dropout regulator, low-dropout linear regulator, LDO regulator for QMX, QMX 12V power supply, QRP linear voltage regulator, no-switching-noise regulator, RF-quiet voltage regulator, selectable 9V / 12V / 13.8V regulator, QRP Labs QMX / QMX+ power, SOTA / POTA portable power, AOTF4185 pass-FET LDO, discrete linear regulator ham radio.</sub>
