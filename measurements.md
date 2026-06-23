@@ -233,8 +233,8 @@ These bench results let several rows of the
 [simulated spec table](./README.md#technical-electrical-specifications) move toward
 hardware-verified status:
 
-- **Dropout, load regulation, line regulation, no-load float** — measured and consistent with
-  (or better than) the simulated figures.
+- **Dropout, load regulation, line regulation** — measured and consistent with
+  simulated figures.
 - **Input range** — operation confirmed down to 7 V at the tested loads, with a load-dependent
   minimum below that.
 - **Output drift with temperature** — measured and consistent with the documented limit.
@@ -251,4 +251,4 @@ terminals on a single V2 sample. Plots generated from Stan's tabulated data. See
 [project README](./README.md) for design rationale, schematic lineage, and the full
 specification table.*
 
-<sub>**Keywords:** M9OMS VLDO V2 measurements, very low dropout regulator bench data, LDO dropout voltage test, QRP regulator load regulation, line regulation, thermal performance, QRP Labs QMX power supply.</sub>
+
