@@ -135,4 +135,4 @@ For the full V2 dataset (all three output settings, thermal, drift) see
 *Comparison data: **Stan Dye, KC7XE**. V1.1 and V2 measured by the same method, at the board
 terminals, single sample of each board. Plots generated from the tabulated data above.*
 
-<sub>**Keywords:** M9OMS VLDO V1.1 vs V2, low-dropout regulator comparison, LDO output sag, dropout region performance, QRP regulator upgrade, QMX 12V regulator, very low dropout linear regulator.</sub>
+
