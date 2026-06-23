@@ -178,9 +178,9 @@ operating range for any of the three output settings.
 
 The VLDO is a **linear** regulator, so the heat it dissipates is set primarily by the
 input–output difference times load current — (V<sub>in</sub> − V<sub>out</sub>) × I<sub>load</sub>.
-Thermal data was taken at the 12 V setting; for the same V<sub>in</sub> − V<sub>out</sub> the
+Thermal data was taken at the 12 V setting with the included (compact) heat sink; for the same V<sub>in</sub> − V<sub>out</sub> the
 9 V and 13.8 V settings should behave similarly. The practical consequence: 12 V in → 9 V out
-(3 V drop) runs as hot as 15 V in → 12 V out, and needs the same extra heatsinking.
+(3 V drop) runs as hot as 15 V in → 12 V out, and needs the same extra heatsinking (mounting to a case, or larger heat sink).
 
 Heatsink temperature versus time key-down, supplied heatsink, 20 °C ambient:
 
