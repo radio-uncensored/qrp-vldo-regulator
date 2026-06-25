@@ -116,10 +116,10 @@ The following dynamic measurements remain:
 * Both V1.1 and V2 exhibit drift. V2 more sensitive in stress-testing (14Vin, 9Vout, 3A).
 * Normal operating parameters verified - 1.5W continuous for 45 minutes (no housing). No voltage excursion observed beyond settling temperature (<0.34%, reached after 5-10 minutes).
 * Remote-mounting PMOS (10cm leads) exhibits similar behaviour, though lower (<0.17%). Thermal calculator to be added to documentation.
-* Re-route traces to eliminate temperature gradient across the Q1/Q2 die - thermal transfer to Q2 currently dominates.
+* Re-route traces to eliminate temperature gradient across the Q1/Q2 die - thermal transfer to Q2 currently dominates if using the on-board heat sink.
 
 ### 4. 633 Hz oscillation — excellent work by CR7BTQ:
-* Prototype board exhibited oscillation under load (633Hz, 20-30 mV).
+* Prototype board exhibited oscillation under load (633Hz, ~20 mV).
 * Various experiments pointed to Vref - 10k loading resistor reduced amplitude by 70%, but frequency entered kHz range - not a viable solution.
 * Vref may need some current sinking ability to feed LTP, plus LTP current draw may be too low for LP2950 stability.
 * Alternate Vref installed - stability restored.
