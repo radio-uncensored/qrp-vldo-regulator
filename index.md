@@ -28,7 +28,7 @@ Modern QRP rigs want a stable ~12 V rail, but switching modules spray RF interfe
 
 ## Documentation
 
-- **[Design rationale, schematic lineage & full specification table](README.md)** — the complete project README.
+- **[Design rationale, schematic lineage & full specification table](design.md)** — the complete project README.
 - **[Bench measurements](measurements.md)** — hardware-verified DC and thermal data (KC7XE, June 2026).
 - **[V1.1 vs V2 comparison](improvements.md)** — like-for-like bench comparison of dropout and load regulation.
 
