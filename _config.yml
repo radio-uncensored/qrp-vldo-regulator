@@ -3,7 +3,7 @@
 #   Settings -> Pages -> Source: "Deploy from a branch" -> main / (root)
 
 # --- Site identity (these drive the <title> and <meta description>) ---
-title: "M9OMS VLDO V2 — Very Low Dropout LDO Regulator for QRP"
+title: "M9OMS"
 description: >-
   Open-hardware very low dropout (VLDO) linear voltage regulator for QRP radios.
   RF-quiet, selectable 9.0 / 12.0 / 13.8 V at up to 2 A — designed by M9OMS for
