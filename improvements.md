@@ -1,3 +1,7 @@
+---
+title: "V1.1 vs V2 Comparison — M9OMS VLDO"
+description: "Like-for-like bench comparison of the M9OMS VLDO V1.1 and V2 regulators: dropout, load regulation, and pass-through behaviour."
+---
 # M9OMS VLDO V1.1 vs V2 — Low-Dropout (LDO) Regulator Bench Comparison
 
 A like-for-like bench comparison of the **M9OMS VLDO V1.1** and **V2** boards at the 12 V output
