@@ -1,3 +1,7 @@
+---
+title: "Bench Measurements — M9OMS VLDO V2"
+description: "Hardware-verified DC and thermal bench data for the M9OMS VLDO V2 linear regulator, measured by Stan Dye KC7XE."
+---
 # M9OMS VLDO V2 — Bench Measurements (Dropout, Line/Load Regulation & Thermal Data)
 
 Measured DC and thermal performance of the **M9OMS VLDO V2** regulator. This page
