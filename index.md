@@ -45,4 +45,29 @@ V2 design and hardware by **M9OMS** — pass stage, active gate drive, loop comp
 
 ---
 
-<sub>**Keywords:** M9OMS VLDO, M9OMS VLDO V2, VLDO regulator, very low dropout regulator, ultra low dropout regulator, low-dropout linear regulator, LDO regulator for QMX, QMX 12V power supply, QRP linear voltage regulator, RF-quiet voltage regulator, no switching noise regulator, QRP Labs QMX / QMX+ power, SOTA / POTA portable power.</sub>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "M9OMS VLDO V2",
+  "description": "Discrete very low dropout linear voltage regulator for QRP radios. Selectable 9.0 / 12.0 / 13.8 V at up to 2 A, with very low dropout and zero switching noise.",
+  "brand": {
+    "@type": "Brand",
+    "name": "M9OMS"
+  },
+  "category": "Amateur Radio Power Supply",
+  "image": "https://radio-uncensored.github.io/qrp-vldo-regulator/images/DSC01726.JPG",
+  "url": "https://radio-uncensored.github.io/qrp-vldo-regulator/",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.ebay.co.uk/itm/267709192002",
+    "priceCurrency": "GBP",
+    "price": "19.13",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "M9OMS"
+    }
+  }
+}
+</script>
