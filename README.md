@@ -123,7 +123,7 @@ The following dynamic measurements remain:
 * Various experiments pointed to Vref - 10k loading resistor reduced amplitude by 70%, but frequency entered kHz range - not a viable solution.
 * Vref may need some current sinking ability to feed LTP, plus LTP current draw may be too low for LP2950 stability.
 * Alternate Vref installed - stability restored.
-* V2 will ship with 78L05. A low Iq / low drift alternative requires testing for later revisions.
+* V2 will ship with 78L05. A low Iq alternative requires testing for later revisions.
 ---
 
 ## Future Project
