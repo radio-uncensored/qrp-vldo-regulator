@@ -15,7 +15,7 @@ The **M9OMS VLDO V2** is a discrete **very low dropout (VLDO)** linear voltage r
 ## Where to buy
 
 - **[M9OMS eBay store](https://www.ebay.co.uk/usr/m9oms-radio)** — all current and previous designs.
-- **[M9OMS VLDO V2 on eBay](https://www.ebay.co.uk/itm/267709192002)** — kit form, partially assembled, with MJF 3D-printed enclosure.
+- **[M9OMS VLDO V2 on eBay](https://www.ebay.co.uk/itm/267709192002)** — kit form, partially assembled, with MJF PA12HP 3D-printed enclosure.
 - <small>[M9OMS VLDO V1.1 on eBay](https://www.ebay.co.uk/itm/267709138260) — previous revision, factory assembled.</small>
 
 ## V2 at a glance
