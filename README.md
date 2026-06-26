@@ -26,9 +26,9 @@ Linear regulation is the cleanest route to an RF-quiet supply, but many LDO boar
 
 1. **SPRAT Issue 201 (G4COL):** [Ian Braithwaite’s original schematic](https://www.gqrp.com/limiter.jpg) used a BJT long-tailed pair driving a P-channel MOSFET pass device: stable and well-behaved in simulations.
 2. **The ND6T variant:** [ND6T published a variant](http://www.nd6t.com/qrp/VLDO.htm) to significantly reduce quiescent current - changes include Itail, voltage divider, Vref and PMOS. Simulations suggest it weakens PMOS gate control. Further testing revealed that a change to Vref led to oscillation (visible under load).
-3. **M9OMS VLDO Prototype:** A 4-layer PCB implementation of G4COL's topology, miniaturised with targeted component upgrades. DC performance [shared by KC7XE on QRP Labs groups.io](https://groups.io/g/QRPLabs/message/158202).
-4. **M9OMS VLDO V1.1:** Based on prototype - final changes include output selection ladder with trim, mounting holes and cable strain relief. 65 mm x 20.5 mm. Factory assembled. Baseline for V2.
-5. **M9OMS VLDO V2:** A fresh design to reduce dropout, improve transient response, and in-dropout performance beyond V1.1 & modern monolithic LDOs. Same footprint. Clearance hole added for case mounting (for applications requiring higher dissipation). See [DC improvements vs V1.1](improvements.md).
+3. **M9OMS VLDO Prototype:** A 4-layer PCB implementation of G4COL's topology, miniaturised with targeted component upgrades. [DC performance by KC7XE on QRP Labs groups.io](https://groups.io/g/QRPLabs/message/158202).
+4. [**M9OMS VLDO V1.1:**](https://www.ebay.co.uk/itm/267709138260) Based on prototype - final changes include output selection ladder with trim, mounting holes and cable strain relief. 65 mm x 20.5 mm. Factory assembled. Baseline for V2.
+5. [**M9OMS VLDO V2:**](https://www.ebay.co.uk/itm/267709192002) A fresh design to reduce dropout, improve transient response, and in-dropout performance beyond V1.1 & modern monolithic LDOs. Same footprint. Clearance hole added for case mounting (for applications requiring higher dissipation). See [DC improvements vs V1.1](improvements.md).
 
 ---
 
@@ -42,7 +42,7 @@ Linear regulation is the cleanest route to an RF-quiet supply, but many LDO boar
 | **Output Voltages** | **9.0 V / 12.0 V / 13.8 V** | Set by header pins; trimmed via `R7` | Measured |
 | **Max Output Current** | 2.0 A | Continuous | Measured |
 | **Dropout Voltage** | **< 50 mV** | At 1.0 A load | Measured |
-| **Quiescent Current ($I_q$)** | 1.13 mA to 2.48 mA | Varies with $V_{IN}$ (8.0 V – 18.0 V) | Measured with LP2950. Initial V2 release will have a higher Iq.|
+| **Quiescent Current ($I_q$)** | ~ 5 mA | Varies with $V_{IN}$ (8.0 V – 18.0 V) | Simulation
 | **Load Regulation** | ~20 mV / ~40 mV | 0.1 A–1.0 A / 0.1 A–2.0 A | Measured |
 | **Line Regulation** | < 5.0 mV | Across $V_{IN}$ = 8.0 V–18.0 V at $I_{LOAD} = 1.0\text{ A}$ | Measured |
 | **Output Noise** | < 25 µV RMS | 20 Hz – 20 kHz | Simulation |
@@ -84,7 +84,7 @@ Linear regulation is the cleanest route to an RF-quiet supply, but many LDO boar
 
 [V2 exceeds V1.1 on measured DC performance in or near dropout](improvements.md). Faster transient response in simulation. Loop bandwidth and PSRR are also expected to improve, pending bench verification.
 
-* **Headroom:** V2 needs about 100 mV across 30 mA–1 A and about 200 mV at 2 A; V1.1 needs 250-500 mV.
+* **Headroom:** V2 needs <50 mV across 30 mA–1 A and <100 mV at 2 A; V1.1 needs 250-500 mV.
 * **DC stiffness:** V2 has a small intrinsic output-resistance advantage, though wiring resistance dominates in-regulation measurements.
 * **Transient response (simulation):** V2 settles a 1.9 A load step within the source’s 10 µs slew time with minimal overshoot or undershoot. V1.1 takes 1.5–3 ms.
 * **Line regulation:** Both stay well under 1 mV/V in regulation.
@@ -103,7 +103,7 @@ The following dynamic measurements remain:
 
 ---
 
-## Outstanding PCB work:
+## Outstanding PCB work (future revisions):
 
 ### 1. Replace Cin1 electrolytic capacitor with aluminium polymer capacitor
 * Simulation based PSRR improves without detriment to stability. Bench confirmation required.
@@ -116,14 +116,17 @@ The following dynamic measurements remain:
 * Both V1.1 and V2 exhibit drift. V2 more sensitive in stress-testing (14Vin, 9Vout, 3A).
 * Normal operating parameters verified - 1.5W continuous for 45 minutes (no housing). No voltage excursion observed beyond settling temperature (<0.34%, reached after 5-10 minutes).
 * Remote-mounting PMOS (10cm leads) exhibits similar behaviour, though lower (<0.17%). Thermal calculator to be added to documentation.
-* Re-route traces to eliminate temperature gradient across the Q1/Q2 die - thermal transfer to Q2 currently dominates if using the on-board heat sink.
+* Re-route traces to eliminate temperature gradient across the Q1/Q2 die. Thermal transfer to Q2 currently dominates if using the on-board heat sink.
 
-### 4. 633 Hz oscillation — excellent work by CR7BTQ:
+## Resolved PCB work (current revision):
+
+### 1. 633 Hz oscillation — excellent work by CR7BTQ:
 * Prototype board exhibited oscillation under load (633Hz, ~20 mV).
 * Various experiments pointed to Vref - 10k loading resistor reduced amplitude by 70%, but frequency entered kHz range - not a viable solution.
 * Vref may need some current sinking ability to feed LTP, plus LTP current draw may be too low for LP2950 stability.
 * Alternate Vref installed - stability restored.
 * V2 will ship with 78L05. A low Iq alternative requires testing for later revisions.
+  
 ---
 
 ## Future Project
