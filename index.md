@@ -25,13 +25,13 @@ The **M9OMS VLDO V2** is a discrete **very low dropout (VLDO)** linear voltage r
 | **Type** | Discrete low-dropout (LDO) **linear** regulator |
 | **Output** | 9.0 V / 12.0 V / 13.8 V (jumper-selectable, trimmed via `R7`) |
 | **Max current** | 2.0 A continuous |
-| **Dropout** | < 100 mV at 1 A |
+| **Dropout** | < 50 mV at 1 A |
 | **Switching noise** | None — linear topology |
 | **Designed for** | QRP radios and other portable HF rigs |
 
 ## Why a discrete LDO?
 
-Modern QRP rigs need a stable rail, but switching modules can introduce noise. Many 'ready' LDO boards need too much headroom to hold regulation as a battery discharges. The VLDO V2 stays quiet, keeps regulating close to the input voltage, and is built for rapid RX-TX current changes.
+Modern QRP rigs need a stable rail, but hobbyist switching modules can introduce noise. Many 'ready' LDO boards need too much headroom to hold regulation as a battery discharges. The VLDO V2 stays quiet, keeps regulating close to the input voltage, and is built for rapid RX-TX current changes.
 
 ## Documentation
 
