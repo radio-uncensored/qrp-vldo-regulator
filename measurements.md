@@ -11,6 +11,9 @@ simulation figures in the [main specification table](./README.md#technical-elect
 > **Measurements by Stan Dye, KC7XE** (June 2026), on a single production-representative
 > V2 board supplied by M9OMS. Method follows Stan's characterisation of the first
 > M9OMS V1 prototype, [shared on the QRP Labs group](https://groups.io/g/QRPLabs/message/158202).
+> Spot-checks at a few operating points by CR7BTQ and M9OMS, on separate same-batch boards in
+> different locations, returned figures consistent with this dataset — indicating the results are
+> representative of the batch rather than a single-unit or single-lab artifact.
 
 [Full evaluation by KC7XE downloadable here.](./downloads/Evaluation%20of%20VLDO%20V2%20by%20M9OMS.pdf)
 
@@ -22,8 +25,10 @@ simulation figures in the [main specification table](./README.md#technical-elect
   increased to hold V<sub>in</sub> at the stated value, removing lead-resistance drop from
   the results. Repeating these sweeps without compensating for supply-lead drop will give
   lower apparent V<sub>out</sub> at high current.
-- **Single sample.** Figures are from one board and have not yet been characterised across
-  units or temperature-cycled; treat them as representative rather than guaranteed limits.
+- **Single-sample dataset.** The full tabulated sweeps are from one board. Spot-checks on two
+  further same-batch boards (CR7BTQ, M9OMS, different locations) agree with these figures; the board
+  has not been temperature-cycled, so treat the results as representative rather than guaranteed
+  limits.
 - **Load range.** Sweeps cover 0–4 A. The 2 A column is the rated continuous maximum; the
   4 A column is included for reference only (beyond rating).
 - **Application focus.** Emphasis is on QMX / QMX+ use — roughly 100 mA receive and ~1 A
