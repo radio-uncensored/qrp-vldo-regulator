@@ -25,7 +25,7 @@ The **M9OMS VLDO V2** is a discrete **very low dropout (VLDO)** linear voltage r
 | **Type** | Discrete low-dropout (LDO) **linear** regulator |
 | **Output** | 9.0 V / 12.0 V / 13.8 V (jumper-selectable, trimmed via `R7`) |
 | **Max current** | 2.0 A continuous |
-| **Dropout** | < 50 mV at 1 A |
+| **Dropout** | < 100 mV (regulation threshold) at 1 A |
 | **Switching noise** | None — linear topology |
 | **Designed for** | QRP radios and other portable HF rigs |
 
