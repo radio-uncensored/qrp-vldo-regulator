@@ -46,12 +46,12 @@ Linear regulation is the cleanest route to an RF-quiet supply, but many LDO boar
 | **Load Regulation** | ~20 mV / ~40 mV | 0.1 A–1.0 A / 0.1 A–2.0 A | Measured |
 | **Line Regulation** | < 5.0 mV | Across $V_{IN}$ = 8.0 V–18.0 V at $I_{LOAD} = 1.0\text{ A}$ | Measured |
 | **Output Noise** | < 25 µV RMS | 20 Hz – 20 kHz | Simulation |
-| **Transient Undershoot** | < 15 mV | 0.5 A $\rightarrow$ 2.0 A, 1 µs edge | Simulation |
-| **Transient Overshoot** | < 15 mV | 2.0 A $\rightarrow$ 0.5 A, 1 µs edge | Simulation |
-| **Load Transient Recovery** | < 5 µs / < 2 µs | To within $\pm 5\text{ mV}$ / $\pm 10\text{ mV}$ | Simulation |
+| **Transient Undershoot** | None observed | 0.1 A $\rightarrow$ 1.5 A | Measured |
+| **Transient Overshoot** | None observed | 1.5 A $\rightarrow$ 0.1 A | Measured |
+| **Load Transient Recovery** | ~25 µs / ~40 µs | 0.1 A $\rightarrow$ 1.5 A / 1.5 A $\rightarrow$ 0.1 A | Measured |
 | **Phase Margin** | ~48° | Clean phase transition, no ringing | Simulation |
 
-> **Measured** rows are hardware-verified on a single V2 sample (DC + thermal, taken at the board terminals); measured dropout, line, and load regulation meet or beat the simulated figures. **Simulation** rows await the dynamic bench work below. Full values, plots, and conditions: [DC Bench Measurements](measurements.md).
+> **Measured** rows are hardware-verified at the board terminals on production-representative samples from the same batch. DC and thermal characterisation by KC7XE, independently corroborated on two further same-batch samples (CR7BTQ and M9OMS) with consistent results. Load-step transient response measured by CR7BTQ. **Simulation** rows await the dynamic bench work below. Full values, plots, and conditions: [DC Bench Measurements](measurements.md).
 
 ---
 
