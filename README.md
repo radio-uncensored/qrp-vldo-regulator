@@ -41,7 +41,7 @@ Linear regulation is the cleanest route to an RF-quiet supply, but many LDO boar
 | **Input Voltage Range** | 8.0 V to 18.0 V DC | Continuous operation | Measured |
 | **Output Voltages** | **9.0 V / 12.0 V / 13.8 V** | Set by header pins; trimmed via `R7` | Measured |
 | **Max Output Current** | 2.0 A | Continuous | Measured |
-| **Dropout Voltage** | **< 50 mV** | At 1.0 A load | Measured |
+| **Dropout Voltage** | **< 100 mV** | Regulation threshold, at 1.0 A | Measured |
 | **Quiescent Current ($I_q$)** | ~ 5 mA | Varies with $V_{IN}$ (8.0 V – 18.0 V) | Simulation
 | **Load Regulation** | ~20 mV / ~40 mV | 0.1 A–1.0 A / 0.1 A–2.0 A | Measured |
 | **Line Regulation** | < 5.0 mV | Across $V_{IN}$ = 8.0 V–18.0 V at $I_{LOAD} = 1.0\text{ A}$ | Measured |
