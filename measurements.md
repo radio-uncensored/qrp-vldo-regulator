@@ -54,12 +54,12 @@ landed them close enough that no per-setting re-trim was needed:
 
 | Parameter | Measured | Condition | Simulated spec |
 | :--- | :--- | :--- | :--- |
-| **Dropout** | ~20–30 mV | 1 A, at board terminals | < 100 mV @ 1 A |
-| **Dropout** | ~50 mV | 2 A | ~200 mV @ 2 A (est.) |
-| **Load regulation** | ~20 mV / ~30 mV | 0.1→1 A / 0.1→2 A, in regulation | ~20 mV / ~40 mV |
+| **Dropout** | <100 mV | 1 A, at board terminals | < 100 mV @ 1 A |
+| **Dropout** | <200 mV | 2 A | ~200 mV @ 2 A (est.) |
+| **Load regulation** | ~20 mV / ~40 mV | 0.1→1 A / 0.1→2 A, in regulation | ~20 mV / ~40 mV |
 | **Line regulation** | ≤ ~3 mV | regulation onset → max V<sub>in</sub>, 1 A | < 5 mV |
 | **Minimum input** | usable to 7 V | rises with load below ~7 V *(see note)* | 8 V (continuous) |
-| **No-load float** | +30–40 mV | output open vs. lightly loaded | +20–30 mV, resolves ~30 mA |
+| **No-load float** | +20–30 mV | output open vs. lightly loaded | - |
 
 Measured dropout sits comfortably inside the simulated `< 100 mV` figure, and line and load
 regulation track the simulation closely. Because everything is referenced to the board
