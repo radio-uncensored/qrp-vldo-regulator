@@ -86,13 +86,7 @@ Linear regulation is the cleanest route to an RF-quiet supply, but many LDO boar
 
 ## Performance Summary: V2 vs V1.1
 
-[V2 exceeds V1.1 on measured DC performance in or near dropout](improvements.md). Faster transient response in simulation. Loop bandwidth and PSRR are also expected to improve, pending bench verification.
-
-* **Headroom:** V2 needs <50 mV across 30 mA–1 A and <100 mV at 2 A; V1.1 needs 250-500 mV.
-* **DC stiffness:** V2 has a small intrinsic output-resistance advantage, though wiring resistance dominates in-regulation measurements.
-* **Transient response (simulation):** V2 settles a 1.9 A load step within the source’s 10 µs slew time with minimal overshoot or undershoot. V1.1 takes 1.5–3 ms.
-* **Line regulation:** Both stay well under 1 mV/V in regulation.
-* **Minimum load:** Both show a small no-load offset of about 20–30 mV, which resolves at roughly 30 mA on the V2 board.
+[V2 exceeds V1.1 on measured DC performance in or near dropout](improvements.md). Faster transient response. Loop bandwidth and PSRR are also expected to improve, pending bench verification.
 
 ---
 
@@ -101,8 +95,6 @@ Linear regulation is the cleanest route to an RF-quiet supply, but many LDO boar
 DC and thermal characterisation is complete — full output-vs-input sweeps (0–4 A, all three output settings) plus thermal data, measured by KC7XE: see [DC Bench Measurements](measurements.md).
 
 The following dynamic measurements remain:
-* **V1.1 transient correlation:** Scope verification against simulated Figure 3a with the same 0.1 A → 2 A pulse profile.
-* **V2 transient correlation:** Scope verification against simulated Figure 3b under the same conditions.
 * **Loop characterisation:** Measure V2 phase margin, unity-gain bandwidth, and gain margin to confirm the simulated ~50° PM / ~60 kHz UGB.
 
 ---
