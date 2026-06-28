@@ -2,9 +2,9 @@
 title: "Design Rationale & Specification — M9OMS VLDO V2"
 description: "Design rationale, schematic lineage, and full specification table for the M9OMS VLDO V2 discrete linear regulator for QRP radios."
 ---
-# M9OMS VLDO V2 — Very Low Dropout (VLDO) LDO Linear Regulator for QRP radios
+# M9OMS VLDO V2
 
-The **M9OMS VLDO V2** is a discrete **very low dropout (VLDO)** linear voltage regulator for QRP radios. It delivers clean, RF-quiet power — selectable **9.0 V / 12.0 V / 13.8 V** at up to **2 A** — with strict voltage control, making it ideal for sensitive HF receivers.
+A discrete **very low dropout (VLDO)** linear voltage regulator for QRP radios. Selectable **9.0 V / 12.0 V / 13.8 V** at up to **2 A**.
 
 ---
 <p align="center">
@@ -28,11 +28,11 @@ When this project began, the QRP Labs QMX had a strict **12.0 V maximum input**.
 ### 3. The Discrete LDO Path
 Linear regulation is the cleanest route to an RF-quiet supply, but many LDO boards require too much headroom for a nominal 12 V battery. This project follows the evolution of a discrete topology. **One** device, ideal for field and shack:
 
-1. **SPRAT Issue 201 (G4COL):** [Ian Braithwaite’s original schematic](https://www.gqrp.com/limiter.jpg) used a BJT long-tailed pair driving a P-channel MOSFET pass device: stable and well-behaved in simulations.
-2. **The ND6T variant:** [ND6T published a variant](http://www.nd6t.com/qrp/VLDO.htm) to significantly reduce quiescent current - changes include Itail, voltage divider, Vref and PMOS. Simulations suggest it weakens PMOS gate control. Further testing revealed that a change to Vref led to oscillation (visible under load).
+1. **SPRAT Issue 201 (G4COL):** [Ian Braithwaite’s original schematic.](https://www.gqrp.com/limiter.jpg)
+2. **The ND6T variant:** [ND6T published a variant.](http://www.nd6t.com/qrp/VLDO.htm)
 3. **M9OMS VLDO Prototype:** A 4-layer PCB implementation of G4COL's topology, miniaturised with targeted component upgrades. [DC performance by KC7XE on QRP Labs groups.io](https://groups.io/g/QRPLabs/message/158202).
-4. [**M9OMS VLDO V1.1:**](https://www.ebay.co.uk/itm/267709138260) Based on prototype - final changes include output selection ladder with trim, mounting holes and cable strain relief. 65 mm x 20.5 mm. Factory assembled. Baseline for V2.
-5. [**M9OMS VLDO V2:**](https://www.ebay.co.uk/itm/267709192002) A fresh design to reduce dropout, improve transient response, and in-dropout performance beyond V1.1 & modern monolithic LDOs. Same footprint. Clearance hole added for case mounting (for applications requiring higher dissipation). See [DC improvements vs V1.1](improvements.md).
+4. [**M9OMS VLDO V1.1:**](https://www.ebay.co.uk/itm/267709138260) Based on prototype - final changes include output selection ladder with trim, mounting holes and cable strain relief.
+5. [**M9OMS VLDO V2:**](https://www.ebay.co.uk/itm/267709192002) A fresh design to reduce dropout, improve transient response, and in-dropout performance beyond V1.1. Clearance hole added for case mounting (for applications requiring higher dissipation). See [DC improvements vs V1.1](improvements.md).
 
 ---
 
@@ -72,15 +72,15 @@ Linear regulation is the cleanest route to an RF-quiet supply, but many LDO boar
 
 ### 3. Pole-Splitting Compensation
 * V1.1 used a large $1\text{ }\mu\text{F}$ gate-to-output Miller capacitor, slowing the loop.
-* V2 uses a smaller Miller capacitor (`C3`) plus a feed-forward capacitor (`Cff`) to add phase boost near crossover, reaching **60 kHz unity-gain bandwidth**.
+* V2 uses a smaller Miller capacitor (`C3`) plus a feed-forward capacitor (`Cff`) to add phase boost near crossover.
 
 ### 4. Symmetrical LTP Collector Loading
 * V1.1 loaded only one side of the differential pair, causing collector mismatch. Temperature-dependent offset not observed.
-* V2 uses matched resistors (`R1` = `Rdu1`) to equalise operating points and reduce input-referred noise. Careful placement required.
+* V2 uses matched resistors (`R1` = `Rdu1`) to equalise operating points and reduce input-referred noise.
 
 ### 5. Damped Output Network
 * V1.1 had no output bulk capacitor or snubber - fast load changes could appear directly at the output.
-* V2 adds a polymer bulk capacitor plus a damped ceramic snubber to improve transient energy delivery whilst suppressing HF ringing.
+* V2 adds a polymer bulk capacitor plus a damped ceramic snubber.
 
 ---
 
@@ -118,8 +118,7 @@ The following dynamic measurements remain:
 
 ### 1. 633 Hz oscillation — excellent work by CR7BTQ:
 * Prototype board exhibited oscillation under load (633Hz, ~20 mV).
-* Various experiments pointed to Vref - 10k loading resistor reduced amplitude by 70%, but frequency entered kHz range - not a viable solution.
-* Vref may need some current sinking ability to feed LTP, plus LTP current draw may be too low for LP2950 stability.
+* Troubleshooting pointed to Vref - 10k loading resistor reduced amplitude by 70%, but frequency entered kHz range - not a viable solution.
 * Alternate Vref installed - stability restored.
 * V2 will ship with 78L05. A low Iq alternative requires testing for later revisions.
   
