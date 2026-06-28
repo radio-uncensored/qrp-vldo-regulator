@@ -1,12 +1,12 @@
 ---
 title: "VLDO V2 — Very Low Dropout Regulator for QRP"
-description: "Discrete, RF-quiet linear voltage regulator for QRP radios. Selectable 9.0 / 12.0 / 13.8 V at up to 2 A, with very low dropout and zero switching noise."
+description: "Discrete, RF-quiet linear voltage regulator for QRP radios. Selectable 9.0 / 12.0 / 13.8 V at up to 2 A, with very low dropout and no switching noise."
 image: /images/DSC01726.JPG
 ---
 
 # M9OMS VLDO V2
 
-The **M9OMS VLDO V2** is a discrete **very low dropout (VLDO)** linear voltage regulator for QRP radios. It supplies clean, RF-quiet power — selectable **9.0 V / 12.0 V / 13.8 V** at up to **2 A**, with **no switching noise** — so a sensitive HF receiver can run straight from a battery without buck-converter hash.
+A discrete **very low dropout (VLDO)** linear voltage regulator for QRP radios. Selectable **9.0 V / 12.0 V / 13.8 V** at up to **2 A**.
 
 <p align="center">
   <img src="images/DSC01726.JPG" alt="M9OMS VLDO V2 assembled board — 65 × 20.5 mm discrete very low dropout linear regulator for QRP radios" width="560">
