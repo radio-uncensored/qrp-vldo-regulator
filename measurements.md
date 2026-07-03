@@ -6,7 +6,7 @@ description: "Hardware-verified DC and thermal bench data for the M9OMS VLDO V2 
 
 Measured DC and thermal performance of the **M9OMS VLDO V2** regulator. This page
 records hardware results that supplement — and progressively replace — the
-simulation figures in the [main specification table](./README.md#technical-electrical-specifications).
+simulation figures in the [main specification table](./README.md#electrical-specifications).
 
 > **Measurements by Stan Dye, KC7XE** (June 2026), on a single production-representative
 > V2 board supplied by M9OMS. Method follows Stan's characterisation of the first
@@ -57,9 +57,9 @@ landed them close enough that no per-setting re-trim was needed:
 | **Dropout** | <100 mV | 1 A, at board terminals | < 100 mV @ 1 A |
 | **Dropout** | <200 mV | 2 A | ~200 mV @ 2 A (est.) |
 | **Load regulation** | ~20 mV / ~40 mV | 0.1→1 A / 0.1→2 A, in regulation | ~20 mV / ~40 mV |
-| **Line regulation** | ≤ ~3 mV | regulation onset → max V<sub>in</sub>, 1 A | < 5 mV |
+| **Line regulation** | ≤ ~8 mV/V | 100 mA and 1.0 A, regulation onset → max V<sub>in</sub>, worst case (12 V setting) | < 5 mV |
 | **Minimum input** | usable to 7 V | rises with load below ~7 V *(see note)* | 8 V (continuous) |
-| **No-load float** | +20–30 mV | output open vs. lightly loaded | - |
+| **No-load float** | +30 mV ±10 mV | output open vs. lightly loaded | - |
 
 Measured dropout sits comfortably inside the simulated `< 100 mV` figure, and line and load
 regulation track the simulation closely. Because everything is referenced to the board
@@ -103,6 +103,8 @@ tracks the input less the dropout, and above it the output holds flat.
 <p align="center"><em>9 V setting — regulation knee in detail.</em></p>
 
 ### 12 V output
+
+*Measured at the 12 V jumper position, trimmed baseline 12.04 V at 100 mA.*
 
 | V<sub>in</sub> | 0 mA | 100 mA | 500 mA | 1000 mA | 1500 mA | 2000 mA | 4000 mA |
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -236,10 +238,21 @@ inconsequential. (80 °C was a self-imposed test ceiling, a 57 °C rise above am
 
 ---
 
+## Startup and shutdown
+
+Startup behaviour was also examined: with a 13 V input at the 12 V setting, the output
+responds in approximately **150 µs** with a clean, quick ramp and no detectable overshoot or
+other anomalous behaviour (within the resolution of the oscilloscope used). The input trace
+showed the expected dip as the board's capacitors charged, attributed largely to inductance
+in the long supply leads used for the test. Shutdown was similarly clean, though much slower,
+governed by the discharge rate of the capacitors.
+
+---
+
 ## Relationship to the specification table
 
 These bench results let several rows of the
-[simulated spec table](./README.md#technical-electrical-specifications) move toward
+[simulated spec table](./README.md#electrical-specifications) move toward
 hardware-verified status:
 
 - **Dropout, load regulation, line regulation** — measured and consistent with
@@ -249,7 +262,7 @@ hardware-verified status:
 - **Output drift with temperature** — measured and consistent with the documented limit.
 
 Still **simulation-only**, pending the dynamic measurements listed under
-[Outstanding Bench Work](./README.md#outstanding-bench-work): transient response, loop
+[Validation Status](./README.md#validation-status): loop
 characterisation (phase margin, unity-gain bandwidth, gain margin), PSRR, and output noise.
 None of these is addressed by the DC and thermal data above.
 

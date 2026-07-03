@@ -1,125 +1,140 @@
 # M9OMS VLDO V2
 
-A discrete **very low dropout (VLDO)** linear voltage regulator for QRP radios. Selectable **9.0 V / 12.0 V / 13.8 V** at up to **2 A**.
+A discrete **very low dropout (VLDO)** linear voltage regulator designed for low-noise RF applications. The regulator accepts an input of 8–18 VDC and provides a selectable **9.0 V / 12.0 V / 13.8 V** output at up to **2 A** continuous, making it suitable for portable and fixed QRP radio equipment.
 
 ---
+
 <p align="center">
   <img src="images/DSC01726.JPG" alt="M9OMS VLDO V2 assembled board — 65 × 20.5 mm discrete very low dropout (VLDO) linear regulator for QRP radios such as the QRP Labs QMX" width="600">
 </p>
 
 ---
 
-## Design Rationale
+## Overview
 
-### 1. The "12V" Problem
-When this project began, the QRP Labs QMX had a strict **12.0 V maximum input**. Exceeding it risked damage, but the obvious power options all involved compromise.
+Portable amateur radio equipment often operates from batteries whose voltage varies significantly during discharge. Marketplace linear boards can require several hundred millivolts of headroom, while switching converters may introduce unwanted RF noise, and some exhibit poorly characterised transient behaviour. The M9OMS VLDO V2 was developed to provide a clean, stable linear supply capable of operating with exceptionally low dropout while maintaining high output current and fast transient response. The design is intended for applications where supply integrity is more important than absolute conversion efficiency.
 
-### 2. Compromised Options
-* **Buck / buck-boost converters:** Cheap switchers can create startup spikes, add RF noise, and in the worst case damage the transceiver. Even visually identical modules often differ by batch, source, or undocumented design changes.
-* **USB-C PD triggers:** Still switching converters - the same spike and noise risks apply. Actual output can exceed 12.0 V depending on the source. PD supplies are better suited to steady charging loads - not rapidly changing SSB or CW demand.
-* **Cheap marketplace modules:** Many hobbyist recommendations are low-cost modules that are hard to verify. Listings reuse photos, part numbers vary. Failure modes are rarely tested or documented.
-* **Rectifier diode(s):** Safe and inexpensive, but lossy. Useful for simple protection. Inefficient across most of a battery discharge curve. Not battery-agnostic.
-* **Partially-charged batteries:** Partially charging a 3s LiPo is more efficient than using diodes - but requires careful monitoring.
+**Key features:**
 
-### 3. The Discrete LDO Path
-Linear regulation is the cleanest route to an RF-quiet supply, but many LDO boards require too much headroom for a nominal 12 V battery. This project follows the evolution of a discrete topology. **One** device, ideal for field and shack:
-
-1. **SPRAT Issue 201 (G4COL):** [Ian Braithwaite’s original schematic.](https://www.gqrp.com/limiter.jpg)
-2. **The ND6T variant:** [ND6T published a variant.](http://www.nd6t.com/qrp/VLDO.htm)
-3. **M9OMS VLDO Prototype:** A 4-layer PCB implementation of G4COL's topology, miniaturised with targeted component upgrades. [DC performance by KC7XE on QRP Labs groups.io](https://groups.io/g/QRPLabs/message/158202).
-4. [**M9OMS VLDO V1.1:**](https://www.ebay.co.uk/itm/267709138260) Based on prototype - final changes include output selection ladder with trim, mounting holes and cable strain relief.
-5. [**M9OMS VLDO V2:**](https://www.ebay.co.uk/itm/267709192002) A fresh design to reduce dropout, improve transient response, and in-dropout performance beyond V1.1. Clearance hole added for case mounting (for applications requiring higher dissipation). See [DC improvements vs V1.1](improvements.md).
+* 8.0–18.0 V input operating range
+* Selectable 9.0 V, 12.0 V or 13.8 V output
+* Up to 2 A continuous output current
+* Less than 100 mV dropout (measured at 1 A)
+* Fast transient response
+* Low-noise linear topology suitable for RF applications
 
 ---
 
-## Technical Electrical Specifications
+## Design Background
 
-> ⚠️ **Specification Note:** Figures originate from LTspice simulations (PCB parasitics, ESR/ESL, TO-220 lead inductance) and are progressively being replaced with bench measurements. The **Basis** column flags which rows are now hardware-verified; the full DC measured dataset and test conditions are in [DC Bench Measurements](measurements.md).
+The project originated as a regulator for the QRP Labs QMX, which originally specified a maximum supply voltage of 12.0 V. Exceeding this limit risked damage, yet each of the obvious power options involved compromise:
 
-| Parameter | Specification | Condition / Note | Basis |
-| :--- | :--- | :--- | :--- |
-| **Input Voltage Range** | 8.0 V to 18.0 V DC | Continuous operation | Measured |
-| **Output Voltages** | **9.0 V / 12.0 V / 13.8 V** | Set by header pins; trimmed via `R7` | Measured |
-| **Max Output Current** | 2.0 A | Continuous | Measured |
-| **Dropout Voltage** | **< 100 mV** | Regulation threshold, at 1.0 A | Measured |
-| **Quiescent Current ($I_q$)** | ~ 5 mA | Varies with $V_{IN}$ (8.0 V – 18.0 V) | Simulation
-| **Load Regulation** | ~20 mV / ~40 mV | 0.1 A–1.0 A / 0.1 A–2.0 A | Measured |
-| **Line Regulation** | < 5.0 mV | Across $V_{IN}$ = 8.0 V–18.0 V at $I_{LOAD} = 1.0\text{ A}$ | Measured |
-| **Output Noise** | < 25 µV RMS | 20 Hz – 20 kHz | Simulation |
-| **Transient Undershoot** | None observed | 0.1 A $\rightarrow$ 1.5 A | Measured |
-| **Transient Overshoot** | None observed | 1.5 A $\rightarrow$ 0.1 A | Measured |
-| **Load Transient Recovery** | ~25 µs / ~40 µs | 0.1 A $\rightarrow$ 1.5 A / 1.5 A $\rightarrow$ 0.1 A | Measured |
-| **Phase Margin** | ~48° | Clean phase transition, no ringing | Simulation |
+* **Switching converters** provide excellent efficiency but may introduce RF noise, and their transient and startup behaviour is often undocumented. Visually identical modules can differ by batch, source, or undocumented design changes.
+* **USB-C PD triggers** are still switching converters, so the same noise and startup risks apply. Actual output can exceed 12.0 V depending on the source, and PD supplies are better suited to steady charging loads than to the rapidly changing demands of SSB or CW operation.
+* **Series rectifier diodes** provide simple, inexpensive over-voltage protection, but they waste power and reduce usable battery capacity across most of the discharge curve.
+* **Partially charged batteries** avoid additional circuitry entirely, but require active monitoring and are not universally applicable.
+* **Commercial LDO boards** frequently require more dropout voltage than is desirable when operating from a nominal 12 V battery system, and again their transient and startup behaviour is often undocumented.
 
-> **Measured** rows are hardware-verified at the board terminals on production-representative samples from the same batch. DC and thermal characterisation by KC7XE, independently corroborated on two further same-batch samples (CR7BTQ and M9OMS) with consistent results. Load-step transient response measured by CR7BTQ. **Simulation** rows await the dynamic bench work below. Full values, plots, and conditions: [DC Bench Measurements](measurements.md).
+The objective therefore became the development of a single regulator combining wide input range, low dropout, low output noise and sufficient current capability for typical QRP transceivers.
+
+### Design Lineage
+
+This project follows the evolution of a discrete topology:
+
+1. **SPRAT Issue 201 (G4COL):** [Ian Braithwaite's original schematic.](https://www.gqrp.com/limiter.jpg)
+2. **The ND6T variant:** [ND6T's published variant of the circuit.](http://www.nd6t.com/qrp/VLDO.htm)
+3. **M9OMS VLDO Prototype:** A 4-layer PCB implementation of G4COL's topology, miniaturised with targeted component upgrades. [DC performance independently measured by KC7XE.](https://groups.io/g/QRPLabs/message/158202)
+4. [**M9OMS VLDO V1.1:**](https://www.ebay.co.uk/itm/267709138260) Based on the prototype, with an output-selection ladder and trim, mounting holes and cable strain relief.
+5. [**M9OMS VLDO V2:**](https://www.ebay.co.uk/itm/267709192002) A fresh design to reduce dropout, improve transient response and improve in-dropout performance beyond V1.1. A clearance hole has been added for case mounting in applications requiring higher dissipation. See [DC improvements vs V1.1](improvements.md).
 
 ---
 
-## Key Architectural Improvements: V2 vs V1.1
+## Electrical Specifications
 
-### 1. Pass-FET Upgrade (`IRF9Z34N` $\rightarrow$ `AOTF4185`)
-* Near dropout, pass-FET performance is set by transconductance at low $V_{GS}$, not just $R_{DS(on)}$.
-* The `AOTF4185` delivers 2.0 A at lower gate drive than the `IRF9Z34N`, giving V2 a clear **headroom advantage** at full load.
-* Its TO-220F package also provides an isolated tab for simpler heatsink mounting.
+| Parameter | Specification | Conditions / Notes |
+| :--- | :--- | :--- |
+| Input Voltage Range | 8.0 V to 18.0 V DC | Continuous operating range |
+| Output Voltage | 9.0 V / 12.0 V / 13.8 V | Selected by header pins; fine adjustment via R7 |
+| Maximum Output Current | 2.0 A | Continuous operation |
+| Dropout Voltage | <100 mV | At I<sub>LOAD</sub> = 1.0 A, regulation threshold |
+| Quiescent Current (I<sub>Q</sub>) | Typical 6 mA | Over V<sub>IN</sub> = 8.0–18.0 V, no load |
+| Load Regulation | 20 mV (typ.) | Output change from 0.1 A to 1.0 A |
+| | 40 mV (typ.) | Output change from 0.1 A to 2.0 A |
+| Line Regulation | ≤ ~8 mV/V | 100 mA and 1.0 A, regulation onset → max V<sub>IN</sub>, worst case (12 V setting) |
+| Output Ripple Voltage | <2 mV p-p | Low-noise DC input, 0–1.5 A load, measured at output terminals |
+| Load-Step Overshoot / Undershoot | No measurable overshoot or undershoot observed | 0.1 A ↔ 1.5 A load step, V<sub>OUT</sub> = 12.0 V |
+| Load-Step Settling Time | 25 µs (typ.) | Load applied (0.1 A → 1.5 A), settling to within load regulation band |
+| | 40 µs (typ.) | Load released (1.5 A → 0.1 A), settling to within load regulation band |
+| Measurement Notes | — | Transient response measured at output terminals through test leads. Load-step edge rate not characterised; values are representative measurements. |
+
+Unless otherwise noted, measured values were obtained on production-representative hardware; the full dataset and test conditions are in [DC Bench Measurements](measurements.md). Simulation-derived values will be replaced with measured results as dynamic characterisation is completed.
+
+---
+
+## Architecture: V2 vs V1.1
+
+VLDO V2 represents a substantial redesign rather than an incremental PCB revision.
+
+### 1. Pass Device (IRF9Z34N → AOTF4185)
+
+Near dropout, regulator performance is governed primarily by pass-device transconductance rather than static R<sub>DS(on)</sub>. The AOTF4185 delivers 2.0 A at lower gate drive than the IRF9Z34N, providing improved headroom at higher output currents. Its isolated TO-220F package also simplifies heatsink installation.
 
 ### 2. Active Gate Drive
-* In V1.1, the LTP drove the pass-FET gate through a passive $10\text{ k}\Omega$ pull-up, slowing gate charge.
-* V2 adds a complementary emitter-follower stage (`Q3`/`Q4`), cutting gate-drive impedance from about $10\text{ k}\Omega$ to the low tens of ohms and enabling microsecond-scale transient response.
+
+In V1.1, the differential pair drove the pass-FET gate through a passive 10 kΩ pull-up, which limited gate-charge speed. V2 adds a complementary emitter-follower stage (Q3/Q4), reducing gate-drive impedance from approximately 10 kΩ to only a few tens of ohms and significantly improving large-signal transient response.
 
 ### 3. Pole-Splitting Compensation
-* V1.1 used a large $1\text{ }\mu\text{F}$ gate-to-output Miller capacitor, slowing the loop.
-* V2 uses a smaller Miller capacitor (`C3`) plus a feed-forward capacitor (`Cff`) to add phase boost near crossover.
 
-### 4. Symmetrical LTP Collector Loading
-* V1.1 loaded only one side of the differential pair, causing collector mismatch. Temperature-dependent offset not observed.
-* V2 uses matched resistors (`R1` = `Rdu1`) to equalise operating points and reduce input-referred noise.
+The compensation network has been redesigned using pole splitting with a reduced Miller capacitor (C3) and a feed-forward capacitor (Cff) to add phase boost near crossover. This increases loop bandwidth while maintaining stable operation.
+
+### 4. Symmetrical Differential Pair Loading
+
+V1.1 loaded only one side of the long-tailed pair, resulting in a collector-current mismatch. V2 uses matched collector loading on both halves (R1 = Rdu1), improving operating symmetry and reducing input-referred noise.
 
 ### 5. Damped Output Network
-* V1.1 had no output bulk capacitor or snubber - fast load changes could appear directly at the output.
-* V2 adds a polymer bulk capacitor plus a damped ceramic snubber.
+
+V1.1 had no output bulk capacitor or snubber, so fast load changes could appear directly at the output. V2 adds a polymer bulk capacitor together with a damped ceramic snubber, improving output stability during rapid load transitions.
 
 ---
 
-## Performance Summary: V2 vs V1.1
+## Performance Summary
 
-[V2 exceeds V1.1 on measured DC performance in or near dropout](improvements.md). Faster transient response. Loop bandwidth and PSRR are also expected to improve, pending bench verification.
+[Compared with Version 1.1](improvements.md), Version 2 demonstrates:
+
+* Reduced dropout voltage under load
+* Improved regulation near dropout
+* Significantly faster transient response
+* Improved large-signal gate drive
+* Increased expected loop bandwidth
+
+Simulation also predicts improved PSRR and loop stability, pending experimental verification.
 
 ---
 
-## Outstanding Bench Work
+## Validation Status
 
-DC and thermal characterisation is complete — full output-vs-input sweeps (0–4 A, all three output settings) plus thermal data, measured by KC7XE: see [DC Bench Measurements](measurements.md).
+The majority of static electrical performance has now been verified on production-representative hardware. Completed measurements include input/output regulation, dropout voltage, load regulation, line regulation, thermal performance, and output characteristics across the full operating range.
 
-The following dynamic measurements remain:
-* **Loop characterisation:** Measure V2 phase margin, unity-gain bandwidth, and gain margin to confirm the simulated ~50° PM / ~60 kHz UGB.
+Dynamic measurements currently in progress include phase margin, gain margin, unity-gain bandwidth, PSRR verification, and broadband noise characterisation.
+
+Measurement data has been independently reproduced across multiple boards, providing confidence that the observed performance is representative of the design rather than a single prototype.
 
 ---
 
-## Outstanding PCB work (future revisions):
+## Future Development
 
-### 1. Replace Cin1 electrolytic capacitor with aluminium polymer capacitor
-* Simulation based PSRR improves without detriment to stability. Bench confirmation required.
+Future revisions will focus primarily on refinement rather than architectural change. Planned work for V2.1 includes:
 
-### 2. Re-route header pins
-* Procurement of additional 2057-MSE-G-ND 1x3 shunts is challenging.
-* Re-routing of header pins allows a single 1x2 shunt to be used. Layout & function remain the same as V1.1.
+* Evaluation of lower quiescent-current voltage references
+* Further optimisation of PCB thermal symmetry
+* Polymer input capacitor validation
+* Simplified output-voltage selection header
+* Completion of dynamic performance characterisation
 
-### 3. Temperature-dependent drift
-* Both V1.1 and V2 exhibit drift. V2 more sensitive in stress-testing (14Vin, 9Vout, 3A).
-* Normal operating parameters verified - 1.5W continuous for 45 minutes (no housing). No voltage excursion observed beyond settling temperature (<0.34%, reached after 5-10 minutes).
-* Remote-mounting PMOS (10cm leads) exhibits similar behaviour, though lower (<0.17%). Thermal calculator to be added to documentation.
-* Re-route traces to eliminate temperature gradient across the Q1/Q2 die. Thermal transfer to Q2 currently dominates if using the on-board heat sink.
+A hybrid switch-mode/linear regulator intended for higher-power applications is also under consideration once Version 2 characterisation is complete.
 
-## Resolved PCB work (current revision):
-
-### 1. 633 Hz oscillation — excellent work by CR7BTQ:
-* Prototype board exhibited oscillation under load (633Hz, ~20 mV).
-* Troubleshooting pointed to Vref - 10k loading resistor reduced amplitude by 70%, but frequency entered kHz range - not a viable solution.
-* Alternate Vref installed - stability restored.
-* V2 will ship with 78L05. A low Iq alternative requires testing for later revisions.
-  
 ---
 
-## Future Project
+## Acknowledgements
 
-Hybrid board (SMPS + linear) - awaiting stable V2 release with verified PSRR measurements before prototyping.
+Independent measurement and validation by KC7XE and CR7BTQ have been invaluable in verifying the performance of the production hardware.
