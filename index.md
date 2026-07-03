@@ -15,8 +15,6 @@ A discrete **very low dropout (VLDO)** linear voltage regulator for QRP radios. 
 ## Where to buy
 
 - **[M9OMS eBay store](https://www.ebay.co.uk/usr/m9oms-radio)** — all current and previous designs.
-- **[M9OMS VLDO V2 on eBay](https://www.ebay.co.uk/itm/267709192002)** — kit form, partially assembled, with MJF PA12HP 3D-printed enclosure.
-- <small>[M9OMS VLDO V1.1 on eBay](https://www.ebay.co.uk/itm/267709138260) — previous revision, factory assembled.</small>
 
 ## V2 at a glance
 
@@ -41,7 +39,7 @@ Modern QRP rigs need a stable rail, but hobbyist switching modules can introduce
 
 ## Credits
 
-V2 design and hardware by **M9OMS** — pass stage, active gate drive, loop compensation, biasing, and output network designed from first principles. DC evaluation by **KC7XE**. Stability evaluation by **CR7BTQ**.
+V2 design and hardware by **M9OMS**. DC evaluation by **KC7XE**. Stability evaluation by **CR7BTQ**.
 
 ---
 
@@ -62,7 +60,7 @@ V2 design and hardware by **M9OMS** — pass stage, active gate drive, loop comp
     "@type": "Offer",
     "url": "https://www.ebay.co.uk/itm/267709192002",
     "priceCurrency": "GBP",
-    "price": "19.13",
+    "price": "13.00",
     "availability": "https://schema.org/InStock",
     "seller": {
       "@type": "Organization",
