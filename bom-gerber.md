@@ -17,7 +17,9 @@ Based on G4COL's schematic, with the following changes (final, V1.2 revision):
 2- Voltage selection ladder & trim potentiometer.
 3- SMD components.
 
-BOM, Gerber and CPL are shared on a **CC BY-NC-ND** basis.
+BOM, Gerber and CPL are shared on a **CC BY-NC-ND** basis. **Verify schematic before commiting to fabrication.**
+
+[**Download here:**](downloads/bom-gerber)
 
 Additional materials required:
 1x 2.54mm shunt.
