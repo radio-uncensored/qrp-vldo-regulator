@@ -11,8 +11,8 @@ description: >-
 Oscilloscope captures of the VLDO V2 output during load steps between **0.1 A and
 1.5 A**, at the **12 V setting** with a **13.8 V input**. This page records the
 measurements behind the load-step rows of the
-[specification table](design.html#electrical-specifications). It supplements the
-[DC and thermal bench measurements](measurements.html); loop characterisation
+[specification table](design.md#electrical-specifications). It supplements the
+[DC and thermal bench measurements](measurements.md); loop characterisation
 (phase margin, gain margin, unity-gain bandwidth), PSRR and broadband noise are 
 not addressed here.
 
@@ -81,7 +81,7 @@ Read the captures with the following in mind:
 - **AC coupling.** The channel is AC-coupled, so the captures show the transient
   excursion and recovery but **not** the static load-regulation shift between the
   0.1 A and 1.5 A operating points. For that figure see the
-  [DC bench measurements](measurements.html). AC coupling is also a practical
+  [DC bench measurements](measurements.md). AC coupling is also a practical
   necessity here: no commonly available oscilloscope has the vertical resolution
   to resolve millivolt-level detail superimposed on a 12 V DC level, so the DC
   component must be removed to observe the transient at this sensitivity.
@@ -112,14 +112,14 @@ Read the captures with the following in mind:
 ## Relationship to the specification table
 
 These captures are the source of the following rows in the
-[specification table](design.html#electrical-specifications):
+[specification table](design.md#electrical-specifications):
 
 - **Load-step overshoot / undershoot** — none observed beyond the measurement
   noise floor.
 - **Load-step settling time** — ~25 µs (load applied), ~40 µs (load released).
 
 Loop characterisation, PSRR and output-noise measurements remain outstanding, as
-noted under [Validation Status](design.html#validation-status).
+noted under [Validation Status](design.md#validation-status).
 
 ---
 
