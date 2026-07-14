@@ -69,7 +69,7 @@ This project follows the evolution of a discrete topology:
 
 Unless otherwise noted, measured values were obtained on production-representative hardware. The full dataset and test conditions are in:
 - [DC Bench Measurements](measurements.md).
-- [Transient Response Measurements](transient.html).
+- [Oscilloscope Measurements](transient.md).
 
 ---
 
