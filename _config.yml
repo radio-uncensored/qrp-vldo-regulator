@@ -27,7 +27,6 @@ plugins:
 # Keep the raw markdown sources out of the rendered site navigation if desired.
 # (README/measurements/improvements still render as pages; this only affects build noise.)
 exclude:
-  - downloads/
   - "*.kicad_*"
   - "*.gbr"
   - "*.drl"
