@@ -18,7 +18,7 @@ stability: two of the three candidates measure favourably on a multimeter, but
 only one has been verified stable on the oscilloscope.
 
 > **Iq measurements by M9OMS**; oscillation investigation and stability
-> verification by M9OMS and CR7BTQ.
+> verification by CR7BTQ.
 
 ---
 
