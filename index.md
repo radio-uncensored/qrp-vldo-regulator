@@ -36,9 +36,9 @@ Modern QRP rigs need a stable rail, but hobbyist switching modules can introduce
 ## Documentation
 
 - **[Design rationale, schematic lineage & full specification table](design.md)** — the complete project README.
-- **[Transient response](https://radio-uncensored.github.io/qrp-vldo-regulator/transient.html)** — oscilloscope captures of 0.1 A ↔ 1.5 A load steps at the 12 V setting.
-- **[Bench measurements](measurements.md)** — hardware-verified DC and thermal data (KC7XE, June 2026).
-- **[V1.1 vs V2 comparison](improvements.md)** — like-for-like bench comparison of dropout and load regulation.
+- **[Oscilloscope measurements](https://radio-uncensored.github.io/qrp-vldo-regulator/transient.html)** — oscilloscope captures of 0.1 A ↔ 1.5 A load steps at the 12 V setting.
+- **[Static DC measurements](measurements.html)** — hardware-verified DC and thermal data (KC7XE, June 2026).
+- **[V1.1 vs V2 comparison](improvements.html)** — like-for-like bench comparison of dropout and load regulation.
 
 ## Credits
 
