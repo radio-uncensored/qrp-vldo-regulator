@@ -32,12 +32,12 @@ persisted through every stabilisation measure attempted.
 
 ![Sawtooth oscillation on the VLDO V2 output with the LP2950 reference, 633 Hz](images/iq/1.png)
 
-*Sawtooth oscillation with the LP2950 reference. 20 mV/div, 1 ms/div;
+*Sawtooth oscillation with the LP2950 reference. 20 mV/div, 5 ms/div;
 cursor measurement 633 Hz.*
 
 ![Sawtooth oscillation with the LP2950 reference on a longer timebase](images/iq/2.png)
 
-*The same oscillation on a 5 ms/div timebase.*
+*The same oscillation on a 1 ms/div timebase.*
 
 Loading the reference output with a 10 kΩ resistor reduced the oscillation
 amplitude by approximately two thirds, but raised its frequency from 633 Hz to
@@ -48,7 +48,7 @@ approximately 7 kHz. This was not considered acceptable.
 *LP2950 loaded with 10 kΩ: amplitude reduced by approximately two thirds,
 frequency raised to approximately 7 kHz.*
 
-Sergio suspected that, as a consequence of the topology, a small current — of
+CR7BTQ suspected that, as a consequence of the topology, a small current — of
 the order of microamps — flows from the LTP (long-tailed pair) back into the
 reference. The LP2950 was subsequently tried in a V1.1 board with the same
 result: a slower oscillation, consistent with the slower response of this
@@ -62,7 +62,7 @@ regulator.
 
 ## Reference substitution: 78L05
 
-A stable V1 prototype had previously been verified by Stan. On that basis,
+A stable V1 prototype had previously been verified by KC7XE. On that basis,
 M9OMS proposed substituting a 78L05. Although not a conventional voltage
 reference, as a regulator it can be expected to have *some* current-sinking
 capability — although no documentation has been found that specifies this. It
@@ -159,7 +159,7 @@ any future reference candidate.
 ---
 
 *Iq measurements: **M9OMS**, Agilent E3631A supply, Agilent 34401A 6½-digit
-multimeter, 8 V–18 V input. Stability verification by oscilloscope; see the
+multimeter, 8 V–18 V input. Stability verification by oscilloscope: **CR7BTQ**, see the
 [transient response measurements](transient.html). See the
 [project README](README.md) for design rationale and the full specification
 table.*
