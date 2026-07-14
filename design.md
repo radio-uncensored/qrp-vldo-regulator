@@ -49,7 +49,7 @@ This project follows the evolution of a discrete topology:
 2. **The ND6T variant:** [ND6T's published variant of the circuit.](http://www.nd6t.com/qrp/VLDO.htm)
 3. **M9OMS VLDO Prototype:** A 4-layer PCB implementation of G4COL's topology, miniaturised with targeted component upgrades. [DC performance independently measured by KC7XE.](https://groups.io/g/QRPLabs/message/158202)
 4. [**M9OMS VLDO V1.1:**](https://www.ebay.co.uk/itm/267709138260) Based on the prototype, with an output-selection ladder and trim, mounting holes and cable strain relief.
-5. [**M9OMS VLDO V2:**](https://www.ebay.co.uk/itm/267709192002) A fresh design to reduce dropout, improve transient response and improve in-dropout performance beyond V1.1. A clearance hole has been added for case mounting in applications requiring higher dissipation. See [DC improvements vs V1.1](improvements.md).
+5. [**M9OMS VLDO V2:**](https://www.ebay.co.uk/itm/267709192002) A fresh design to reduce dropout, improve transient response and improve in-dropout performance beyond V1.1. A clearance hole has been added for case mounting in applications requiring higher dissipation. See [DC improvements vs V1.1](improvements.html).
 
 ---
 
@@ -72,8 +72,8 @@ This project follows the evolution of a discrete topology:
 | Measurement Notes | — | Transient response measured at output terminals through test leads. Load-step edge rate not characterised; values are representative measurements. |
 
 Unless otherwise noted, measured values were obtained on production-representative hardware. The full dataset and test conditions are in:
-- [DC Bench Measurements](measurements.md).
-- [Transient Response Measurements](transient.html).
+- [DC Bench Measurements](measurements.html).
+- [Oscilloscope Measurements](transient.html).
 
 ---
 
@@ -105,7 +105,7 @@ V1.1 had no output bulk capacitor or snubber, so fast load changes could appear 
 
 ## Performance Summary
 
-[Compared with Version 1.1](improvements.md), Version 2 demonstrates:
+[Compared with Version 1.1](improvements.html), Version 2 demonstrates:
 
 * Reduced dropout voltage under load
 * Improved regulation near dropout
