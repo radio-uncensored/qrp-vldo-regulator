@@ -25,7 +25,7 @@ not addressed here.
 
 - **Board:** production-representative V2, 12 V jumper setting.
 - **Input:** 13.800 V DC, maintained at the PCB input pads by a four-terminal
-  (Kelvin) connection to the power supply, compensating for voltage drop in the
+  connection to the power supply, compensating for voltage drop in the
   supply leads.
 - **Load:** electronic load pulsing between 0.1 A and 1.5 A. The edge rate of the
   load transition was **not characterised**; settling figures are representative
@@ -33,7 +33,7 @@ not addressed here.
 - **Measurement point:** directly at the PCB output pads.
 - **Oscilloscope:** Tektronix TDS 784D, 10 MS/s sample rate, 25 µs/div timebase,
   Ch1 at 10 mV/div, AC-coupled, 20 MHz bandwidth limit enabled.
-- **Probes:** Tektronix P6139A passive probes, 500 MHz bandwidth.
+- **Probes:** Tektronix P6139A, 500 MHz bandwidth.
 - **Trigger:** Ch1 edge at −12.6 mV, HF Reject trigger coupling.
 - **Captures:** single-shot acquisitions; times measured with on-screen cursors.
 
