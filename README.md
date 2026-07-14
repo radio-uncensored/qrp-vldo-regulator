@@ -61,13 +61,15 @@ This project follows the evolution of a discrete topology:
 | Load Regulation | 20 mV (typ.) | Output change from 0.1 A to 1.0 A |
 | | 40 mV (typ.) | Output change from 0.1 A to 2.0 A |
 | Line Regulation | ≤ ~8 mV/V | 100 mA and 1.0 A, regulation onset → max V<sub>IN</sub>, worst case (12 V setting) |
-| Output Ripple Voltage | <2 mV p-p | Low-noise DC input, 0–1.5 A load, measured at output terminals |
+| Output Ripple Voltage | ~2 mV p-p | Low-noise DC input, 0–1.5 A load, measured at output terminals |
 | Load-Step Overshoot / Undershoot | No measurable overshoot or undershoot observed | 0.1 A ↔ 1.5 A load step, V<sub>OUT</sub> = 12.0 V |
 | Load-Step Settling Time | 25 µs (typ.) | Load applied (0.1 A → 1.5 A), settling to within load regulation band |
 | | 40 µs (typ.) | Load released (1.5 A → 0.1 A), settling to within load regulation band |
 | Measurement Notes | — | Transient response measured at output terminals through test leads. Load-step edge rate not characterised; values are representative measurements. |
 
-Unless otherwise noted, measured values were obtained on production-representative hardware; the full dataset and test conditions are in [DC Bench Measurements](measurements.md). Simulation-derived values will be replaced with measured results as dynamic characterisation is completed.
+Unless otherwise noted, measured values were obtained on production-representative hardware. The full dataset and test conditions are in:
+- [DC Bench Measurements](measurements.md).
+- [Transient response — load-step measurements](transient.html).
 
 ---
 
@@ -117,7 +119,7 @@ The majority of static electrical performance has now been verified on productio
 
 Dynamic measurements currently in progress include phase margin, gain margin, unity-gain bandwidth, PSRR verification, and broadband noise characterisation.
 
-Measurement data has been independently reproduced across multiple boards, providing confidence that the observed performance is representative of the design rather than a single prototype.
+Static DC measurement data has been independently reproduced across multiple boards, providing confidence that the observed performance is representative of the design rather than a single prototype.
 
 ---
 
