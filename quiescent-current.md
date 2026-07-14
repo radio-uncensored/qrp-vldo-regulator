@@ -2,8 +2,8 @@
 title: "Quiescent Current vs Stability — M9OMS VLDO V2"
 description: >-
   Quiescent current measurements for the M9OMS VLDO V2 with three voltage
-  reference candidates, and the stability history that led to the choice of a
-  higher-Iq reference for the first V2 release.
+  reference candidates, and the stability investigation that determined the
+  reference choice for the first V2 release.
 ---
 
 # M9OMS VLDO V2 — Quiescent Current vs Stability
@@ -11,24 +11,26 @@ description: >-
 *By M9OMS and CR7BTQ.*
 
 Quiescent current (Iq) measurements for the VLDO V2 across an **8 V to 18 V**
-input range, with three voltage reference candidates. This page records why the
-first release of V2 uses a non-traditional Vref, and highlights the importance
-of oscilloscope verification: two of the three candidates measure well on a
-multimeter, but only one has been verified stable on the bench.
+input range, with three voltage-reference candidates. This page records the
+stability investigation that determined the reference choice for the first V2
+release, and the resulting trade-off between quiescent current and verified
+stability: two of the three candidates measure favourably on a multimeter, but
+only one has been verified stable on the oscilloscope.
 
 > **Iq measurements by M9OMS**; oscillation investigation and stability
 > verification by M9OMS and CR7BTQ.
 
 ---
 
-## Background: the sawtooth oscillation
+## Background: sawtooth oscillation
 
-A substantial delay to this project was caused by a sawtooth oscillation on the
-output. This was traced back to the voltage reference — originally an OnSemi
-LP2950, chosen to keep Iq low. The LP2950 has a reputation for being somewhat
-challenging to stabilise, but no matter what we tried, the oscillation remained.
+Development of the V2 was delayed substantially by a sawtooth oscillation on
+the output. The oscillation was traced to the voltage reference — originally an
+OnSemi LP2950, selected to minimise quiescent current. The LP2950 has a
+reputation for being difficult to stabilise; in this circuit, the oscillation
+persisted through every stabilisation measure attempted.
 
-![Sawtooth oscillation on the VLDO V2 output with the LP2950 reference, 633 Hz, ~60 mV p-p](images/iq/1.png)
+![Sawtooth oscillation on the VLDO V2 output with the LP2950 reference, 633 Hz](images/iq/1.png)
 
 *Sawtooth oscillation with the LP2950 reference. 20 mV/div, 1 ms/div;
 cursor measurement 633 Hz.*
@@ -37,18 +39,19 @@ cursor measurement 633 Hz.*
 
 *The same oscillation on a 5 ms/div timebase.*
 
-Loading the reference with a 10 kΩ resistor reduced the amplitude by two thirds,
-but the frequency increased from 633 Hz to approximately 7 kHz. This was not
-acceptable.
+Loading the reference output with a 10 kΩ resistor reduced the oscillation
+amplitude by approximately two thirds, but raised its frequency from 633 Hz to
+approximately 7 kHz. This was not considered acceptable.
 
 ![Reduced-amplitude, higher-frequency oscillation with the LP2950 loaded by a 10 kΩ resistor](images/iq/3.jpg)
 
-*LP2950 loaded with 10 kΩ: amplitude reduced by two thirds, frequency raised to
-approximately 7 kHz.*
+*LP2950 loaded with 10 kΩ: amplitude reduced by approximately two thirds,
+frequency raised to approximately 7 kHz.*
 
-Sergio suspected that, due to the topology, some current (microamps) flows from
-the LTP back into the Vref. We tried the OnSemi LP2950 in a V1.1 board with the
-same result — albeit a slower oscillation, due to the slow response of this
+Sergio suspected that, as a consequence of the topology, a small current — of
+the order of microamps — flows from the LTP (long-tailed pair) back into the
+reference. The LP2950 was subsequently tried in a V1.1 board with the same
+result: a slower oscillation, consistent with the slower response of this
 regulator.
 
 ![Slower oscillation with the LP2950 fitted to a V1.1 board](images/iq/4.jpg)
@@ -57,31 +60,34 @@ regulator.
 
 ---
 
-## The fix: 78L05 as the reference
+## Reference substitution: 78L05
 
-Having had a stable V1 prototype verified by Stan, M9OMS suggested a 78L05.
-Whilst not a traditional voltage reference, being a regulator it would have
-*some* current-sinking ability — although we have not been able to find any
-documentation that cites this. Not only that, it is a legacy workhorse that is
-stable. An additional benefit is that it is quieter (see the
+A stable V1 prototype had previously been verified by Stan. On that basis,
+M9OMS proposed substituting a 78L05. Although not a conventional voltage
+reference, as a regulator it can be expected to have *some* current-sinking
+capability — although no documentation has been found that specifies this. It
+is also a long-established part with a record of stable operation, and its
+output is quieter (see the
 [transient response measurements](transient.html)).
 
-It worked: the 20 mV sawtooth disappeared and was replaced with a 2 mV ripple.
-No sawtooth. This is why the first release of V2 uses a higher-Iq component.
+With the 78L05 fitted, the 20 mV sawtooth was eliminated, leaving
+approximately 2 mV of ripple and no residual oscillation. The higher quiescent
+current of the 78L05 was accepted in exchange for verified stability, and this
+is the configuration of the first V2 release.
 
 ---
 
 ## V2.1: next steps
 
-V2.1 is underway. We are trying a different Vref — a precision reference that
-can sink up to 10 mA. This requires thorough testing, and we are some weeks away
-from dynamic characterisation.
+V2.1 development is underway with a different reference: a precision voltage
+reference specified to sink up to 10 mA. This candidate requires thorough
+testing, and dynamic characterisation is some weeks away.
 
 ---
 
 ## Quiescent current measurements
 
-For reference, the Iq values for the VLDO V2 using the different Vref
+Measured quiescent current for the VLDO V2 with each of the three reference
 candidates, across the 8 V to 18 V input range.
 
 > **Measured by M9OMS.** Power supply: Agilent E3631A; Iq measured on an
@@ -144,10 +150,11 @@ candidates, across the 8 V to 18 V input range.
 
 ## Summary
 
-This page clarifies why the first release of V2 uses a non-traditional Vref,
-and highlights the importance of oscilloscope verification: the lowest-Iq
-candidate produced a sustained sawtooth oscillation that a multimeter alone
-would not reveal.
+The lowest-Iq candidate sustained a sawtooth oscillation that multimeter
+measurement alone would not have revealed. The first release of V2 therefore
+uses a non-traditional reference with a higher quiescent current and verified
+stability, and oscilloscope verification is treated as an essential step for
+any future reference candidate.
 
 ---
 
