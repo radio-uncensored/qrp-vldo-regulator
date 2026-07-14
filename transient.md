@@ -5,10 +5,10 @@ Oscilloscope captures of the VLDO V2 output during load steps between **0.1 A an
 measurements behind the load-step rows of the
 [specification table](design.html#electrical-specifications). It supplements the
 [DC and thermal bench measurements](measurements.html); loop characterisation
-(phase margin, gain margin, unity-gain bandwidth), PSRR and broadband noise remain
-**simulation-only** and are not addressed here.
+(phase margin, gain margin, unity-gain bandwidth), PSRR and broadband noise are 
+not addressed here.
 
-> **Measurements by [CALLSIGN]** (June 2026), on a single production-representative
+> **Measurements by CR7BTQ** (June 2026), on a single production-representative
 > V2 board, 12 V jumper setting.
 
 ---
@@ -21,7 +21,7 @@ measurements behind the load-step rows of the
   load transition was **not characterised**; settling figures are representative
   of this setup rather than a specification against a defined load slew rate.
 - **Measurement point:** output terminals, through test leads.
-- **Oscilloscope:** Tektronix [MODEL], 10 MS/s sample rate, 25 µs/div timebase,
+- **Oscilloscope:** Tektronix TDS 784D, 10 MS/s sample rate, 25 µs/div timebase,
   Ch1 at 10 mV/div, AC-coupled, 20 MHz bandwidth limit enabled.
 - **Trigger:** Ch1 edge at −12.6 mV, HF Reject trigger coupling.
 - **Captures:** single-shot acquisitions; times measured with on-screen cursors.
@@ -35,9 +35,9 @@ measurements behind the load-step rows of the
 *0.1 A → 1.5 A load step, 12 V setting, 13.8 V in. AC-coupled, 10 mV/div,
 25 µs/div. Cursors: 25.0 µs.*
 
-When the load is applied, the output dips by roughly 15–20 mV and recovers
-monotonically, settling back to within the measurement noise floor in
-approximately **25 µs** by cursor measurement.
+When the load is applied, the output dips by roughly ~30 mV and recovers
+back to within the measurement noise floor in approximately **25 µs** by 
+cursor measurement.
 
 ---
 
@@ -48,7 +48,7 @@ approximately **25 µs** by cursor measurement.
 *1.5 A → 0.1 A load step, 12 V setting, 13.8 V in. AC-coupled, 10 mV/div,
 25 µs/div. Cursors: 40.0 µs.*
 
-When the load is released, the output recovers upward by a similar 15–20 mV,
+When the load is released, the output recovers upward by a similar ~30 mV,
 settling to within the measurement noise floor in approximately **40 µs** by
 cursor measurement, with a slight, slow excursion of a few millivolts before
 final settling.
@@ -59,9 +59,9 @@ final settling.
 
 - **Settling:** approximately 25 µs (load applied) and 40 µs (load released) to
   within the measurement noise floor, measured by cursor on single captures.
-- **Damping:** recovery is monotonic and well damped in both directions; no
+- **Damping:** recovery is well damped in both directions; no
   ringing was observed.
-- **Overshoot:** no overshoot or undershoot beyond the ~2–3 mV noise floor of the
+- **Overshoot:** no overshoot or undershoot beyond the ~0.5 mV noise floor of the
   measurement was observed at this resolution (10 mV/div).
 
 ---
@@ -74,10 +74,10 @@ Read the captures with the following in mind:
   excursion and recovery but **not** the static load-regulation shift between the
   0.1 A and 1.5 A operating points. For that figure see the
   [DC bench measurements](measurements.html).
-- **Noise floor.** The settled trace shows a band of roughly 2–3 mV p-p, which
-  includes probe and ground-loop pickup at this sensitivity. This is an upper
-  bound on what the setup can resolve — **these captures are not a ripple
-  measurement**, and the timebase and sample rate here are chosen for the
+- **Noise floor.** The settled trace shows a band of ~0.5 mV p-p, which includes
+  probe and ground-loop pickup at this sensitivity. This is an upper bound on what
+  the setup can resolve — **these captures are not a ripple measurement although
+  ~2 mV p-p is observed**, and the timebase and sample rate here are chosen for the
   transient, not for characterising high-frequency content.
 - **Coupled spikes.** Narrow, periodic, alternating-polarity spikes visible on
   both captures are consistent with switching-edge pickup coupled into the probe
@@ -104,7 +104,7 @@ noted under [Validation Status](design.html#validation-status).
 
 ---
 
-*Transient measurements: **[CALLSIGN]**, June 2026, single V2 sample, 12 V
+*Transient measurements: **CR7BTQ**, June 2026, single V2 sample, 12 V
 setting, 13.8 V input, electronic load 0.1 A ↔ 1.5 A. See the
 [project README](README.md) for design rationale and the full specification
 table.*
