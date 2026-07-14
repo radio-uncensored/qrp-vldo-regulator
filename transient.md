@@ -24,13 +24,16 @@ not addressed here.
 ## Test setup and conditions
 
 - **Board:** production-representative V2, 12 V jumper setting.
-- **Input:** 13.8 V DC.
+- **Input:** 13.800 V DC, maintained at the PCB input pads by a four-terminal
+  (Kelvin) connection to the power supply, compensating for voltage drop in the
+  supply leads.
 - **Load:** electronic load pulsing between 0.1 A and 1.5 A. The edge rate of the
   load transition was **not characterised**; settling figures are representative
   of this setup rather than a specification against a defined load slew rate.
-- **Measurement point:** output terminals, through test leads.
+- **Measurement point:** directly at the PCB output pads.
 - **Oscilloscope:** Tektronix TDS 784D, 10 MS/s sample rate, 25 µs/div timebase,
   Ch1 at 10 mV/div, AC-coupled, 20 MHz bandwidth limit enabled.
+- **Probes:** Tektronix P6139A passive probes, 500 MHz bandwidth.
 - **Trigger:** Ch1 edge at −12.6 mV, HF Reject trigger coupling.
 - **Captures:** single-shot acquisitions; times measured with on-screen cursors.
 
@@ -78,17 +81,28 @@ Read the captures with the following in mind:
 - **AC coupling.** The channel is AC-coupled, so the captures show the transient
   excursion and recovery but **not** the static load-regulation shift between the
   0.1 A and 1.5 A operating points. For that figure see the
-  [DC bench measurements](measurements.html).
+  [DC bench measurements](measurements.html). AC coupling is also a practical
+  necessity here: no commonly available oscilloscope has the vertical resolution
+  to resolve millivolt-level detail superimposed on a 12 V DC level, so the DC
+  component must be removed to observe the transient at this sensitivity.
+- **Settling-time criterion.** The settling times were read subjectively from the
+  waveform, as the point beyond which the trace no longer visibly approaches its
+  final value, rather than by the standard 10 %–90 % rise/fall-time convention
+  used for digital circuits. This criterion was chosen deliberately: it better
+  reflects the time between the load change and the output reaching its final
+  voltage, at the cost of the repeatability of the standard method. The criterion
+  may be refined in future measurements.
 - **Noise floor.** The settled trace shows a band of ~0.5 mV p-p, which includes
   probe and ground-loop pickup at this sensitivity. This is an upper bound on what
   the setup can resolve — **these captures are not a ripple measurement although
   ~2 mV p-p is observed**, and the timebase and sample rate here are chosen for the
   transient, not for characterising high-frequency content.
 - **Coupled spikes.** Narrow, periodic, alternating-polarity spikes visible on
-  both captures are consistent with switching-edge pickup coupled into the probe
-  ground loop from test equipment. They are present independent of the load-step
-  event and are not attributed to the regulator; their source was not
-  conclusively identified.
+  both captures are switching-edge pickup coupled into the probe ground loop —
+  an artefact of measuring at a very sensitive vertical scale (10 mV/div) in a
+  laboratory with other equipment operating, and routinely observed on digital
+  oscilloscopes at their most sensitive settings. They are present independent
+  of the load-step event and are not attributed to the regulator.
 - **Single captures, single board.** Both traces are single-shot acquisitions on
   one board at one output setting; treat the figures as representative rather
   than guaranteed limits.
