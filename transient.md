@@ -43,9 +43,8 @@ not addressed here.
 *0.1 A → 1.5 A load step, 12 V setting, 13.8 V in. AC-coupled, 10 mV/div,
 25 µs/div. Cursors: 25.0 µs.*
 
-When the load is applied, the output dips by roughly ~30 mV and recovers
-back to within the measurement noise floor in approximately **25 µs** by 
-cursor measurement.
+When the load is applied, the output dips by roughly ~30 mV to within the 
+measurement noise floor in approximately **25 µs** by cursor measurement.
 
 ---
 
@@ -58,8 +57,7 @@ cursor measurement.
 
 When the load is released, the output recovers upward by a similar ~30 mV,
 settling to within the measurement noise floor in approximately **40 µs** by
-cursor measurement, with a slight, slow excursion of a few millivolts before
-final settling.
+cursor measurement.
 
 ---
 
@@ -67,8 +65,7 @@ final settling.
 
 - **Settling:** approximately 25 µs (load applied) and 40 µs (load released) to
   within the measurement noise floor, measured by cursor on single captures.
-- **Damping:** recovery is well damped in both directions; no
-  ringing was observed.
+- **Damping:** recovery is well damped in both directions; no ringing was observed.
 - **Overshoot:** no overshoot or undershoot beyond the ~0.5 mV noise floor of the
   measurement was observed at this resolution (10 mV/div).
 
