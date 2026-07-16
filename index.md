@@ -62,7 +62,7 @@ V2 design and hardware by **M9OMS**. DC evaluation by **KC7XE**. Stability evalu
   "url": "https://radio-uncensored.github.io/qrp-vldo-regulator/",
   "offers": {
     "@type": "Offer",
-    "url": "https://www.ebay.co.uk/itm/267709192002",
+    "url": "https://www.ebay.com/itm/267709192002",
     "priceCurrency": "GBP",
     "price": "13.00",
     "availability": "https://schema.org/InStock",
