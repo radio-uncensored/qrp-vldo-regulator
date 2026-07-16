@@ -1,4 +1,4 @@
-VLDO V1
+## VLDO V1
 
 BOM, Gerber and CPL avilable for download. SEE NOTES BELOW.
 
@@ -17,11 +17,19 @@ Based on G4COL's schematic, with the following changes (final, V1.2 revision):
 2- Voltage selection ladder & trim potentiometer.
 3- SMD components.
 
+PCB dimensions: 65mm x 20.5mm x 25mm.
+3D printed housing: [https://www.thingiverse.com/thing:7246700](https://www.thingiverse.com/thing:7246700)
+
 BOM, Gerber and CPL are shared on a **CC BY-NC-ND** basis. **Verify schematic before commiting to fabrication.**
 
-[**Download here:**](downloads/bom-gerber)
+[**Download V1 BOM & Gerber here:**](downloads/bom-gerber)
 
 Additional materials required:
-1x 2.54mm shunt.
-1x M3 machine screw.
-Optional (but advised): TO-220 isolation washer and thermal pad.
+- 1x 2.54mm shunt.
+- 1x TO-220 isolation kit (including M3 machine screw).
+
+##
+
+**Why CC BY-NC-ND?**
+
+Altering the BOM prior to fabrication can cause oscillations.
