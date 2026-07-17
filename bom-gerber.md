@@ -1,6 +1,8 @@
 ## VLDO V1
 
-BOM, Gerber and CPL available for download. SEE NOTES BELOW.
+Further development has moved to VLDO V2. Independent measurements and characterisation make V2 the recommended choice for new builds and applications. The BOM and Gerber files for this earlier design are provided here as an open hardware reference.
+
+SEE NOTES BELOW.
 
 ---
 
@@ -30,8 +32,21 @@ Additional materials required:
 
 ## Why CC BY-NC-ND?
 
-The BOM, Gerber and CPL files are shared on a **CC BY-NC-ND** basis to preserve the validated design configuration.
+The BOM, Gerber and CPL files correspond to a validated design configuration. Maintaining the original component selection helps preserve the measured performance of this implementation under the tested conditions.
 
-Derivatives of G4COL's original design have been published with component changes that may affect stability. In particular, changes affecting pass-device capacitance, amplifier drive capability, feedback network impedance, and reference-node behaviour should be treated carefully.
+Component changes may affect stability. In particular, changes affecting pass-device capacitance, amplifier drive capability, feedback network impedance, and reference-node behaviour should be treated carefully.
 
-The BOM reflects the component set validated for this implementation. However, stability should still be verified, as component tolerances, substitutions, layout differences, and other factors may affect performance.
+Although the BOM reflects the validated component set for this implementation, stability should still be verified. Component tolerances, substitutions, layout differences, and other factors may affect performance.
+
+## Parameters
+
+- Input voltage: 9–18 V DC
+- Output options: approximately 9.0 V / 12.0 V / 13.6 V
+- Dropout voltage: typically 0.04–0.4 V at 1 A (input voltage dependent)
+- Maximum continuous output current: 2 A
+- Output trim via R7
+- PCB dimensions: 65 × 20.5 mm (25 mm height including heatsink)
+
+Thermal considerations:
+
+The onboard heatsink supports approximately 1.5 W continuous dissipation. Higher power dissipation requires additional cooling, such as mounting the TO-220 pass device to a larger heatsink or suitable metal enclosure. Electrical isolation must be maintained, as the device tab is connected to the output rail.
