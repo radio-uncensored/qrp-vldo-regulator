@@ -42,7 +42,7 @@ Although the BOM reflects the validated component set for this implementation, s
 
 - Input voltage: 9–18 V DC
 - Output options: approximately 9.0 V / 12.0 V / 13.6 V
-- Dropout voltage: typically 0.04–0.4 V at 1 A (input voltage dependent)
+- Voltage drop: typically 0.04–0.4 V at 1 A (input voltage dependent)
 - Maximum continuous output current: 2 A
 - Output trim via R7
 - PCB dimensions: 65 × 20.5 mm (25 mm height including heatsink)
