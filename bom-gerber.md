@@ -1,3 +1,9 @@
+---
+title: "VLDO V1 Open Hardware Reference"
+description: >-
+  BOM, Gerber and CPL files for the original VLDO V1 design. Superseded by VLDO V2, which offers significantly improved performance and is recommended for new builds.
+---
+
 ## VLDO V1
 
 Further development has moved to VLDO V2. Independent measurements and characterisation make V2 the recommended choice for new builds and applications. The BOM and Gerber files for this earlier design are provided here as an open hardware reference.
@@ -41,12 +47,12 @@ Although the BOM reflects the validated component set for this implementation, s
 ## Parameters
 
 - Input voltage: 9–18 V DC
-- Output options: approximately 9.0 V / 12.0 V / 13.6 V
-- Voltage drop: typically 0.04–0.4 V at 1 A (input voltage dependent)
+- Output voltage options: approximately 9.0 V / 12.0 V / 13.6 V
+- Voltage drop: typically 0.04–0.4 V at 1 A (depending on input voltage)
 - Maximum continuous output current: 2 A
 - Output trim via R7
 - PCB dimensions: 65 × 20.5 mm (25 mm height including heatsink)
 
 Thermal considerations:
 
-The onboard heatsink supports approximately 1.5 W continuous dissipation. Higher power dissipation requires additional cooling, such as mounting the TO-220 pass device to a larger heatsink or suitable metal enclosure. Electrical isolation must be maintained, as the device tab is connected to the output rail.
+The onboard heatsink supports approximately 1.5 W of continuous power dissipation. Higher dissipation requires additional cooling, such as mounting the TO-220 pass device to a larger heatsink or suitable metal enclosure. Electrical isolation must be maintained, as the device tab is connected to the output rail.
