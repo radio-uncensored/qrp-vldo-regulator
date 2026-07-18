@@ -5,9 +5,8 @@
 # --- Site identity (these drive the <title> and <meta description>) ---
 title: "M9OMS"
 description: >-
-  Open-hardware very low dropout (VLDO) linear voltage regulator for QRP radios.
-  RF-quiet, selectable 9.0 / 12.0 / 13.8 V at up to 2 A — designed by M9OMS for
-  the QRP Labs QMX and QMX+.
+  Very low dropout (VLDO) linear voltage regulator for QRP radios.
+  RF-quiet, selectable 9.0 / 12.0 / 13.8 V at up to 2 A — designed by M9OMS. Fully characterised.
 
 # --- Canonical URLs (help jekyll-seo-tag and the sitemap emit absolute links) ---
 url: "https://radio-uncensored.github.io"
