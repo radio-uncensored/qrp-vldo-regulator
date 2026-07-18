@@ -7,7 +7,7 @@ description: "Like-for-like bench comparison of the M9OMS VLDO V1.1 and V2 regul
 A like-for-like bench comparison of the **M9OMS VLDO V1.1** and **V2** boards at the 12 V output
 setting. Both datasets are [KC7XE bench measurements](measurements.md); this page uses the input voltages common to both runs. Each comparison is direct.
 
-> V2 is work in progress. The figures below are DC measurements on single samples of each board,
+> V2 characterisation is ongoing. The figures below are DC measurements on single samples of each board,
 > taken at the board terminals. The dynamic measurements (transient response, loop characterisation,
 > PSRR) listed under [Validation Status](README.md#validation-status) are not addressed
 > here.
@@ -87,8 +87,7 @@ The ΔV<sub>OUT</sub> figures arise from two differences, both visible in the gr
 **Dropout-region behaviour.** Below the 12 V setpoint a linear regulator can only pass
 V<sub>in</sub> less its own dropout. V2's lower dropout allows it to deliver close to the full input
 voltage at 1–2 A down to 8 V. V1.1 requires more headroom: under load its output departs from the
-input at around 11–12 V, deteriorating as it approaches by 8 V. For a 3S LiPo under transmit load, this
-determines how far down the discharge curve the supply remains usable.
+input at around 11–12 V, deteriorating as it approaches by 8 V. For a 3S LiPo under transmit load, this determines how far down the battery discharge curve the supply remains usable before dropout affects the radio.
 
 **Pass-device conduction at higher current.** At 2 A the V2 pass device drops less and is driven
 harder, so its 2 A ΔV<sub>OUT</sub> (~40 mV) remains close to its 1 A ΔV<sub>OUT</sub> (~20 mV). V1.1's 2 A ΔV<sub>OUT</sub> is 2–3× the 1 A figure in regulation, increasing further in the dropout region as gate drive becomes insufficient — the same mechanism behind the loss of regulation at 8 V.
