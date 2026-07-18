@@ -4,7 +4,7 @@ description: "Design rationale, schematic lineage, and full specification table 
 ---
 # M9OMS VLDO V2
 
-A discrete **very low dropout (VLDO)** linear voltage regulator designed for low-noise RF applications. The regulator accepts an input of 8–18 VDC and provides a selectable **9.0 V / 12.0 V / 13.8 V** output at up to **2 A** continuous, making it suitable for portable and fixed QRP radio equipment.
+A discrete **very low dropout (VLDO)** linear voltage regulator designed for low-noise RF applications. The regulator accepts an input of 8–18 VDC and provides a selectable **9.0 V / 12.0 V / 13.8 V** output at up to **2 A** continuous, making it suitable for portable and fixed QRP radio equipment such as the QRP Labs QMX.
 
 ---
 
@@ -16,7 +16,7 @@ A discrete **very low dropout (VLDO)** linear voltage regulator designed for low
 
 ## Overview
 
-Portable amateur radio equipment often operates from batteries whose voltage varies significantly during discharge. Marketplace linear boards can require several hundred millivolts of headroom, while switching converters may introduce unwanted RF noise, and some exhibit poorly characterised transient behaviour. The M9OMS VLDO V2 was developed to provide a clean, stable linear supply capable of operating with exceptionally low dropout while maintaining high output current and fast transient response. The design is intended for applications where supply integrity is more important than absolute conversion efficiency.
+Portable amateur radio equipment often operates from batteries whose voltage varies significantly during discharge. Commercial LDO boards can require several hundred millivolts of headroom, while switching converters may introduce unwanted RF noise, and some exhibit poorly characterised transient behaviour. The M9OMS VLDO V2 was developed to provide a clean, stable linear supply capable of operating with exceptionally low dropout while maintaining high output current and fast transient response. The design is intended for applications where supply integrity is more important than absolute conversion efficiency.
 
 **Key features:**
 
@@ -64,7 +64,7 @@ This project follows the evolution of a discrete topology:
 | Quiescent Current (I<sub>Q</sub>) | Typical 6 mA | Over V<sub>IN</sub> = 8.0–18.0 V, no load |
 | Load Regulation | 20 mV (typ.) | Output change from 0.1 A to 1.0 A |
 | | 40 mV (typ.) | Output change from 0.1 A to 2.0 A |
-| Line Regulation | ≤ ~8 mV/V | 100 mA and 1.0 A, regulation onset → max V<sub>IN</sub>, worst case (12 V setting) |
+| Line Regulation | ~8 mV/V | 100 mA and 1.0 A, regulation onset → max V<sub>IN</sub>, worst case (12 V setting) |
 | Output Ripple Voltage | ~2 mV p-p | Low-noise DC input, 0–1.5 A load, measured at output terminals |
 | Load-Step Overshoot / Undershoot | No measurable overshoot or undershoot observed | 0.1 A ↔ 1.5 A load step, V<sub>OUT</sub> = 12.0 V |
 | Load-Step Settling Time | 25 µs (typ.) | Load applied (0.1 A → 1.5 A), settling to within load regulation band |
