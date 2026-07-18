@@ -1,6 +1,6 @@
 ---
-title: "VLDO V2 — Very Low Dropout Regulator for QRP"
-description: "Discrete, RF-quiet linear voltage regulator for QRP radios. Selectable 9.0 / 12.0 / 13.8 V at up to 2 A, with very low dropout and no switching noise."
+title: "M9OMS VLDO V2 - RF-Quiet Power Supply for QRP Labs QMX"
+description: "Discrete very low dropout (VLDO) linear voltage regulator for QRP Labs QMX and other QRP radios. RF-quiet design with selectable 9.0 / 12.0 / 13.8 V output up to 2 A. No switching noise."
 image: /images/DSC01726.JPG
 ---
 
@@ -23,16 +23,16 @@ A discrete **very low dropout (VLDO)** linear voltage regulator for QRP radios. 
 
 | | |
 | :--- | :--- |
-| **Type** | Discrete low-dropout (LDO) **linear** regulator |
+| **Type** | Discrete low-dropout (LDO) **linear voltage regulator** |
 | **Output** | 9.0 V / 12.0 V / 13.8 V (jumper-selectable, trimmed via `R7`) |
-| **Max current** | 2.0 A continuous |
-| **Dropout** | < 100 mV (regulation threshold) at 1 A |
-| **Switching noise** | None — linear topology |
+| **Maximum current** | 2.0 A continuous |
+| **Dropout voltage** | < 100 mV (regulation threshold) at 1 A |
+| **Switching noise** | Not a switching converter — linear topology |
 | **Designed for** | QRP radios and other portable HF rigs |
 
 ## Why a discrete LDO?
 
-Modern QRP rigs need a stable rail, but hobbyist switching modules can introduce noise. Many 'ready' LDO boards need too much headroom to hold regulation as a battery discharges. The VLDO V2 stays quiet, keeps regulating close to the input voltage, and is built for rapid RX-TX current changes.
+Modern QRP rigs need a stable supply rail, but hobbyist switching modules can introduce noise. Many conventional LDO boards require too much voltage headroom to maintain regulation as a battery discharges. The VLDO V2 remains RF-quiet, regulates very close to the input voltage, and is designed for rapid RX-TX current changes.
 
 ## Documentation
 
@@ -57,7 +57,7 @@ V2 design and hardware by **M9OMS**. DC evaluation by **KC7XE**. Stability evalu
     "@type": "Brand",
     "name": "M9OMS"
   },
-  "category": "Amateur Radio Power Supply",
+  "category": "Linear Voltage Regulator for Amateur Radio",
   "image": "https://radio-uncensored.github.io/qrp-vldo-regulator/images/DSC01726.JPG",
   "url": "https://radio-uncensored.github.io/qrp-vldo-regulator/",
   "offers": {
