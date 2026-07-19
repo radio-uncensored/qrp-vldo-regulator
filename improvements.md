@@ -9,7 +9,7 @@ setting. Both datasets are [KC7XE bench measurements](measurements.md); this pag
 
 > V2 characterisation is ongoing. The figures below are DC measurements on single samples of each board,
 > taken at the board terminals. The dynamic measurements (transient response, loop characterisation,
-> PSRR) listed under [Validation Status](README.md#validation-status) are not addressed
+> PSRR) listed under [Validation Status](design.md#validation-status) are not addressed
 > here.
 
 ---
@@ -120,7 +120,7 @@ from a nominal 12 V battery operates within this window.**
 
 For the full V2 dataset (all three output settings, thermal, drift) see
 [Bench Measurements](measurements.md); for the design rationale and the V1.1 → V2 change list see the
-[project README](README.md).
+[project README](design.md).
 
 ---
 

@@ -6,7 +6,7 @@ description: "Hardware-verified DC and thermal bench data for the M9OMS VLDO V2 
 
 Measured DC and thermal performance of the **M9OMS VLDO V2** regulator. This page
 records hardware results that supplement — and progressively replace — the
-simulation figures in the [main specification table](./README.md#electrical-specifications).
+simulation figures in the [main specification table](./design.md#electrical-specifications).
 
 > **Measurements by Stan Dye, KC7XE** (June 2026), on a single production-representative
 > V2 board supplied by M9OMS. Method follows Stan's characterisation of the first
@@ -252,7 +252,7 @@ governed by the discharge rate of the capacitors.
 ## Relationship to the specification table
 
 These bench results let several rows of the
-[simulated spec table](./README.md#electrical-specifications) move toward
+[simulated spec table](./design.md#electrical-specifications) move toward
 hardware-verified status:
 
 - **Dropout, load regulation, line regulation** — measured and consistent with
@@ -262,7 +262,7 @@ hardware-verified status:
 - **Output drift with temperature** — measured and consistent with the documented limit.
 
 Still **simulation-only**, pending the dynamic measurements listed under
-[Validation Status](./README.md#validation-status): loop
+[Validation Status](./design.md#validation-status): loop
 characterisation (phase margin, unity-gain bandwidth, gain margin), PSRR, and output noise.
 None of these is addressed by the DC and thermal data above.
 
@@ -270,7 +270,7 @@ None of these is addressed by the DC and thermal data above.
 
 *DC and thermal measurements: **Stan Dye, KC7XE**, June 2026. All values measured at the board
 terminals on a single V2 sample. Plots generated from Stan's tabulated data. See the
-[project README](./README.md) for design rationale, schematic lineage, and the full
+[project README](./design.md) for design rationale, schematic lineage, and the full
 specification table.*
 
 

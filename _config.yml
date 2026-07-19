@@ -16,6 +16,7 @@ plugins:
   # [text](measurements.md) links resolve to the correct .html URLs automatically.
 
 exclude:
+  - "README.md"        # served on GitHub repo only; design.md is the canonical site page
   - "*.kicad_*"
   - "*.gbr"
   - "*.drl"

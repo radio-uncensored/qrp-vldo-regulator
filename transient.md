@@ -125,5 +125,5 @@ noted under [Validation Status](design.md#validation-status).
 
 *Transient measurements: **CR7BTQ**, June 2026, single V2 sample, 12 V
 setting, 13.8 V input, electronic load 0.1 A ↔ 1.5 A. See the
-[project README](README.md) for design rationale and the full specification
+[project README](design.md) for design rationale and the full specification
 table.*
