@@ -48,10 +48,9 @@ The objective therefore became the development of a single regulator combining w
 This project follows the evolution of a discrete topology:
 
 1. **SPRAT Issue 201 (G4COL):** [Ian Braithwaite's original schematic.](https://www.gqrp.com/limiter.jpg)
-2. **The ND6T variant:** [ND6T's published variant of the circuit.](http://www.nd6t.com/qrp/VLDO.htm)
-3. **M9OMS VLDO Prototype:** A 4-layer PCB implementation of G4COL's topology, miniaturised with targeted component upgrades. [DC performance independently measured by KC7XE.](https://groups.io/g/QRPLabs/message/158202)
-4. [**M9OMS VLDO V1.1:**](https://www.ebay.com/itm/267709138260) Based on the prototype, with an output-selection ladder and trim, mounting holes and cable strain relief.
-5. [**M9OMS VLDO V2:**](https://www.ebay.com/itm/267709192002) A fresh design to reduce dropout, improve transient response and improve in-dropout performance beyond V1.1. A clearance hole has been added for case mounting in applications requiring higher dissipation. See [DC improvements vs V1.1](improvements.html).
+2. **M9OMS VLDO Prototype:** A 4-layer PCB implementation of G4COL's topology, miniaturised with targeted component upgrades. [DC performance independently measured by KC7XE.](https://groups.io/g/QRPLabs/message/158202)
+3. [**M9OMS VLDO V1.1:**](https://www.ebay.com/itm/267709138260) Based on the prototype, with an output-selection ladder and trim, mounting holes and cable strain relief.
+4. [**M9OMS VLDO V2:**](https://www.ebay.com/itm/267709192002) A fresh design to reduce dropout, improve transient response and improve in-dropout performance beyond V1.1. A clearance hole has been added for case mounting in applications requiring higher dissipation. See [DC improvements vs V1.1](improvements.html).
 
 ---
 
