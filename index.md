@@ -1,6 +1,6 @@
 ---
 title: "M9OMS VLDO V2 - RF-Quiet Power Supply for QRP Labs QMX"
-description: "Discrete very low dropout (VLDO) linear voltage regulator for QRP Labs QMX and other QRP radios. RF-quiet design with selectable 9.0 / 12.0 / 13.8 V output up to 2 A. No switching noise."
+description: "Discrete very low dropout (VLDO) linear voltage regulator for QRP Labs QMX and other QRP radios. RF-quiet, selectable 9.0 / 12.0 / 13.8 V output up to 2 A."
 image: /images/DSC01726.JPG
 ---
 
@@ -14,7 +14,6 @@ A discrete **very low dropout (VLDO)** linear voltage regulator for QRP radios. 
 
 ## Where to buy
 
-- **[eBay Shop](https://www.ebay.co.uk/usr/m9oms-radio)** https://www.ebay.co.uk/usr/m9oms-radio
 - **[VLDO V2](https://www.ebay.com/itm/267709192002)** https://www.ebay.com/itm/267709192002
 - **[Nylon Housing](https://www.ebay.com/itm/267715531314)** https://www.ebay.com/itm/267715531314
 

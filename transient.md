@@ -1,7 +1,7 @@
 ---
 title: "Transient Response — M9OMS VLDO V2"
 description: >-
-  Oscilloscope load-step measurements (0.1 A to 1.5 A) for the M9OMS VLDO V2
+  Oscilloscope load-step measurements (0.1–1.5 A) for the M9OMS VLDO V2
   linear regulator at the 12 V setting, with test conditions and measurement
   limitations.
 ---

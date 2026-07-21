@@ -1,7 +1,7 @@
 ---
 title: "VLDO V1 Open Hardware Reference"
 description: >-
-  BOM, Gerber and CPL files for the original VLDO V1 design. Superseded by VLDO V2, which offers significantly improved performance and is recommended for new builds.
+  BOM, Gerber and CPL files for the original VLDO V1 design. Superseded by VLDO V2, which offers improved performance and is recommended for new builds.
 ---
 
 ## VLDO V1
