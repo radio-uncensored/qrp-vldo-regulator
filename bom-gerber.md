@@ -4,9 +4,9 @@ description: >-
   BOM, Gerber and CPL files for the original VLDO V1 design. Superseded by VLDO V2, which offers improved performance and is recommended for new builds.
 ---
 
-## VLDO V1
+# VLDO V1
 
-Further development has moved to VLDO V2. Independent measurements and characterisation make V2 the recommended choice for new builds and applications. The BOM and Gerber files for this earlier design are provided here as an open hardware reference.
+Further development has moved to [VLDO V2](index.md). Independent measurements and characterisation make V2 the recommended choice for new builds and applications. The BOM and Gerber files for this earlier design are provided here as an open hardware reference.
 
 SEE NOTES BELOW.
 
