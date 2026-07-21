@@ -14,6 +14,7 @@ A discrete **very low dropout (VLDO)** linear voltage regulator for QRP radios. 
 
 ## Where to buy
 
+- **[eBay Shop](https://www.ebay.co.uk/usr/m9oms-radio)** https://www.ebay.co.uk/usr/m9oms-radio
 - **[VLDO V2](https://www.ebay.com/itm/267709192002)** https://www.ebay.com/itm/267709192002
 - **[Nylon Housing](https://www.ebay.com/itm/267715531314)** https://www.ebay.com/itm/267715531314
 
