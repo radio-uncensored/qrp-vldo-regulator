@@ -14,6 +14,7 @@ A discrete **very low dropout (VLDO)** linear voltage regulator for QRP radios. 
 
 ## Where to buy
 
+- **[eBay Shop](https://www.ebay.co.uk/usr/m9oms-radio)** https://www.ebay.co.uk/usr/m9oms-radio
 - **[VLDO V2](https://www.ebay.com/itm/267709192002)** https://www.ebay.com/itm/267709192002
 - **[Nylon Housing](https://www.ebay.com/itm/267715531314)** https://www.ebay.com/itm/267715531314
 
@@ -37,9 +38,9 @@ Modern QRP rigs need a stable supply rail, but hobbyist switching modules can in
 ## Documentation
 
 - **[Design rationale, schematic lineage & full specification table](design.md)** — the complete project README.
-- **[Oscilloscope measurements](https://radio-uncensored.github.io/qrp-vldo-regulator/transient.html)** — oscilloscope captures of 0.1 A ↔ 1.5 A load steps at the 12 V setting.
-- **[Static DC measurements](measurements.html)** — hardware-verified DC and thermal data (KC7XE, June 2026).
-- **[V1.1 vs V2 comparison](improvements.html)** — like-for-like bench comparison of dropout and load regulation.
+- **[Oscilloscope measurements](transient.md)** — oscilloscope captures of 0.1 A ↔ 1.5 A load steps at the 12 V setting.
+- **[Static DC measurements](measurements.md)** — hardware-verified DC and thermal data (KC7XE, June 2026).
+- **[V1.1 vs V2 comparison](improvements.md)** — like-for-like bench comparison of dropout and load regulation.
 
 ## Credits
 
@@ -62,7 +63,7 @@ V2 design and hardware by **M9OMS**. DC evaluation by **KC7XE**. Stability evalu
   "url": "https://radio-uncensored.github.io/qrp-vldo-regulator/",
   "offers": {
     "@type": "Offer",
-    "url": "https://www.ebay.com/itm/267709192002",
+    "url": "https://www.ebay.co.uk/usr/m9oms-radio",
     "priceCurrency": "GBP",
     "price": "13.00",
     "availability": "https://schema.org/InStock",
