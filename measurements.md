@@ -17,6 +17,8 @@ simulation figures in the [main specification table](./design.md#electrical-spec
 
 [Full evaluation by KC7XE downloadable here.](./downloads/Evaluation%20of%20VLDO%20V2%20by%20M9OMS.pdf)
 
+**Product page:** [M9OMS VLDO V2 — RF-quiet power supply for QRP Labs QMX](index.md)
+
 ---
 
 ## Test method and conditions

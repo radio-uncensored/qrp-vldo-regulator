@@ -19,6 +19,8 @@ not addressed here.
 > **Measurements by CR7BTQ** (June 2026), on a single production-representative
 > V2 board, 12 V jumper setting.
 
+**Product page:** [M9OMS VLDO V2 — RF-quiet power supply for QRP Labs QMX](index.md)
+
 ---
 
 ## Test setup and conditions

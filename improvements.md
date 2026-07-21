@@ -12,6 +12,8 @@ setting. Both datasets are [KC7XE bench measurements](measurements.md); this pag
 > PSRR) listed under [Validation Status](design.md#validation-status) are not addressed
 > here.
 
+**Product page:** [M9OMS VLDO V2 — RF-quiet power supply for QRP Labs QMX](index.md)
+
 ---
 
 ## Scope and method

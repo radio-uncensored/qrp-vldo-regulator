@@ -6,6 +6,8 @@ description: "Design rationale, schematic lineage, and full specification table 
 
 A discrete **very low dropout (VLDO)** linear voltage regulator designed for low-noise RF applications. The regulator accepts an input of 8–18 VDC and provides a selectable **9.0 V / 12.0 V / 13.8 V** output at up to **2 A** continuous, making it suitable for portable and fixed QRP radio equipment such as the QRP Labs QMX.
 
+**Product page:** [M9OMS VLDO V2 — RF-quiet power supply for QRP Labs QMX](index.md)
+
 ---
 
 <p align="center">

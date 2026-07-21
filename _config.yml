@@ -1,4 +1,4 @@
-title: "RF-Quiet Power Supply for QRP Labs QMX | M9OMS"
+title: "M9OMS"
 description: >-
   RF-quiet very low dropout (VLDO) linear voltage regulator for QRP Labs QMX and other QRP radios.
   Selectable 9.0, 12.0 or 13.8 V output up to 2 A. Hardware design by M9OMS with comprehensive measurements and characterisation.
@@ -15,8 +15,15 @@ plugins:
   # jekyll-relative-links is enabled by GitHub Pages by default, so existing
   # [text](measurements.md) links resolve to the correct .html URLs automatically.
 
+# TODO(M9OMS): uncomment and fill in with your real meta-tag tokens.
+# Google: Search Console > Settings > Ownership verification > HTML tag (the content="..." value).
+# Bing: Bing Webmaster Tools > Settings > Verification > Meta tag (the content="..." value).
+# webmaster_verifications:
+#   google: "PASTE_GOOGLE_META_TOKEN_HERE"
+#   bing: "PASTE_BING_META_TOKEN_HERE"
+
 exclude:
-  - "README.md"        # served on GitHub repo only; design.md is the canonical site page
+  - "README.md"
   - "*.kicad_*"
   - "*.gbr"
   - "*.drl"
