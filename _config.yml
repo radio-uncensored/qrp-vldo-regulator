@@ -15,12 +15,10 @@ plugins:
   # jekyll-relative-links is enabled by GitHub Pages by default, so existing
   # [text](measurements.md) links resolve to the correct .html URLs automatically.
 
-# TODO(M9OMS): uncomment and fill in with your real meta-tag tokens.
 # Google: Search Console > Settings > Ownership verification > HTML tag (the content="..." value).
-# Bing: Bing Webmaster Tools > Settings > Verification > Meta tag (the content="..." value).
-# webmaster_verifications:
-#   google: "PASTE_GOOGLE_META_TOKEN_HERE"
-#   bing: "PASTE_BING_META_TOKEN_HERE"
+webmaster_verifications:
+  bing: "B8FDCB19B66032EF011B60EA4D224A21"
+  # google: "PASTE_GOOGLE_META_TOKEN_HERE"
 
 exclude:
   - "README.md"
