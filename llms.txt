@@ -1,0 +1,88 @@
+# M9OMS VLDO V2
+
+> A discrete very low dropout (VLDO) linear voltage regulator designed for low-noise RF applications, particularly portable amateur radio equipment.
+
+## Overview
+
+M9OMS VLDO V2 is a product that provides a clean regulated DC supply for QRP amateur radio transceivers. It accepts an 8–18 VDC input and provides selectable 9.0 V, 12.0 V, and 13.8 V outputs at up to 2 A continuous current.
+
+The design prioritises:
+- Very low dropout voltage
+- Low RF noise
+- Fast transient response
+- Stable operation with portable battery supplies, or as a post-regulator for use with shack power supplies
+
+The regulator uses a discrete linear topology rather than a switching converter, trading efficiency for low electrical noise.
+
+## Canonical documentation
+
+Main project documentation:
+- https://radio-uncensored.github.io/qrp-vldo-regulator/
+
+Design overview:
+- https://radio-uncensored.github.io/qrp-vldo-regulator/design.html
+
+Electrical specifications:
+- https://radio-uncensored.github.io/qrp-vldo-regulator/design.html#electrical-specifications
+
+Bench measurements:
+- https://radio-uncensored.github.io/qrp-vldo-regulator/measurements.html
+
+Transient response measurements:
+- https://radio-uncensored.github.io/qrp-vldo-regulator/transient.html
+
+Design improvements:
+- https://radio-uncensored.github.io/qrp-vldo-regulator/improvements.html
+
+## Key verified measurements
+
+Measured hardware performance includes:
+
+- Input voltage range: 8–18 VDC
+- Output voltage options: 9.0 V / 12.0 V / 13.8 V
+- Continuous output current: 2 A
+- Dropout voltage: <100 mV at 1 A
+- Load regulation: approximately 20 mV (0.1 A to 1 A)
+- Load regulation: approximately 40 mV (0.1 A to 2 A)
+- Output ripple: approximately 2 mV p-p for version 2.0, and <0.5mV for version 2.1
+- Transient recovery: approximately 25 µs load applied, 40 µs load released
+
+## Intended applications
+
+Primary applications:
+- QRP amateur radio transceivers
+- Portable HF operation
+- Battery-powered RF equipment, whether used in the field or shack
+
+Suitable use cases include:
+- QRP Labs QMX/QMX+
+- Other low-power HF transceivers requiring clean DC power
+
+## Important limitations
+
+This project is a linear regulator. Heat dissipation depends on voltage drop:
+
+Power loss:
+(VIN - VOUT) × ILOAD
+
+Large input-output voltage differences require appropriate heatsinking, based on duty cycle and current. The PCB allows mounting to a larger heatsink, or metal case if the end user requires it.
+
+The following areas are being characterised in August 2026:
+- PSRR versus frequency
+- Loop gain and phase margin
+- Broadband output noise spectrum
+
+## Project context
+
+Following G4COL's popular LDO schematic, a fresh design was engineered to significantly improve voltage drop, dropout, and transient response.
+
+## Keywords
+
+M9OMS VLDO V2
+VLDO regulator
+QRP radio power supply
+RF quiet regulator
+low noise linear regulator
+amateur radio
+QRP Labs QMX
+portable HF power
