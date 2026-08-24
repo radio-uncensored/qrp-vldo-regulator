@@ -2,7 +2,7 @@
 title: "Design Rationale & Specification — M9OMS VLDO V2"
 description: "Design rationale, schematic lineage, and full specification table for the M9OMS VLDO V2 discrete linear regulator for QRP radios."
 ---
-# M9OMS VLDO V2
+# M9OMS VLDO V2 (New 2.1 Revision)
 
 A discrete **very low dropout (VLDO)** linear voltage regulator designed for low-noise RF applications. The regulator accepts an input of 8–18 VDC and provides a selectable **9.0 V / 12.0 V / 13.8 V** output at up to **2 A** continuous, making it suitable for portable and fixed QRP radio equipment such as the QRP Labs QMX.
 
@@ -49,12 +49,12 @@ This project follows the evolution of a discrete topology:
 
 1. **SPRAT Issue 201 (G4COL):** [Ian Braithwaite's original schematic.](https://www.gqrp.com/limiter.jpg)
 2. **M9OMS VLDO Prototype:** A 4-layer PCB implementation of G4COL's topology, miniaturised with targeted component upgrades. [DC performance independently measured by KC7XE.](https://groups.io/g/QRPLabs/message/158202)
-3. [**M9OMS VLDO V1.1:**](https://www.ebay.com/itm/267709138260) Based on the prototype, with an output-selection ladder and trim, mounting holes and cable strain relief.
-4. [**M9OMS VLDO V2:**](https://www.ebay.com/itm/267709192002) A fresh design to reduce dropout, improve transient response and improve in-dropout performance beyond V1.1. A clearance hole has been added for case mounting in applications requiring higher dissipation. See [DC improvements vs V1.1](improvements.html).
+3. **M9OMS VLDO V1.1:** Based on the prototype, with an output-selection ladder and trim, mounting holes and cable strain relief.
+4. [**M9OMS VLDO V2:**](https://m9oms.com) A fresh design to reduce dropout, improve transient response and improve in-dropout performance beyond V1.1. A clearance hole has been added for case mounting in applications requiring higher dissipation. See [DC improvements vs V1.1](improvements.md).
 
 ---
 
-## Electrical Specifications
+## Electrical Specifications (V2.1 revision)
 
 | Parameter | Specification | Conditions / Notes |
 | :--- | :--- | :--- |
@@ -62,14 +62,14 @@ This project follows the evolution of a discrete topology:
 | Output Voltage | 9.0 V / 12.0 V / 13.8 V | Selected by header pins; fine adjustment via R7 |
 | Maximum Output Current | 2.0 A | Continuous operation |
 | Dropout Voltage | <100 mV | At I<sub>LOAD</sub> = 1.0 A, regulation threshold |
-| Quiescent Current (I<sub>Q</sub>) | Typical 6 mA | Over V<sub>IN</sub> = 8.0–18.0 V, no load |
+| Quiescent Current (I<sub>Q</sub>) | Typical <3 mA | Over V<sub>IN</sub> = 8.0–18.0 V, no load |
 | Load Regulation | 20 mV (typ.) | Output change from 0.1 A to 1.0 A |
 | | 40 mV (typ.) | Output change from 0.1 A to 2.0 A |
-| Line Regulation | ~8 mV/V | 100 mA and 1.0 A, regulation onset → max V<sub>IN</sub>, worst case (12 V setting) |
-| Output Ripple Voltage | ~2 mV p-p | Low-noise DC input, 0–1.5 A load, measured at output terminals |
+| Line Regulation | ≤ ~5 mV/V | 100 mA and 1.0 A, regulation onset → max V<sub>IN</sub>, worst case (12 V setting) |
+| Output Ripple Voltage | Below measurement noise floor | Low-noise DC input, 0–1.5 A load, measured at output terminals |
 | Load-Step Overshoot / Undershoot | No measurable overshoot or undershoot observed | 0.1 A ↔ 1.5 A load step, V<sub>OUT</sub> = 12.0 V |
-| Load-Step Settling Time | 25 µs (typ.) | Load applied (0.1 A → 1.5 A), settling to within load regulation band |
-| | 40 µs (typ.) | Load released (1.5 A → 0.1 A), settling to within load regulation band |
+| Load-Step Settling Time | 30 µs (typ.) | Load applied (0.1 A → 1.5 A), settling to within load regulation band |
+| | 100 µs (typ.) | Load released (1.5 A → 0.1 A), settling to within load regulation band |
 | Measurement Notes | — | Transient response measured at output terminals through test leads. Load-step edge rate not characterised; values are representative measurements. |
 
 Unless otherwise noted, measured values were obtained on production-representative hardware. The full dataset and test conditions are in:
@@ -128,17 +128,12 @@ Static DC measurement data has been independently reproduced across multiple boa
 
 ---
 
-## Future Development
+## V2.1 refinements
 
-Future revisions will focus primarily on refinement rather than architectural change. Planned work for V2.1 includes:
-
-* Evaluation of lower quiescent-current voltage references
-* Further optimisation of PCB thermal symmetry
-* Polymer input capacitor validation
+* Lower quiescent current
+* Precision bandgap voltage reference
 * Simplified output-voltage selection header
-* Completion of dynamic performance characterisation
-
-A hybrid switch-mode/linear regulator intended for higher-power applications is also under consideration once Version 2 characterisation is complete.
+* Additional dynamic performance characterisation detail
 
 ---
 
