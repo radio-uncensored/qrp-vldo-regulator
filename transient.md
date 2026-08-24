@@ -62,7 +62,7 @@ not addressed here.
 ## 1. Measurement noise floor
 
 Before measuring the regulator, the probe was measured against ground to
-establish what the setup itself contributes. Everything later on this page is
+establish what the setup itself contributes. All measurements on this page are
 read against this floor.
 
 ### TEK00027 — Ground reference, no bandwidth limit
@@ -72,11 +72,10 @@ read against this floor.
 *Ground reference, no bandwidth limit. AC-coupled, 10.0 mV/div, 5.00 µs/div,
 10.0 MS/s, Sample mode.*
 
-Without a bandwidth limit the trace shows a continuous band of grass with
+Without a bandwidth limit the trace shows a continuous band of noise with
 occasional narrow spikes — all of it picked up by the probes rather than
 originating in the regulator. Part of it was traced to a magnifier lamp at the
-bench; a component at around **80 MHz** was also present, most likely from
-computers running in the same small room. The remainder was not identified.
+bench; a component at around **80 MHz** was also present, most likely computers running in the same room. The remainder was not identified.
 
 ### TEK00028 — Ground reference, 20 MHz bandwidth limit
 
@@ -164,17 +163,15 @@ measurement noise floor established in section 1, and there is no progressive
 worsening as load increases. Each capture covers 50 ms, and none shows periodic
 content, drift or any repeating disturbance.
 
-What that does demonstrate is the absence of low-frequency instability: no
-motorboating, no load-dependent oscillation, and no marginal behaviour appearing
+What this demonstrates is the absence of low-frequency instability: no load-dependent oscillation, and no marginal behaviour appearing
 at any point between no load and the 2 A rating. What it does **not** provide is
-a ripple or noise figure. At 10.0 mV/div a 2 mV p-p artefact occupies a fifth of
-a division, so these captures bound the answer rather than measure it — a proper
-figure needs a dedicated low-noise measurement, which remains outstanding.
+a ripple or noise figure. These captures suggest (rather than measure) lower ripple
+than the original V2 board. An accurate measurements remains outstanding.
 
-Any faint texture visible on the loaded traces is an artefact of the electronic
+Any noise visible on the loaded traces is an artefact of the electronic
 load rather than of the regulator. This was confirmed by repeating the
-measurements with resistive loads, where the texture is absent; the electronic
-load was necessary only for the load-step captures that follow.
+measurements with resistive loads (noise was significantly reduced); the electronic
+load was present for all captures that follow (with the load set to "off" where no load was necessary).
 
 ---
 
@@ -188,10 +185,8 @@ load was necessary only for the load-step captures that follow.
 5.00 MS/s. Cursors: 32.2 mV, 30.4 µs.*
 
 When the load is applied, the output falls by **32 mV**, reaching its final value
-in approximately **30 µs**. The falling edge is largely slew-limited — a straight
-midsection rather than an exponential — which is the pass device being driven
-hard by the gate-drive stage, then a soft knee onto the new level. There is no
-excursion beyond the final value and no ringing.
+in approximately **30 µs**. There is no
+excursion beyond the final value, and no ringing.
 
 ### TEK00037 — 1.5 A → 0.1 A, load released
 
@@ -201,22 +196,9 @@ excursion beyond the final value and no ringing.
 2.50 MS/s. Cursors: 31.6 mV, 99.6 µs.*
 
 When the load is released, the output rises by the same **32 mV**, reaching its
-final value in approximately **100 µs**. The recovery is a clean first-order
-approach with no overshoot.
+final value in approximately **100 µs**. The recovery is a clean with no overshoot.
 
-**The two excursions agree to within 0.6 mV.** Both are the load-regulation
-difference between the two operating points, not a transient glitch: the rail
-moves to its new regulated level and stays there. The excursion corresponds to an
-effective output impedance of roughly **23 mΩ** (32 mV across a 1.4 A change).
-
-Settling is slower on release than on application, and the reason is inherent to
-a series linear regulator: it can source current but cannot sink it. On release
-the pass device is still conducting for 1.5 A while the load takes only 0.1 A, so
-the surplus charge on the output capacitance can be removed only by the load
-itself — at 100 mA, that is unavoidably slower than the load-application case,
-where the loop simply drives the pass device harder. Of the two directions, the
-load-application case is the more consequential in normal use, and it is the
-faster of the two.
+Settling is slower on release than on application - asymmetry to protect from transient over shoots.
 
 For context, both figures are three orders of magnitude shorter than a CW element
 at 20 WPM.
@@ -274,20 +256,6 @@ The output behaves identically at every load: flat at zero while the input ramps
 then a single steep, monotonic rise, then a soft knee onto the settled level.
 **No overshoot at any load**, no steps, no retriggering and no disturbance on the
 knee.
-
-Two features of the input trace explain the rest. First, Ch2 shows a distinct dip
-as Ch1 rises — the input sagging while the output capacitance charges — and the
-dip deepens with load, from a barely visible notch at 0 mA to a pronounced sag at
-2 A that takes the remainder of the frame to recover. Second, the input ramp
-itself slows as load increases, which is why the cursor interval from trigger to
-settled output grows from 910 µs to 1.72 ms across the series. Both are
-properties of the bench supply feeding a capacitive load, not of the regulator;
-see [Input ramp rate](#measurement-limitations) below.
-
-At the two highest currents the output rise merges into the input ramp and the
-traces run parallel for a time. That is the regulator still in dropout, tracking
-the input up until it clears the setpoint — the same behaviour the DC sweeps
-show, captured dynamically.
 
 ---
 
@@ -373,40 +341,32 @@ A slight overshoot is present at the 9 V setting: the output rises to a peak and
 then declines gently to its settled value across the remainder of the frame. It
 is a soft, well-damped hump rather than a spike, and no ringing follows it.
 
-The oscilloscope reads **9.28 V** at the peak. The instrument's voltage readout
-runs consistently low, so the true figure is higher, but the peak has not been
+The oscilloscope reads **9.28 V** at the peak. The peak has not been
 established with a more accurate instrument and no exact value is claimed here.
 An oscilloscope should not be relied on for absolute voltage accuracy.
 
 Even with this overshoot, a 9 V QMX should not see a damaging surge originating
-from the regulator — though every load is its own case.
+from the regulator — though a simple fix can address this (awaiting bench test).
 
 ---
 
 ## Observations
 
-- **Reference:** REF5050 output measures 4.995 V, with no structure above the
-  measurement noise floor.
+- **Reference:** REF5050 output measures 4.995 V, with no noise measurable.
 - **Constant load:** no departure from the noise floor at any load from 0 mA to
   2 A, and no periodic content; no low-frequency instability at any point in the
   operating range.
-- **Load-step excursion:** 32 mV in both directions, for a 0.1 A ↔ 1.5 A step —
-  an effective output impedance of roughly 23 mΩ.
 - **Settling:** approximately 30 µs (load applied) and 100 µs (load released) to
   within the measurement noise floor, measured by cursor on single captures.
 - **Damping:** recovery is well damped in both directions; no ringing was observed.
 - **Overshoot:** during load step measurements, no overshoot or undershoot beyond
   the noise floor of the measurement was observed at the resolution used.
-- **Asymmetry:** recovery is slower on load release than on load application. A
-  series linear regulator cannot sink current, so surplus charge on the output
-  capacitance is removed only by the load — at 100 mA, slower than the loop can
-  drive the pass device on.
+- **Asymmetry:** recovery is slower on load release than on load application.
 - **Power-on, 12 V:** no overshoot at any load from 0 mA to 2 A.
 - **Power-on at 9 V:** the output capacitor begins charging at 8.76 V input on the
   captured ramp, while the circuit itself starts correctly from 6.5 V in.
 - **Power-on overshoot at 9 V:** slight and well damped; scope reads 9.28 V at the
-  peak, and the instrument reads low, so the true peak is higher but not
-  established.
+  peak, but the true value is not yet established.
 - **Power-off:** output tracks the input down under load until it collapses below
   dropout, cleanly and without oscillation at every load; the collapse arrives
   sooner at higher currents because the load discharges the supply reservoir
@@ -417,8 +377,7 @@ from the regulator — though every load is its own case.
   not a regulator start-up figure; see the limitations below.
 - **Settled output at 2.00 V/div:** the power-on cursors read 11.88 V at 0 mA to
   500 mA, 11.84 V at 1 A and 1.5 A, and 11.80 V at 2 A. At this vertical scale
-  the readings are coarse and the instrument reads low; treat them as indicative,
-  not as a load-regulation measurement.
+  the readings are coarse - the instrument is not being used to measure load-regulation.
 
 ---
 
@@ -426,8 +385,8 @@ from the regulator — though every load is its own case.
 
 Read the captures with the following in mind:
 
-- **AC coupling.** For the load-step captures the channel is AC-coupled, so those
-  captures show the transient excursion and recovery but **not** the static
+- **AC coupling.** For the load-step captures the channel is AC-coupled - those
+  captures were taken to show transient excursion and recovery but **not** the static
   load-regulation shift between the
   0.1 A and 1.5 A operating points. For that figure see the
   [DC bench measurements](measurements.md).
@@ -444,17 +403,16 @@ Read the captures with the following in mind:
   reflects the time between the load change and the output reaching its final
   voltage, at the cost of appearing to take longer. It also depends on how far
   into the noise the trace can be followed: the quieter settled band on the V2.1
-  revision extends the visible tail, placing the cursor later than the ~2 mV p-p
-  band on V2 allowed. The effect is largest on release, where the final approach
-  is asymptotic. **The figures on this page and on the
-  [V2 page](transient.md) are therefore not directly comparable, and the longer
-  V2.1 figures do not indicate slower recovery.**
+  revision extends the visible tail, placing the cursor later than the previous ~2 mV p-p
+  band (V2) allowed. The effect is largest on release, where the final approach
+  is asymptotic. **The figures on this page are therefore not directly comparable, and the longer
+  V2.1 figures do not indicate slower recovery than the V2.0 board.**
 - **Noise floor.** The settled trace shows a band of noise, which includes probe
   and ground-loop pickup and, on the captures taken with the load connected,
   artefacts from the electronic load at this sensitivity. The ground-reference
   captures in section 1 show the same setup measured against ground, without the
   electronic load contributing; repeating the constant-load captures with
-  resistive loads removes the texture, confirming its origin.
+  resistive loads removes the noise, confirming its origin.
   This is an upper bound on what the setup can resolve — **these captures are not
   a ripple measurement although no ripple is observed** — and the timebase and
   sample rate here are chosen for the transient, not for characterising
@@ -465,8 +423,7 @@ Read the captures with the following in mind:
   here; the load-dependent dip visible on Ch2 in section 5 is part of the same
   effect. **No accurate figure for regulator start-up time can be taken from
   these captures**, since the input transition itself dominates.
-- **Oscilloscope voltage accuracy.** The instrument's voltage readout runs low
-  against reality, as noted for the 9 V overshoot above. Absolute voltages read
+- **Oscilloscope voltage accuracy.** As noted for the 9 V overshoot above - absolute voltages read
   from these captures should be treated as approximate.
 - **Single captures, single board.** Each trace is one capture on one board;
   treat the figures as representative rather than guaranteed limits.
@@ -478,20 +435,15 @@ Read the captures with the following in mind:
 These captures are the source of the following rows in the
 [specification table](design.md#electrical-specifications):
 
-- **Reference voltage** — 4.995 V.
-- **Load-step excursion** — 32 mV, 0.1 A ↔ 1.5 A.
 - **Load-step overshoot / undershoot** — none observed beyond the measurement
   noise floor.
 - **Load-step settling time** — ~30 µs (load applied), ~100 µs (load released).
-- **Power-on overshoot, 9 V setting** — slight; scope reads 9.28 V at the peak.
-- **Minimum input voltage, 9 V setting** — 6.5 V.
+
 
 Loop characterisation, PSRR and output-noise measurements remain outstanding, as
 noted under [Validation Status](design.md#validation-status).
 
 ---
 
-*Oscilloscope measurements: **CR7BTQ**, August 2026, single V2.1 sample, 12 V and 9 V
-settings, 13.800 V input at 5 A limit, constant loads 0 mA to 2 A, electronic
-load steps 0.1 A ↔ 1.5 A. See the [project README](design.md) for design
+*Oscilloscope measurements: **CR7BTQ**, August 2026. See the [project README](design.md) for design
 rationale and the full specification table.*
