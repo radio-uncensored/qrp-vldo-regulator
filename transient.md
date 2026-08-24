@@ -67,7 +67,7 @@ read against this floor.
 
 ### TEK00027 — Ground reference, no bandwidth limit
 
-![Ground reference with no bandwidth limit, showing broadband noise pickup](images/transient/TEK00027.png)
+![Ground reference with no bandwidth limit, showing broadband noise pickup](images/transient/TEK00027.jpeg)
 
 *Ground reference, no bandwidth limit. AC-coupled, 10.0 mV/div, 5.00 µs/div,
 10.0 MS/s, Sample mode.*
@@ -79,7 +79,7 @@ bench; a component at around **80 MHz** was also present, most likely computers 
 
 ### TEK00028 — Ground reference, 20 MHz bandwidth limit
 
-![Ground reference with 20 MHz bandwidth limit, showing a substantially reduced noise band](images/transient/TEK00028.png)
+![Ground reference with 20 MHz bandwidth limit, showing a substantially reduced noise band](images/transient/TEK00028.jpeg)
 
 *Ground reference, 20 MHz bandwidth limit. AC-coupled, 10.0 mV/div, 100 µs/div,
 500 kS/s, Hi Res mode.*
@@ -99,7 +99,7 @@ them is therefore not attributable to the bandwidth limit alone.
 
 ### TEK00029 — REF5050 output
 
-![REF5050 reference output, flat at the measurement noise floor](images/transient/TEK00029.png)
+![REF5050 reference output, flat at the measurement noise floor](images/transient/TEK00029.jpeg)
 
 *REF5050 reference output. AC-coupled, 10.0 mV/div, 100 µs/div, 500 kS/s,
 Hi Res mode.*
@@ -118,42 +118,42 @@ Output voltage captured at six constant load currents from no load to 2 A.
 
 ### TEK00030 — 0 mA constant load
 
-![Output voltage at 0 mA constant load](images/transient/TEK00030.png)
+![Output voltage at 0 mA constant load](images/transient/TEK00030.jpeg)
 
 *Output voltage, 0 mA constant load. AC-coupled, 10.0 mV/div, 5.00 ms/div,
 10.0 kS/s, Hi Res mode.*
 
 ### TEK00031 — 100 mA constant load
 
-![Output voltage at 100 mA constant load](images/transient/TEK00031.png)
+![Output voltage at 100 mA constant load](images/transient/TEK00031.jpeg)
 
 *Output voltage, 100 mA constant load. AC-coupled, 10.0 mV/div, 5.00 ms/div,
 10.0 kS/s, Hi Res mode.*
 
 ### TEK00032 — 500 mA constant load
 
-![Output voltage at 500 mA constant load](images/transient/TEK00032.png)
+![Output voltage at 500 mA constant load](images/transient/TEK00032.jpeg)
 
 *Output voltage, 500 mA constant load. AC-coupled, 10.0 mV/div, 5.00 ms/div,
 10.0 kS/s, Hi Res mode.*
 
 ### TEK00033 — 1 A constant load
 
-![Output voltage at 1 A constant load](images/transient/TEK00033.png)
+![Output voltage at 1 A constant load](images/transient/TEK00033.jpeg)
 
 *Output voltage, 1 A constant load. AC-coupled, 10.0 mV/div, 5.00 ms/div,
 10.0 kS/s, Hi Res mode.*
 
 ### TEK00034 — 1.5 A constant load
 
-![Output voltage at 1.5 A constant load](images/transient/TEK00034.png)
+![Output voltage at 1.5 A constant load](images/transient/TEK00034.jpeg)
 
 *Output voltage, 1.5 A constant load. AC-coupled, 10.0 mV/div, 5.00 ms/div,
 10.0 kS/s, Hi Res mode.*
 
 ### TEK00035 — 2 A constant load
 
-![Output voltage at 2 A constant load](images/transient/TEK00035.png)
+![Output voltage at 2 A constant load](images/transient/TEK00035.jpeg)
 
 *Output voltage, 2 A constant load. AC-coupled, 10.0 mV/div, 5.00 ms/div,
 10.0 kS/s, Hi Res mode.*
@@ -179,7 +179,7 @@ load was present for all captures that follow (with the load set to "off" where 
 
 ### TEK00036 — 0.1 A → 1.5 A, load applied
 
-![Output transient, 0.1 A to 1.5 A load step: output falls 32 mV and reaches its final value in approximately 30 µs with no undershoot](images/transient/TEK00036.png)
+![Output transient, 0.1 A to 1.5 A load step: output falls 32 mV and reaches its final value in approximately 30 µs with no undershoot](images/transient/TEK00036.jpeg)
 
 *0.1 A → 1.5 A load step, 13.8 V in. AC-coupled, 10.0 mV/div, 10.0 µs/div,
 5.00 MS/s. Cursors: 32.2 mV, 30.4 µs.*
@@ -190,7 +190,7 @@ excursion beyond the final value, and no ringing.
 
 ### TEK00037 — 1.5 A → 0.1 A, load released
 
-![Output transient, 1.5 A to 0.1 A load step: output rises 32 mV and reaches its final value in approximately 100 µs with no overshoot](images/transient/TEK00037.png)
+![Output transient, 1.5 A to 0.1 A load step: output rises 32 mV and reaches its final value in approximately 100 µs with no overshoot](images/transient/TEK00037.jpeg)
 
 *1.5 A → 0.1 A load step, 13.8 V in. AC-coupled, 10.0 mV/div, 20.0 µs/div,
 2.50 MS/s. Cursors: 31.6 mV, 99.6 µs.*
@@ -212,42 +212,42 @@ currents.
 
 ### TEK00038 — 0 mA constant load
 
-![Power-on ramp at 0 mA constant load](images/transient/TEK00038.png)
+![Power-on ramp at 0 mA constant load](images/transient/TEK00038.jpeg)
 
 *Power-on, 0 mA constant load. DC-coupled, Ch1 and Ch2 2.00 V/div, 500 µs/div,
 100 kS/s, Hi Res mode. Cursors: 11.80 V, 910 µs.*
 
 ### TEK00039 — 100 mA constant load
 
-![Power-on ramp at 100 mA constant load](images/transient/TEK00039.png)
+![Power-on ramp at 100 mA constant load](images/transient/TEK00039.jpeg)
 
 *Power-on, 100 mA constant load. DC-coupled, Ch1 and Ch2 2.00 V/div, 500 µs/div,
 100 kS/s, Hi Res mode. Cursors: 11.84 V, 1.01 ms.*
 
 ### TEK00040 — 500 mA constant load
 
-![Power-on ramp at 500 mA constant load](images/transient/TEK00040.png)
+![Power-on ramp at 500 mA constant load](images/transient/TEK00040.jpeg)
 
 *Power-on, 500 mA constant load. DC-coupled, Ch1 and Ch2 2.00 V/div, 500 µs/div,
 100 kS/s, Hi Res mode. Cursors: 11.84 V, 1.01 ms.*
 
 ### TEK00041 — 1 A constant load
 
-![Power-on ramp at 1 A constant load](images/transient/TEK00041.png)
+![Power-on ramp at 1 A constant load](images/transient/TEK00041.jpeg)
 
 *Power-on, 1 A constant load. DC-coupled, Ch1 and Ch2 2.00 V/div, 500 µs/div,
 100 kS/s, Hi Res mode. Cursors: 11.80 V, 1.24 ms.*
 
 ### TEK00042 — 1.5 A constant load
 
-![Power-on ramp at 1.5 A constant load](images/transient/TEK00042.png)
+![Power-on ramp at 1.5 A constant load](images/transient/TEK00042.jpeg)
 
 *Power-on, 1.5 A constant load. DC-coupled, Ch1 and Ch2 2.00 V/div, 500 µs/div,
 100 kS/s, Hi Res mode. Cursors: 11.80 V, 1.46 ms.*
 
 ### TEK00043 — 2 A constant load
 
-![Power-on ramp at 2 A constant load](images/transient/TEK00043.png)
+![Power-on ramp at 2 A constant load](images/transient/TEK00043.jpeg)
 
 *Power-on, 2 A constant load. DC-coupled, Ch1 and Ch2 2.00 V/div, 500 µs/div,
 100 kS/s, Hi Res mode. Cursors: 11.80 V, 1.72 ms.*
@@ -267,35 +267,35 @@ qualitative.
 
 ### TEK00044 — 100 mA constant load
 
-![Power-off ramp at 100 mA constant load](images/transient/TEK00044.png)
+![Power-off ramp at 100 mA constant load](images/transient/TEK00044.jpeg)
 
 *Power-off, 100 mA constant load. DC-coupled, Ch1 and Ch2 2.00 V/div, 10.0 ms/div,
 5.00 kS/s, Hi Res mode.*
 
 ### TEK00045 — 500 mA constant load
 
-![Power-off ramp at 500 mA constant load](images/transient/TEK00045.png)
+![Power-off ramp at 500 mA constant load](images/transient/TEK00045.jpeg)
 
 *Power-off, 500 mA constant load. DC-coupled, Ch1 and Ch2 2.00 V/div, 10.0 ms/div,
 5.00 kS/s, Hi Res mode.*
 
 ### TEK00046 — 1 A constant load
 
-![Power-off ramp at 1 A constant load](images/transient/TEK00046.png)
+![Power-off ramp at 1 A constant load](images/transient/TEK00046.jpeg)
 
 *Power-off, 1 A constant load. DC-coupled, Ch1 and Ch2 2.00 V/div, 10.0 ms/div,
 5.00 kS/s, Hi Res mode.*
 
 ### TEK00047 — 1.5 A constant load
 
-![Power-off ramp at 1.5 A constant load](images/transient/TEK00047.png)
+![Power-off ramp at 1.5 A constant load](images/transient/TEK00047.jpeg)
 
 *Power-off, 1.5 A constant load. DC-coupled, Ch1 and Ch2 2.00 V/div, 10.0 ms/div,
 5.00 kS/s, Hi Res mode.*
 
 ### TEK00048 — 2 A constant load
 
-![Power-off ramp at 2 A constant load](images/transient/TEK00048.png)
+![Power-off ramp at 2 A constant load](images/transient/TEK00048.jpeg)
 
 *Power-off, 2 A constant load. DC-coupled, Ch1 and Ch2 2.00 V/div, 10.0 ms/div,
 5.00 kS/s, Hi Res mode.*
@@ -320,7 +320,7 @@ The 9 V setting was tested for the first time in this round.
 
 ### TEK00050 — Input threshold at the 9 V setting
 
-![Power-on ramp at the 9 V setting, showing output capacitor charging once the input reaches 8.76 V](images/transient/TEK00050.png)
+![Power-on ramp at the 9 V setting, showing output capacitor charging once the input reaches 8.76 V](images/transient/TEK00050.jpeg)
 
 *Power-on, 9 V setting. DC-coupled, Ch1 and Ch2 2.00 V/div, 500 µs/div,
 100 kS/s, Hi Res mode. Ch2 cursors: 560 mV, 1.13 ms, at 8.76 V.*
@@ -332,7 +332,7 @@ correctly from an input as low as **6.5 V** at the 9 V setting.
 
 ### TEK00051 — Output overshoot at the 9 V setting
 
-![Power-on ramp at the 9 V setting, same capture, cursors repositioned to show slight output overshoot](images/transient/TEK00051.png)
+![Power-on ramp at the 9 V setting, same capture, cursors repositioned to show slight output overshoot](images/transient/TEK00051.jpeg)
 
 *Power-on, 9 V setting — same capture as above, cursors repositioned.
 Ch1 cursors: 9.32 V, 1.13 ms, at 9.28 V.*
