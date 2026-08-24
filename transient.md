@@ -25,7 +25,7 @@ not addressed here.
 
 ## Test setup and conditions
 
-- **Board:** production-representative V2.1, 12 V or 9 V jumper setting.
+- **Board:** production-representative V2.1 board - 12 V or 9 V jumper setting.
 - **Input:** 13.800 V DC, maintained at the PCB input pads by a four-terminal
   connection to the power supply, compensating for voltage drop in the
   supply leads. Current limit set to 5 A; supply is a Tenma 72-2540 (30 V / 5 A).
