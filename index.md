@@ -14,11 +14,7 @@ A discrete **very low dropout (VLDO)** linear voltage regulator for QRP radios. 
 
 ## Where to buy
 
-- **[eBay Shop](https://www.ebay.co.uk/usr/m9oms-radio)** https://www.ebay.co.uk/usr/m9oms-radio
-- **[VLDO V2](https://www.ebay.com/itm/267709192002)** https://www.ebay.com/itm/267709192002
-- **[Nylon Housing](https://www.ebay.com/itm/267715531314)** https://www.ebay.com/itm/267715531314
-
-
+- **[M9OMS Shop](https://m9oms.com)** https://m9oms.com
 
 ## V2 at a glance
 
@@ -52,7 +48,7 @@ V2 design and hardware by **M9OMS**. DC evaluation by **KC7XE**. Stability evalu
 {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "M9OMS VLDO V2",
+  "name": "M9OMS VLDO V2 - 2.1 revision",
   "description": "Discrete very low dropout linear voltage regulator for QRP radios. Selectable 9.0 / 12.0 / 13.8 V at up to 2 A, with very low dropout and no switching noise.",
   "brand": {
     "@type": "Brand",
@@ -63,9 +59,9 @@ V2 design and hardware by **M9OMS**. DC evaluation by **KC7XE**. Stability evalu
   "url": "https://radio-uncensored.github.io/qrp-vldo-regulator/",
   "offers": {
     "@type": "Offer",
-    "url": "https://www.ebay.co.uk/usr/m9oms-radio",
+    "url": "https://m9oms.com",
     "priceCurrency": "GBP",
-    "price": "13.00",
+    "price": "15.00",
     "availability": "https://schema.org/InStock",
     "seller": {
       "@type": "Organization",
