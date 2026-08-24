@@ -1,13 +1,13 @@
 ---
-title: "Oscilloscope Measurements — M9OMS VLDO V2.1"
+title: "Oscilloscope Measurements — M9OMS VLDO V2"
 description: >-
-  Oscilloscope measurements of the M9OMS VLDO V2.1 linear regulator at 13.8 V in:
+  Oscilloscope measurements of the M9OMS VLDO V2 linear regulator at 13.8 V in:
   noise floor, reference, constant load, load steps, power-on and power-off.
 ---
 
-# M9OMS VLDO V2.1 — Oscilloscope Measurements (Noise Floor, Load Steps, Power-On and Power-Off)
+# M9OMS VLDO V2 — Oscilloscope Measurements (Noise Floor, Load Steps, Power-On and Power-Off)
 
-Oscilloscope captures of the M9OMS VLDO V2 - **V2.1 board revision**, under a
+Oscilloscope captures of the M9OMS VLDO V2 - **NEW V2.1 board revision**, under a
 **13.8 V input**, covering the measurement noise floor, the voltage reference,
 output voltage at constant loads from **0 mA to 2 A**, transient response to load
 steps between **0.1 A and 1.5 A**, and power-on and power-off ramps. This page
@@ -20,8 +20,6 @@ not addressed here.
 > **Measurements by CR7BTQ** (August 2026), on a single V2.1 board.
 
 **Product page:** [M9OMS VLDO V2 — RF-quiet power supply for QRP Labs QMX](index.md)
-
-> **Which board these describe.** These captures are of the new **V2.1** revision.
 
 ---
 
