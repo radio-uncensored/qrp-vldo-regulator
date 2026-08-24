@@ -364,8 +364,7 @@ from the regulator — though a simple fix can address this (awaiting bench test
 - **Asymmetry:** recovery is slower on load release than on load application.
 - **Power-on, 12 V:** no overshoot at any load from 0 mA to 2 A.
 - **Power-on at 9 V:** the output capacitor begins charging at 8.76 V input on the
-  captured ramp, while the circuit itself starts correctly from 6.5 V in.
-- **Power-on overshoot at 9 V:** slight and well damped; scope reads 9.28 V at the
+  captured ramp, while the circuit itself starts correctly from 6.5 V in. An overshoot (slight and well damped) was observed; scope reads 9.28 V at the
   peak, but the true value is not yet established.
 - **Power-off:** output tracks the input down under load until it collapses below
   dropout, cleanly and without oscillation at every load; the collapse arrives
