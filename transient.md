@@ -21,10 +21,7 @@ not addressed here.
 
 **Product page:** [M9OMS VLDO V2 — RF-quiet power supply for QRP Labs QMX](index.md)
 
-> **Which board these describe.** These captures are of the **V2.1** revision.
-> For the shipping V2 board see the [V2 oscilloscope measurements](transient.md).
-> The settling figures on the two pages are **not directly comparable** — see
-> [Settling-time criterion](#measurement-limitations) below.
+> **Which board these describe.** These captures are of the new **V2.1** revision.
 
 ---
 
