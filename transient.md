@@ -7,7 +7,7 @@ description: >-
 
 # M9OMS VLDO V2.1 — Oscilloscope Measurements (Noise Floor, Load Steps, Power-On and Power-Off)
 
-Oscilloscope captures of the M9OMS VLDO on the **V2.1 board revision**, under a
+Oscilloscope captures of the M9OMS VLDO V2 - **V2.1 board revision**, under a
 **13.8 V input**, covering the measurement noise floor, the voltage reference,
 output voltage at constant loads from **0 mA to 2 A**, transient response to load
 steps between **0.1 A and 1.5 A**, and power-on and power-off ramps. This page
