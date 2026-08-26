@@ -8,7 +8,7 @@ description: >-
 
 # M9OMS VLDO V2 — Transient Response (Load-Step Measurements)
 
-Oscilloscope captures of the VLDO V2 output during load steps between **0.1 A and
+Oscilloscope captures of the legacy VLDO V2 output during load steps between **0.1 A and
 1.5 A**, at the **12 V setting** with a **13.8 V input**. This page records the
 measurements behind the load-step rows of the
 [specification table](design.md#electrical-specifications). It supplements the
@@ -43,7 +43,7 @@ not addressed here.
 
 ## Load applied: 0.1 A → 1.5 A
 
-![Output transient, 0.1 A to 1.5 A load step: output dips and recovers within approximately 25 µs](images/transient/TEK00026.png)
+![Output transient, 0.1 A to 1.5 A load step: output dips and recovers within approximately 25 µs](images/transient/legacyV2_0/TEK00026.png)
 
 *0.1 A → 1.5 A load step, 12 V setting, 13.8 V in. AC-coupled, 10 mV/div,
 25 µs/div. Cursors: 25.0 µs.*
@@ -55,7 +55,7 @@ measurement noise floor in approximately **25 µs** by cursor measurement.
 
 ## Load released: 1.5 A → 0.1 A
 
-![Output transient, 1.5 A to 0.1 A load step: output recovers upward within approximately 40 µs](images/transient/TEK00024.png)
+![Output transient, 1.5 A to 0.1 A load step: output recovers upward within approximately 40 µs](images/transient/legacyV2_0/TEK00024.png)
 
 *1.5 A → 0.1 A load step, 12 V setting, 13.8 V in. AC-coupled, 10 mV/div,
 25 µs/div. Cursors: 40.0 µs.*
