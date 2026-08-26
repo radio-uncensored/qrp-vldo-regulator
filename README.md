@@ -127,7 +127,7 @@ Static DC measurement data has been independently reproduced across multiple boa
 * Lower quiescent current
 * Precision bandgap voltage reference
 * Simplified output-voltage selection header
-* Additional dynamic performance characterisation detail
+* Additional characterisation detail
 
 ---
 
