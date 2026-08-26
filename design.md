@@ -59,7 +59,7 @@ This project follows the evolution of a discrete topology:
 | Parameter | Specification | Conditions / Notes |
 | :--- | :--- | :--- |
 | Input Voltage Range | 8.0 V to 18.0 V DC | Continuous operating range |
-| Output Voltage | 9.0 V / 12.0 V / 13.8 V | Selected by header pins; fine adjustment via R7 |
+| Output Voltage | 9.0 V / 12.0 V / 13.8 V | Selected by header pins; fine adjustment via R10 |
 | Maximum Output Current | 2.0 A | Continuous operation |
 | Dropout Voltage | <100 mV | At I<sub>LOAD</sub> = 1.0 A, regulation threshold |
 | Quiescent Current (I<sub>Q</sub>) | Typical <3 mA | Over V<sub>IN</sub> = 8.0–18.0 V, no load |
