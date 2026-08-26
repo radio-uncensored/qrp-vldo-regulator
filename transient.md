@@ -274,7 +274,7 @@ established with a more accurate instrument and no exact value is claimed here.
 - **Asymmetry:** recovery is slower on load release than on load application.
 - **Power-on, 12 V:** no overshoot at any load from 0 mA to 2 A.
 - **Power-on at 9 V:** the output capacitor begins charging at 8.76 V input on the
-  captured ramp, while the circuit itself starts correctly from 6.5 V in. Fully damped regulation settling with only a slight rise above the target voltage.
+  captured ramp, while the circuit itself starts correctly from 6.5 V in. Fully damped regulation settling with only a slight, temporary rise above the target voltage.
 - **Power-off:** output tracks the input down under load until it collapses below
   dropout, cleanly and without oscillation at every load; the collapse arrives
   sooner at higher currents because the load discharges the supply reservoir
