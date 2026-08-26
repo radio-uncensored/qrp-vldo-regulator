@@ -313,7 +313,7 @@ Read the captures with the following in mind:
   into the noise the trace can be followed: the quieter settled band on the V2.1
   revision extends the visible tail, placing the cursor later than the previous ~2 mV p-p
   band (V2) allowed. The effect is largest on release, where the final approach
-  is asymptotic. **The figures on this page are therefore not directly comparable, and the longer
+  is asymptotic. **The figures on this page are therefore not directly comparable, and the new
   V2.1 figures do not indicate slower recovery than the V2.0 board.**
 - **Noise floor.** The settled trace shows a band of noise, which includes probe
   and ground-loop pickup and, on the captures taken with the load connected,
@@ -331,7 +331,7 @@ Read the captures with the following in mind:
   here; the load-dependent dip visible on Ch2 in section 5 is part of the same
   effect. **No accurate figure for regulator start-up time can be taken from
   these captures**, since the input transition itself dominates.
-- **Oscilloscope voltage accuracy.** As noted for the 9 V overshoot above - absolute voltages read
+- **Oscilloscope voltage accuracy.** As noted above - absolute voltages read
   from these captures should be treated as approximate.
 - **Single captures, single board.** Each trace is one capture on one board;
   treat the figures as representative rather than guaranteed limits.
