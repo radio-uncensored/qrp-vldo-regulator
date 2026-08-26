@@ -238,7 +238,7 @@ several seconds after power is removed.
 
 ## 7. Power-on, 9 V setting
 
-Behaviour at the 9 V setting (constant load, transient response), did not show any differences to the 12 V setting, apart from the observations in this section:
+Behaviour at the 9 V setting (constant load, transient response), did not show any difference to the 12 V setting, apart from the observations in this section:
 
 ### TEK00050 — Input threshold at the 9 V setting
 
@@ -249,20 +249,14 @@ charging, which appears to be the limiting factor on this capture. The same inpu
 dip seen at the 12 V setting is present here. In practice the circuit starts up
 correctly from an input as low as **6.5 V** at the 9 V setting.
 
-### TEK00051 — Output overshoot at the 9 V setting
+### TEK00051 — Startup behaviour at the 9 V setting
 
 ![Power-on ramp at the 9 V setting, same capture, cursors repositioned to show slight output overshoot](images/transient/TEK00051.jpeg)
 
-A slight overshoot is present at the 9 V setting: the output rises to a peak and
-then declines gently to its settled value across the remainder of the frame. It
-is a soft, well-damped hump rather than a spike, and no ringing follows it.
+Fully damped regulation settling with only a slight rise above the target voltage. The output rises to a peak and then declines gently to its settled value across the remainder of the frame. Well-damped and no ringing follows it.
 
 The oscilloscope reads **9.28 V** at the peak. The peak has not been
 established with a more accurate instrument and no exact value is claimed here.
-An oscilloscope should not be relied on for absolute voltage accuracy.
-
-Even with this overshoot, a 9 V QMX should not see a damaging surge originating
-from the regulator — though a simple fix can address this (awaiting bench test).
 
 ---
 
@@ -280,8 +274,7 @@ from the regulator — though a simple fix can address this (awaiting bench test
 - **Asymmetry:** recovery is slower on load release than on load application.
 - **Power-on, 12 V:** no overshoot at any load from 0 mA to 2 A.
 - **Power-on at 9 V:** the output capacitor begins charging at 8.76 V input on the
-  captured ramp, while the circuit itself starts correctly from 6.5 V in. An overshoot (slight and well damped) was observed; scope reads 9.28 V at the
-  peak, but the true value is not yet established.
+  captured ramp, while the circuit itself starts correctly from 6.5 V in. Fully damped regulation settling with only a slight rise above the target voltage.
 - **Power-off:** output tracks the input down under load until it collapses below
   dropout, cleanly and without oscillation at every load; the collapse arrives
   sooner at higher currents because the load discharges the supply reservoir
