@@ -27,8 +27,7 @@ not addressed here.
 
 - **Board:** production-representative V2.1 board - 12 V or 9 V jumper setting.
 - **Input:** 13.800 V DC, maintained at the PCB input pads by a four-terminal
-  connection to the power supply, compensating for voltage drop in the
-  supply leads. Current limit set to 5 A; supply is a Tenma 72-2540 (30 V / 5 A).
+  connection to the power supply (Agilent 66309D). An additional supply (Tenma 72-2540) was used for some tests.
 - **Load:** electronic load pulsing between 0.1 A and 1.5 A. The edge rate of the
   load transition was **not characterised**; settling figures are representative
   of this setup rather than a specification against a defined load slew rate.
@@ -46,16 +45,7 @@ not addressed here.
 - **Vertical scale and coupling:** the reference, constant-load and load-step
   captures are AC-coupled at 10.0 mV/div. The power-on and power-off captures are
   DC-coupled at 2.00 V/div on both channels.
-- **Trigger:** set per capture rather than held constant. Ch1 falling edge at
-  −5.6 mV for the ground-reference, reference and constant-load captures; Ch1
-  falling edge at −3.0 mV for the load-application step; Ch1 rising edge at
-  −18.2 mV for the load-release step; Ch2 rising edge at 480 mV for the 12 V
-  power-on captures and at 8.00 V for the 9 V ones; Ch2 falling edge at 11.0 V
-  for the power-off captures.
-- **Acquisition:** the load-step captures are Sample-mode acquisitions (2 and 17
-  acquisitions respectively); the reference, constant-load, power-on and
-  power-off captures were taken in Hi Res mode. Times and voltages measured with
-  on-screen cursors.
+- **Trigger:** was not held constant, to obtain the clearest captures.
 
 ---
 
@@ -69,9 +59,6 @@ read against this floor.
 
 ![Ground reference with no bandwidth limit, showing broadband noise pickup](images/transient/TEK00027.jpeg)
 
-*Ground reference, no bandwidth limit. AC-coupled, 10.0 mV/div, 5.00 µs/div,
-10.0 MS/s, Sample mode.*
-
 Without a bandwidth limit the trace shows a continuous band of noise with
 occasional narrow spikes — all of it picked up by the probes rather than
 originating in the regulator. Part of it was traced to a magnifier lamp at the
@@ -81,17 +68,11 @@ bench; a component at around **80 MHz** was also present, most likely computers 
 
 ![Ground reference with 20 MHz bandwidth limit, showing a substantially reduced noise band](images/transient/TEK00028.jpeg)
 
-*Ground reference, 20 MHz bandwidth limit. AC-coupled, 10.0 mV/div, 100 µs/div,
-500 kS/s, Hi Res mode.*
-
 With the 20 MHz bandwidth limit enabled the externally coupled content is largely
 removed and the trace collapses to a thin band. **Every capture on this page was
 taken with this limit enabled.**
 
-The two captures are not a like-for-like comparison: they differ in timebase
-(5.00 µs/div against 100 µs/div), sample rate (10.0 MS/s against 500 kS/s) and
-acquisition mode (Sample against Hi Res). The reduction in visible noise between
-them is therefore not attributable to the bandwidth limit alone.
+The two captures differ in timebase to obtain a clear capture of the noise floor.
 
 ---
 
@@ -100,9 +81,6 @@ them is therefore not attributable to the bandwidth limit alone.
 ### TEK00029 — REF5050 output
 
 ![REF5050 reference output, flat at the measurement noise floor](images/transient/TEK00029.jpeg)
-
-*REF5050 reference output. AC-coupled, 10.0 mV/div, 100 µs/div, 500 kS/s,
-Hi Res mode.*
 
 The reference trace is indistinguishable from the ground-reference capture above:
 no periodic content and no structure above the measurement floor at this
@@ -120,43 +98,26 @@ Output voltage captured at six constant load currents from no load to 2 A.
 
 ![Output voltage at 0 mA constant load](images/transient/TEK00030.jpeg)
 
-*Output voltage, 0 mA constant load. AC-coupled, 10.0 mV/div, 5.00 ms/div,
-10.0 kS/s, Hi Res mode.*
-
 ### TEK00031 — 100 mA constant load
 
 ![Output voltage at 100 mA constant load](images/transient/TEK00031.jpeg)
-
-*Output voltage, 100 mA constant load. AC-coupled, 10.0 mV/div, 5.00 ms/div,
-10.0 kS/s, Hi Res mode.*
 
 ### TEK00032 — 500 mA constant load
 
 ![Output voltage at 500 mA constant load](images/transient/TEK00032.jpeg)
 
-*Output voltage, 500 mA constant load. AC-coupled, 10.0 mV/div, 5.00 ms/div,
-10.0 kS/s, Hi Res mode.*
-
 ### TEK00033 — 1 A constant load
 
 ![Output voltage at 1 A constant load](images/transient/TEK00033.jpeg)
-
-*Output voltage, 1 A constant load. AC-coupled, 10.0 mV/div, 5.00 ms/div,
-10.0 kS/s, Hi Res mode.*
 
 ### TEK00034 — 1.5 A constant load
 
 ![Output voltage at 1.5 A constant load](images/transient/TEK00034.jpeg)
 
-*Output voltage, 1.5 A constant load. AC-coupled, 10.0 mV/div, 5.00 ms/div,
-10.0 kS/s, Hi Res mode.*
-
 ### TEK00035 — 2 A constant load
 
 ![Output voltage at 2 A constant load](images/transient/TEK00035.jpeg)
 
-*Output voltage, 2 A constant load. AC-coupled, 10.0 mV/div, 5.00 ms/div,
-10.0 kS/s, Hi Res mode.*
 
 Across the full 20:1 load range, no trace departs meaningfully from the
 measurement noise floor established in section 1, and there is no progressive
@@ -166,7 +127,7 @@ content, drift or any repeating disturbance.
 What this demonstrates is the absence of low-frequency instability: no load-dependent oscillation, and no marginal behaviour appearing
 at any point between no load and the 2 A rating. What it does **not** provide is
 a ripple or noise figure. These captures suggest (rather than measure) lower ripple
-than the original V2 board. An accurate measurements remains outstanding.
+than the original V2 board. A dedicated ripple measurement remains outstanding.
 
 Any noise visible on the loaded traces is an artefact of the electronic
 load rather than of the regulator. This was confirmed by repeating the
@@ -181,9 +142,6 @@ load was present for all captures that follow (with the load set to "off" where 
 
 ![Output transient, 0.1 A to 1.5 A load step: output falls 32 mV and reaches its final value in approximately 30 µs with no undershoot](images/transient/TEK00036.jpeg)
 
-*0.1 A → 1.5 A load step, 13.8 V in. AC-coupled, 10.0 mV/div, 10.0 µs/div,
-5.00 MS/s. Cursors: 32.2 mV, 30.4 µs.*
-
 When the load is applied, the output falls by **32 mV**, reaching its final value
 in approximately **30 µs**. There is no
 excursion beyond the final value, and no ringing.
@@ -192,13 +150,10 @@ excursion beyond the final value, and no ringing.
 
 ![Output transient, 1.5 A to 0.1 A load step: output rises 32 mV and reaches its final value in approximately 100 µs with no overshoot](images/transient/TEK00037.jpeg)
 
-*1.5 A → 0.1 A load step, 13.8 V in. AC-coupled, 10.0 mV/div, 20.0 µs/div,
-2.50 MS/s. Cursors: 31.6 mV, 99.6 µs.*
-
 When the load is released, the output rises by the same **32 mV**, reaching its
 final value in approximately **100 µs**. The recovery is a clean with no overshoot.
 
-Settling is slower on release than on application - asymmetry to protect from transient over shoots.
+Settling is slower on release than on application.
 
 For context, both figures are three orders of magnitude shorter than a CW element
 at 20 WPM.
@@ -214,43 +169,25 @@ currents.
 
 ![Power-on ramp at 0 mA constant load](images/transient/TEK00038.jpeg)
 
-*Power-on, 0 mA constant load. DC-coupled, Ch1 and Ch2 2.00 V/div, 500 µs/div,
-100 kS/s, Hi Res mode. Cursors: 11.80 V, 910 µs.*
-
 ### TEK00039 — 100 mA constant load
 
 ![Power-on ramp at 100 mA constant load](images/transient/TEK00039.jpeg)
-
-*Power-on, 100 mA constant load. DC-coupled, Ch1 and Ch2 2.00 V/div, 500 µs/div,
-100 kS/s, Hi Res mode. Cursors: 11.84 V, 1.01 ms.*
 
 ### TEK00040 — 500 mA constant load
 
 ![Power-on ramp at 500 mA constant load](images/transient/TEK00040.jpeg)
 
-*Power-on, 500 mA constant load. DC-coupled, Ch1 and Ch2 2.00 V/div, 500 µs/div,
-100 kS/s, Hi Res mode. Cursors: 11.84 V, 1.01 ms.*
-
 ### TEK00041 — 1 A constant load
 
 ![Power-on ramp at 1 A constant load](images/transient/TEK00041.jpeg)
-
-*Power-on, 1 A constant load. DC-coupled, Ch1 and Ch2 2.00 V/div, 500 µs/div,
-100 kS/s, Hi Res mode. Cursors: 11.80 V, 1.24 ms.*
 
 ### TEK00042 — 1.5 A constant load
 
 ![Power-on ramp at 1.5 A constant load](images/transient/TEK00042.jpeg)
 
-*Power-on, 1.5 A constant load. DC-coupled, Ch1 and Ch2 2.00 V/div, 500 µs/div,
-100 kS/s, Hi Res mode. Cursors: 11.80 V, 1.46 ms.*
-
 ### TEK00043 — 2 A constant load
 
 ![Power-on ramp at 2 A constant load](images/transient/TEK00043.jpeg)
-
-*Power-on, 2 A constant load. DC-coupled, Ch1 and Ch2 2.00 V/div, 500 µs/div,
-100 kS/s, Hi Res mode. Cursors: 11.80 V, 1.72 ms.*
 
 The output behaves identically at every load: flat at zero while the input ramps,
 then a single steep, monotonic rise, then a soft knee onto the settled level.
@@ -269,36 +206,21 @@ qualitative.
 
 ![Power-off ramp at 100 mA constant load](images/transient/TEK00044.jpeg)
 
-*Power-off, 100 mA constant load. DC-coupled, Ch1 and Ch2 2.00 V/div, 10.0 ms/div,
-5.00 kS/s, Hi Res mode.*
-
 ### TEK00045 — 500 mA constant load
 
 ![Power-off ramp at 500 mA constant load](images/transient/TEK00045.jpeg)
-
-*Power-off, 500 mA constant load. DC-coupled, Ch1 and Ch2 2.00 V/div, 10.0 ms/div,
-5.00 kS/s, Hi Res mode.*
 
 ### TEK00046 — 1 A constant load
 
 ![Power-off ramp at 1 A constant load](images/transient/TEK00046.jpeg)
 
-*Power-off, 1 A constant load. DC-coupled, Ch1 and Ch2 2.00 V/div, 10.0 ms/div,
-5.00 kS/s, Hi Res mode.*
-
 ### TEK00047 — 1.5 A constant load
 
 ![Power-off ramp at 1.5 A constant load](images/transient/TEK00047.jpeg)
 
-*Power-off, 1.5 A constant load. DC-coupled, Ch1 and Ch2 2.00 V/div, 10.0 ms/div,
-5.00 kS/s, Hi Res mode.*
-
 ### TEK00048 — 2 A constant load
 
 ![Power-off ramp at 2 A constant load](images/transient/TEK00048.jpeg)
-
-*Power-off, 2 A constant load. DC-coupled, Ch1 and Ch2 2.00 V/div, 10.0 ms/div,
-5.00 kS/s, Hi Res mode.*
 
 The output falls with the input in every case, riding just below it by the
 dropout voltage until the input can no longer sustain the setpoint, at which
@@ -316,14 +238,11 @@ several seconds after power is removed.
 
 ## 7. Power-on, 9 V setting
 
-The 9 V setting was tested for the first time in this round.
+Behaviour at the 9 V setting (constant load, transient response), did not show any differences to the 12 V setting, apart from the observations in this section:
 
 ### TEK00050 — Input threshold at the 9 V setting
 
 ![Power-on ramp at the 9 V setting, showing output capacitor charging once the input reaches 8.76 V](images/transient/TEK00050.jpeg)
-
-*Power-on, 9 V setting. DC-coupled, Ch1 and Ch2 2.00 V/div, 500 µs/div,
-100 kS/s, Hi Res mode. Ch2 cursors: 560 mV, 1.13 ms, at 8.76 V.*
 
 The Ch2 cursors put the input at **8.76 V** where the output capacitor begins
 charging, which appears to be the limiting factor on this capture. The same input
@@ -333,9 +252,6 @@ correctly from an input as low as **6.5 V** at the 9 V setting.
 ### TEK00051 — Output overshoot at the 9 V setting
 
 ![Power-on ramp at the 9 V setting, same capture, cursors repositioned to show slight output overshoot](images/transient/TEK00051.jpeg)
-
-*Power-on, 9 V setting — same capture as above, cursors repositioned.
-Ch1 cursors: 9.32 V, 1.13 ms, at 9.28 V.*
 
 A slight overshoot is present at the 9 V setting: the output rises to a peak and
 then declines gently to its settled value across the remainder of the frame. It
