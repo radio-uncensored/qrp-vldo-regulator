@@ -59,21 +59,13 @@ with the rate of rise on the input.
 ![Further detail of the output voltage rise at 200 µs per division, showing a smooth and controlled ramp](images/transient/TEK00056.png)
 
 At these timebases the rise is smooth and controlled throughout. The output
-reaches approximately **6 V** in roughly **1 ms**, which is quick by the
-standards of most supplies.
-
-The QMX and QMX+ CPU is already operating at that voltage, so the board brings
-the radio up without a startup failure. The final value follows only shortly
-afterwards, while the PA is not yet enabled, so the remainder of the ramp does
-not place the finals at risk.
+reaches approximately **6 V** in roughly **1 ms**.
 
 ---
 
 ## 3. 12 V setting
 
-The 12 V setting was observed on the oscilloscope but not captured: the rise
-above the target voltage never occurred at this setting without the
-modification, so there was nothing to record. In other respects it follows the
+The 12 V setting was observed on the oscilloscope but not captured. It follows the
 9 V setting, the shape of the ramp being consistent across output voltages. The
 output rises quickly to around **two-thirds** of the final output voltage, then
 more slowly until it reaches the final value, in a way that resembles a
