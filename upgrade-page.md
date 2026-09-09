@@ -1,20 +1,16 @@
 ---
 title: "Optional Upgrade — M9OMS VLDO V2.1"
 description: >-
-  Oscilloscope measurements of the optional V2.1 upgrade: startup behaviour with
-  a 1 µF capacitor added between pin 5 of the voltage reference and ground.
+  Oscilloscope measurements of the optional V2.1 upgrade: startup behaviour.
 ---
 
-# M9OMS VLDO V2.1 — Optional Upgrade (Startup Behaviour)
+# M9OMS VLDO V2.1 — Optional Upgrade
 
 An optional modification to the V2.1 board, for builders who wish to fit it. A
 **1 µF capacitor** is added between **pin 5 of the voltage reference and ground**,
-and removes the slight rise above the target voltage recorded at the 9 V setting
-with a 13.8 V input in
-[Power-on, 9 V setting](transient.md#7-power-on-9-v-setting): with the
-capacitor fitted, the output no longer rises above its target at any point in the
-ramp. The cost is a small increase in startup time, with **no adverse effect on
-safety or operation**. This page records the captures behind that statement.
+which resolves the slight rise above target at the 9 V setting 
+[as seen on the previous page](transient.md#7-power-on-9-v-setting): The result a small increase in startup time, with **no adverse effect on
+safety or operation**. This page records the captures, verifying the addition of this capacitor.
 
 > **Measurements by CR7BTQ** (September 2026), on a single V2.1 board.
 
