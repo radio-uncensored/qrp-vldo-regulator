@@ -32,7 +32,7 @@ jumper setting.
 
 ### TEK00053 — Output rise to settled value
 
-![Power-on ramp with the upgrade fitted, cursors measuring 66.6 ms from the start of the output rise to the settled value](images/transient/TEK00053.BMP)
+![Power-on ramp with the upgrade fitted, cursors measuring 66.6 ms from the start of the output rise to the settled value](images/transient/TEK00053.jpeg)
 
 From the first movement of the output until it sits very close to its final
 value, the cursor interval is **66.6 ms**, with the settled output read at
