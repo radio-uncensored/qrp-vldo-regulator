@@ -40,7 +40,7 @@ value, the cursor interval is **66.6 ms**, with the settled output read at
 
 ### TEK00054 — Input applied to settled output
 
-![Power-on ramp with the upgrade fitted, cursors measuring 73.4 ms from the input being applied to the settled output](images/upgrade/TEK00054.jpeg)
+![Power-on ramp with the upgrade fitted, cursors measuring 73.4 ms from the input being applied to the settled output](images/transient/TEK00054.jpeg)
 
 Measured from the point at which the input is applied, the interval is
 **73.4 ms**. This figure includes the input transition and will therefore vary
@@ -52,11 +52,11 @@ with the rate of rise on the input.
 
 ### TEK00055 — Output rise, 1.00 ms/div
 
-![Detail of the output voltage rise at 1.00 ms per division](images/upgrade/TEK00055.jpeg)
+![Detail of the output voltage rise at 1.00 ms per division](images/transient/TEK00055.jpeg)
 
 ### TEK00056 — Output rise, 200 µs/div
 
-![Further detail of the output voltage rise at 200 µs per division, showing a smooth and controlled ramp](images/upgrade/TEK00056.jpeg)
+![Further detail of the output voltage rise at 200 µs per division, showing a smooth and controlled ramp](images/transient/TEK00056.jpeg)
 
 At these timebases the rise is smooth and controlled throughout. The output
 reaches approximately **6 V** in roughly **1 ms**, which is quick by the
@@ -87,7 +87,7 @@ Either method is acceptable; choose whichever suits the board in front of you.
 
 ### Option 1 — SMD capacitor to pin 5 and board ground
 
-![The 1 µF capacitor fitted as an SMD part between pin 5 of the voltage reference and board ground, on a prototype board](images/upgrade/IMG_0828.jpeg)
+![The 1 µF capacitor fitted as an SMD part between pin 5 of the voltage reference and board ground, on a prototype board](images/transient/IMG_0828.jpeg)
 
 Remove a small area of solder mask to expose board ground, then place and solder
 the 1 µF capacitor between pin 5 of the voltage reference and that point. The
@@ -95,7 +95,7 @@ photograph above was taken on a prototype board.
 
 ### Option 2 — THT capacitor between pin 5 and the reference ground pin
 
-![The 1 µF capacitor fitted as a through-hole part between pin 5 and the ground pin of the voltage reference, on a production board](images/upgrade/IMG_0855.jpeg)
+![The 1 µF capacitor fitted as a through-hole part between pin 5 and the ground pin of the voltage reference, on a production board](images/transient/IMG_0855.jpeg)
 
 Solder a through-hole capacitor directly between pin 5 of the voltage reference
 and its ground pin. The photograph above was taken on a final production board.
