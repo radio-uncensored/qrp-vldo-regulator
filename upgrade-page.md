@@ -79,7 +79,7 @@ Either method is acceptable; choose whichever suits your ability.
 
 ### Option 1 — SMD capacitor to pin 5 and board ground
 
-![The 1 µF capacitor fitted as an SMD part between pin 5 of the voltage reference and board ground, on a prototype board](images/transient/IMG_0828.jpeg)
+![The 1 µF capacitor fitted as an SMD part between pin 5 of the voltage reference and board ground, on a prototype board](images/transient/IMG_0829.jpeg)
 
 Remove a small area of solder mask to expose board ground, then place and solder
 the 1 µF capacitor between pin 5 of the voltage reference and that point. The
