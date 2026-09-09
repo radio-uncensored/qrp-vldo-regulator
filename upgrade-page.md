@@ -1,0 +1,113 @@
+---
+title: "Optional Upgrade — M9OMS VLDO V2.1"
+description: >-
+  Oscilloscope measurements of the optional V2.1 upgrade: startup behaviour with
+  a 1 µF capacitor added between pin 5 of the voltage reference and ground.
+---
+
+# M9OMS VLDO V2.1 — Optional Upgrade (Startup Behaviour)
+
+An optional modification to the V2.1 board, for builders who wish to fit it. A
+**1 µF capacitor** is added between **pin 5 of the voltage reference and ground**,
+and removes the slight rise above the target voltage recorded at the 9 V setting
+with a 13.8 V input in
+[Power-on, 9 V setting](transient.md#7-power-on-9-v-setting): with the
+capacitor fitted, the output no longer rises above its target at any point in the
+ramp. The cost is a small increase in startup time, with **no adverse effect on
+safety or operation**. This page records the captures behind that statement.
+
+> **Measurements by CR7BTQ** (September 2026), on a single V2.1 board.
+
+**Product page:** [M9OMS VLDO V2 — RF-quiet power supply for QRP Labs QMX](index.md)
+
+---
+
+## Test setup and conditions
+
+The setup is identical to that used for the
+[oscilloscope measurements](transient.md#test-setup-and-conditions). The only
+variable is the addition of the 1 µF capacitor between pin 5 of the voltage
+reference and ground. The captures in sections 1 and 2 were taken at the **9 V**
+jumper setting.
+
+---
+
+## 1. Startup timing
+
+### TEK00053 — Output rise to settled value
+
+![Power-on ramp with the upgrade fitted, cursors measuring 66.6 ms from the start of the output rise to the settled value](images/upgrade/TEK00053.jpeg)
+
+From the first movement of the output until it sits very close to its final
+value, the cursor interval is **66.6 ms**, with the settled output read at
+**8.88 V**.
+
+### TEK00054 — Input applied to settled output
+
+![Power-on ramp with the upgrade fitted, cursors measuring 73.4 ms from the input being applied to the settled output](images/upgrade/TEK00054.jpeg)
+
+Measured from the point at which the input is applied, the interval is
+**73.4 ms**. This figure includes the input transition and will therefore vary
+with the rate of rise on the input.
+
+---
+
+## 2. The output rise
+
+### TEK00055 — Output rise, 1.00 ms/div
+
+![Detail of the output voltage rise at 1.00 ms per division](images/upgrade/TEK00055.jpeg)
+
+### TEK00056 — Output rise, 200 µs/div
+
+![Further detail of the output voltage rise at 200 µs per division, showing a smooth and controlled ramp](images/upgrade/TEK00056.jpeg)
+
+At these timebases the rise is smooth and controlled throughout. The output
+reaches approximately **6 V** in roughly **1 ms**, which is quick by the
+standards of most supplies.
+
+The QMX and QMX+ CPU is already operating at that voltage, so the board brings
+the radio up without a startup failure. The final value follows only shortly
+afterwards, while the PA is not yet enabled, so the remainder of the ramp does
+not place the finals at risk.
+
+---
+
+## 3. 12 V setting
+
+The 12 V setting was observed on the oscilloscope but not captured: the rise
+above the target voltage never occurred at this setting without the
+modification, so there was nothing to record. In other respects it follows the
+9 V setting, the shape of the ramp being consistent across output voltages. The
+output rises quickly to around **two-thirds** of the final output voltage, then
+more slowly until it reaches the final value, in a way that resembles a
+logarithmic curve.
+
+---
+
+## 4. How to implement this
+
+Either method is acceptable; choose whichever suits the board in front of you.
+
+### Option 1 — SMD capacitor to pin 5 and board ground
+
+![The 1 µF capacitor fitted as an SMD part between pin 5 of the voltage reference and board ground, on a prototype board](images/upgrade/IMG_0828.jpeg)
+
+Remove a small area of solder mask to expose board ground, then place and solder
+the 1 µF capacitor between pin 5 of the voltage reference and that point. The
+photograph above was taken on a prototype board.
+
+### Option 2 — THT capacitor between pin 5 and the reference ground pin
+
+![The 1 µF capacitor fitted as a through-hole part between pin 5 and the ground pin of the voltage reference, on a production board](images/upgrade/IMG_0855.jpeg)
+
+Solder a through-hole capacitor directly between pin 5 of the voltage reference
+and its ground pin. The photograph above was taken on a final production board.
+
+**Take care not to bridge pin 5 to any of the neighbouring pins on the voltage
+reference — the pitch is fine.**
+
+---
+
+*Oscilloscope measurements: **CR7BTQ**, September 2026. See the
+[project README](design.md) for design rationale and the full specification table.*
