@@ -32,7 +32,7 @@ jumper setting.
 
 ### TEK00053 — Output rise to settled value
 
-![Power-on ramp with the upgrade fitted, cursors measuring 66.6 ms from the start of the output rise to the settled value](/images/transient/TEK00053.jpeg)
+![Power-on ramp with the upgrade fitted, cursors measuring 66.6 ms from the start of the output rise to the settled value](images/transient/TEK00053.png)
 
 From the first movement of the output until it sits very close to its final
 value, the cursor interval is **66.6 ms**, with the settled output read at
@@ -40,7 +40,7 @@ value, the cursor interval is **66.6 ms**, with the settled output read at
 
 ### TEK00054 — Input applied to settled output
 
-![Power-on ramp with the upgrade fitted, cursors measuring 73.4 ms from the input being applied to the settled output](images/transient/TEK00054.jpeg)
+![Power-on ramp with the upgrade fitted, cursors measuring 73.4 ms from the input being applied to the settled output](images/transient/TEK00054.png)
 
 Measured from the point at which the input is applied, the interval is
 **73.4 ms**. This figure includes the input transition and will therefore vary
@@ -52,11 +52,11 @@ with the rate of rise on the input.
 
 ### TEK00055 — Output rise, 1.00 ms/div
 
-![Detail of the output voltage rise at 1.00 ms per division](images/transient/TEK00055.jpeg)
+![Detail of the output voltage rise at 1.00 ms per division](images/transient/TEK00055.png)
 
 ### TEK00056 — Output rise, 200 µs/div
 
-![Further detail of the output voltage rise at 200 µs per division, showing a smooth and controlled ramp](images/transient/TEK00056.jpeg)
+![Further detail of the output voltage rise at 200 µs per division, showing a smooth and controlled ramp](images/transient/TEK00056.png)
 
 At these timebases the rise is smooth and controlled throughout. The output
 reaches approximately **6 V** in roughly **1 ms**, which is quick by the
