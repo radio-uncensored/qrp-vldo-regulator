@@ -9,7 +9,7 @@ description: >-
 An optional modification to the V2.1 board, for builders who wish to implement it. A
 **1 µF capacitor** is added between **pin 5 of the voltage reference and ground**,
 which resolves the slight rise above target at the 9 V setting 
-[as seen on the previous page](transient.md#7-power-on-9-v-setting): The result a small increase in startup time, with **no adverse effect on
+[as seen on the previous page](transient.md#7-power-on-9-v-setting). The result: a small increase in startup time, with **no adverse effect on
 safety or operation**. This page records the captures, verifying the addition of this capacitor.
 
 > **Measurements by CR7BTQ** (September 2026), on a single V2.1 board.
