@@ -83,7 +83,7 @@ logarithmic curve.
 
 ## 4. How to implement this
 
-Either method is acceptable; choose whichever suits the board in front of you.
+Either method is acceptable; choose whichever suits your ability.
 
 ### Option 1 — SMD capacitor to pin 5 and board ground
 
