@@ -59,7 +59,7 @@ with the rate of rise on the input.
 ![Further detail of the output voltage rise at 200 µs per division, showing a smooth and controlled ramp](images/transient/TEK00056.jpg)
 
 At these timebases the rise is smooth and controlled throughout. The output
-reaches approximately **6 V** in roughly **1 ms** - which can be considered as a fast startup time. A QMX and QMX+ CPU would have powered up in this timeframe, and the final settled voltage is reached shortly after that. This is unlikely to affect the PA during normal operation - the PA isn't active when powering up.
+reaches approximately **6 V** in roughly **1 ms** - which is considered to be a fast startup time. A QMX and QMX+ CPU would have powered up in this timeframe, and the final settled voltage is reached shortly after that. This is unlikely to affect the PA during normal operation - the PA isn't active when powering up.
 
 ---
 
