@@ -92,8 +92,7 @@ photograph above was taken on a prototype board.
 Solder a through-hole capacitor directly between pin 5 of the voltage reference
 and its ground pin. The photograph above was taken on a final production board.
 
-**Take care not to bridge pin 5 to any of the neighbouring pins on the voltage
-reference — the pitch is fine.**
+**Take care not to bridge any pins on IC1 - they have a fine pitch.**
 
 ---
 
