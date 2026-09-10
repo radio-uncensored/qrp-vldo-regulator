@@ -258,6 +258,8 @@ Fully damped regulation settling with only a slight rise above the target voltag
 The oscilloscope reads **9.28 V** at the peak. The peak has not been
 established with a more accurate instrument and no exact value is claimed here.
 
+A modification is available for applications requiring a zero rise above peak at this setting. Please read [this page](V2_1_mod.md). 
+
 ---
 
 ## Observations
