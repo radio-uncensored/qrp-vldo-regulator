@@ -4,12 +4,12 @@ description: >-
   Oscilloscope measurements of the optional V2.1 upgrade: startup behaviour.
 ---
 
-# M9OMS VLDO V2.1 — Optional Upgrade
+# M9OMS VLDO V2.1 — Optional Modification
 
 An optional modification to the V2.1 board, for builders who wish to implement it. A
 **1 µF capacitor** is added between **pin 5 of the voltage reference and ground**,
-which resolves the slight rise above target at the 9 V setting 
-[as seen on the previous page](transient.md#7-power-on-9-v-setting). The result: a small increase in startup time, with **no adverse effect on
+which eliminates a slight rise above target observed at the 9 V setting 
+[see the previous page](transient.md#7-power-on-9-v-setting). This slightly increases startup time, with **no adverse effect on
 safety or operation**. This page records the captures, verifying the addition of this capacitor.
 
 > **Measurements by CR7BTQ** (September 2026), on a single V2.1 board.
@@ -21,7 +21,7 @@ safety or operation**. This page records the captures, verifying the addition of
 ## Test setup and conditions
 
 The setup is identical to that used for the
-[oscilloscope measurements](transient.md#test-setup-and-conditions). The only
+[main oscilloscope measurements](transient.md#test-setup-and-conditions). The only
 variable is the addition of the 1 µF capacitor between pin 5 of the voltage
 reference and ground. The captures in sections 1 and 2 were taken at the **9 V**
 jumper setting.
@@ -34,7 +34,7 @@ jumper setting.
 
 ![Power-on ramp with the upgrade fitted, cursors measuring 66.6 ms from the start of the output rise to the settled value](images/transient/TEK00053.jpg)
 
-From the first movement of the output until it sits very close to its final
+Measured from the first increase in output until settling at its final
 value, the cursor interval is **66.6 ms**, with the settled output read at
 **8.88 V**.
 
@@ -59,7 +59,7 @@ with the rate of rise on the input.
 ![Further detail of the output voltage rise at 200 µs per division, showing a smooth and controlled ramp](images/transient/TEK00056.jpg)
 
 At these timebases the rise is smooth and controlled throughout. The output
-reaches approximately **6 V** in roughly **1 ms**.
+reaches approximately **6 V** in roughly **1 ms** - which can be considered as a fast startup time. A QMX and QMX+ CPU would have powered up in this timeframe, and the final settled voltage is reached shortly after that. This is unlikely to affect the PA during normal operation - the PA isn't active when powering up.
 
 ---
 
