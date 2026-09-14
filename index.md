@@ -1,6 +1,6 @@
 ---
-title: "M9OMS VLDO V2 - RF-Quiet Power Supply for QRP Labs QMX"
-description: "Discrete very low dropout (VLDO) linear voltage regulator for QRP Labs QMX and other QRP radios. RF-quiet, selectable 9.0 / 12.0 / 13.8 V output up to 2 A."
+title: "M9OMS VLDO V2 - Linear Power Supply for QRP radios"
+description: "Discrete very low dropout (VLDO) voltage regulator for QRP radios. Quiet, selectable 9.0 / 12.0 / 13.8 V output up to 2 A."
 image: /images/DSC01726.JPG
 ---
 
@@ -9,27 +9,28 @@ image: /images/DSC01726.JPG
 A discrete **very low dropout (VLDO)** linear voltage regulator for QRP radios. Selectable **9.0 V / 12.0 V / 13.8 V** at up to **2 A**.
 
 <p align="center">
-  <img src="images/DSC01726.JPG" alt="M9OMS VLDO V2 assembled board — 65 × 20.5 mm discrete very low dropout linear regulator for QRP radios" width="560">
+  <img src="images/DSC01726.JPG" alt="M9OMS VLDO V2.1 assembled board — 65 × 20.5 mm discrete very low dropout linear regulator for QRP radios" width="560">
 </p>
 
 ## Where to buy
 
 - **[M9OMS Shop](https://m9oms.com)** https://m9oms.com
 
-## V2 at a glance
+## V2 at a glance (V2.1 revision)
 
 | | |
 | :--- | :--- |
 | **Type** | Discrete low-dropout (LDO) **linear voltage regulator** |
-| **Output** | 9.0 V / 12.0 V / 13.8 V (jumper-selectable, trimmed via `R7`) |
+| **Output** | 9.0 V / 12.0 V / 13.8 V (jumper-selectable, trimmed via `R10`) |
 | **Maximum current** | 2.0 A continuous |
+| **Quiescent current** | <3 mA |
 | **Dropout voltage** | < 100 mV (regulation threshold) at 1 A |
 | **Switching noise** | Not a switching converter — linear topology |
 | **Designed for** | QRP radios and other portable HF rigs |
 
 ## Why a discrete LDO?
 
-Modern QRP rigs need a stable supply rail, but hobbyist switching modules can introduce noise. Many conventional LDO boards require too much voltage headroom to maintain regulation as a battery discharges. The VLDO V2 remains RF-quiet, regulates very close to the input voltage, and is designed for rapid RX-TX current changes.
+Modern QRP rigs need a stable supply rail, but hobbyist switching modules can introduce noise. Many conventional LDO boards require too much voltage headroom to maintain regulation as a battery discharges. The VLDO V2 remains RF-quiet, regulates very close to the input voltage, and is designed for rapid RX-TX current changes. V2.1 is the latest revision.
 
 ## Documentation
 
@@ -40,7 +41,7 @@ Modern QRP rigs need a stable supply rail, but hobbyist switching modules can in
 
 ## Credits
 
-V2 design and hardware by **M9OMS**. DC evaluation by **KC7XE**. Stability evaluation by **CR7BTQ**.
+V2/V2.1 design and hardware by **M9OMS**. DC evaluation by **KC7XE**. Stability evaluation by **CR7BTQ**.
 
 ---
 
